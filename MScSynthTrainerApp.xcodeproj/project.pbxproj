@@ -16,6 +16,8 @@
 		21427A60287B3C1D00E9EEB5 /* DunneAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 21427A5F287B3C1D00E9EEB5 /* DunneAudioKit */; };
 		21427A63287B3C3F00E9EEB5 /* SporthAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 21427A62287B3C3F00E9EEB5 /* SporthAudioKit */; };
 		21427A66287B3C9600E9EEB5 /* STKAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 21427A65287B3C9600E9EEB5 /* STKAudioKit */; };
+		21427A68287B41E800E9EEB5 /* TutorialsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21427A67287B41E800E9EEB5 /* TutorialsMenu.swift */; };
+		21427A6A287B424100E9EEB5 /* DynamicOscillatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21427A69287B424100E9EEB5 /* DynamicOscillatorView.swift */; };
 		218C8CA72862662000154F87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218C8CA62862662000154F87 /* AppDelegate.swift */; };
 		218C8CA92862662000154F87 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218C8CA82862662000154F87 /* SceneDelegate.swift */; };
 		218C8CAB2862662000154F87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218C8CAA2862662000154F87 /* ViewController.swift */; };
@@ -34,6 +36,8 @@
 /* Begin PBXFileReference section */
 		11D24E5B16A5AB1BB15E00DA /* Pods-MScSynthTrainerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MScSynthTrainerApp.release.xcconfig"; path = "Target Support Files/Pods-MScSynthTrainerApp/Pods-MScSynthTrainerApp.release.xcconfig"; sourceTree = "<group>"; };
 		211C71C42869FD40003D6342 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		21427A67287B41E800E9EEB5 /* TutorialsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialsMenu.swift; sourceTree = "<group>"; };
+		21427A69287B424100E9EEB5 /* DynamicOscillatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicOscillatorView.swift; sourceTree = "<group>"; };
 		218C8CA32862662000154F87 /* MScSynthTrainerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MScSynthTrainerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		218C8CA62862662000154F87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		218C8CA82862662000154F87 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				21F276F62874D83900152B32 /* HomeVCSwiftUIView.swift */,
+				21427A67287B41E800E9EEB5 /* TutorialsMenu.swift */,
+				21427A69287B424100E9EEB5 /* DynamicOscillatorView.swift */,
 			);
 			path = SwiftUIViews;
 			sourceTree = "<group>";
@@ -291,8 +297,10 @@
 				218C8CA72862662000154F87 /* AppDelegate.swift in Sources */,
 				218F57ED2864843C0052B064 /* Utilities.swift in Sources */,
 				218C8CBC2862667100154F87 /* SignUpViewController.swift in Sources */,
+				21427A6A287B424100E9EEB5 /* DynamicOscillatorView.swift in Sources */,
 				21F276F72874D83900152B32 /* HomeVCSwiftUIView.swift in Sources */,
 				218C8CBF2862668A00154F87 /* LoginViewController.swift in Sources */,
+				21427A68287B41E800E9EEB5 /* TutorialsMenu.swift in Sources */,
 				218C8CA92862662000154F87 /* SceneDelegate.swift in Sources */,
 				218C8CC22862669700154F87 /* HomeViewController.swift in Sources */,
 				21D9D904286A0F7000DB0153 /* Constants.swift in Sources */,

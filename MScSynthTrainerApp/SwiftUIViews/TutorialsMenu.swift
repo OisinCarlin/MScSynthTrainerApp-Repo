@@ -1,49 +1,32 @@
 //
-//  HomeVCSwiftUIView.swift
+//  TutorialsMenu.swift
 //  MScSynthTrainerApp
 //
-//  Created by Oisin Carlin on 05/07/2022.
-//  Navigation Menu Style Reference: Rebeloper
-//www.youtube.com/watch?v=7c2fBRM4gSA&ab_channel=Rebeloper-RebelDeveloper
+//  Created by Oisin Carlin on 10/07/2022.
 //
 
 import SwiftUI
-import AudioKit
-import AudioKitUI
-import AVFoundation
 
 // Only need one NavigationView Instance for Menu navigation
 // .. in primary menu screen HomeVCSwiftUIView
 // Can imbed multiple NavigationLink destinations between SwiftUI files
-struct HomeVCSwiftUIView: View {
-    var body: some View {
-        // If reverting from Menu Navigation view, delete MasterView, TutorialsMenu and DynamicOscillatorView and just present text
-        
-//        Text("Welcome to SynthTrainer!")
-//            .padding(25)
-        NavigationView {
-            MasterView()
-        }.navigationViewStyle(DoubleColumnNavigationViewStyle())
-    }
-}
-
-struct MasterView: View {
+struct TutorialsMenu: View {
     var body: some View {
         Form {
             Group {
-                Section(header: Text("Main Menu")) {
+                Section(header: Text("Topics")) {
                     NavigationLink(destination: TutorialsMenu()){
                         HStack {
-                            Image("hello")
+                            Image("controls")
                                 .resizable()
                                 .renderingMode(.original)
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 80, height: 80)
                             VStack(alignment: .leading) {
-                                Text("Welcome")
+                                Text("Basic Controls")
                                     .font(.headline)
                                     .fontWeight(.bold)
-                                Text("Welcome to SynthTrainer! Here's a quick introduction to our app.")
+                                Text("Up, down, high, low. Learn the basics here")
                                     .font(.subheadline)
                                     .foregroundColor(Color.gray)
                                     .lineLimit(2)
@@ -52,16 +35,16 @@ struct MasterView: View {
                     }
                     NavigationLink(destination: TutorialsMenu()){
                         HStack {
-                            Image("teacherInMusic")
+                            Image("waveOscillator")
                                 .resizable()
                                 .renderingMode(.original)
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 80, height: 80)
                             VStack(alignment: .leading) {
-                                Text("Tutorials")
+                                Text("Oscillators and Waveforms")
                                     .font(.headline)
                                     .fontWeight(.bold)
-                                Text("Start learning with our interactive tutorials!")
+                                Text("...")
                                     .font(.subheadline)
                                     .foregroundColor(Color.gray)
                                     .lineLimit(2)
@@ -70,16 +53,16 @@ struct MasterView: View {
                     }
                     NavigationLink(destination: TutorialsMenu()){
                         HStack {
-                            Image("playKeyBoard")
+                            Image("lowPassFilter")
                                 .resizable()
                                 .renderingMode(.original)
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 80, height: 80)
                             VStack(alignment: .leading) {
-                                Text("Play")
+                                Text("Filters")
                                     .font(.headline)
                                     .fontWeight(.bold)
-                                Text("Been through the tutorials? Play about with synthesiser parts and see what sounds you can make.")
+                                Text("...")
                                     .font(.subheadline)
                                     .foregroundColor(Color.gray)
                                     .lineLimit(2)
@@ -88,16 +71,16 @@ struct MasterView: View {
                     }
                     NavigationLink(destination: TutorialsMenu()){
                         HStack {
-                            Image("quiz")
+                            Image("envelope")
                                 .resizable()
                                 .renderingMode(.original)
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 80, height: 80)
                             VStack(alignment: .leading) {
-                                Text("Quiz")
+                                Text("Envelopes")
                                     .font(.headline)
                                     .fontWeight(.bold)
-                                Text("Test your learning so far with our quizzes!")
+                                Text("...")
                                     .font(.subheadline)
                                     .foregroundColor(Color.gray)
                                     .lineLimit(2)
@@ -106,16 +89,16 @@ struct MasterView: View {
                     }
                     NavigationLink(destination: TutorialsMenu()){
                         HStack {
-                            Image("progress")
+                            Image("map")
                                 .resizable()
                                 .renderingMode(.original)
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 80, height: 80)
                             VStack(alignment: .leading) {
-                                Text("Progress")
+                                Text("Approaches")
                                     .font(.headline)
                                     .fontWeight(.bold)
-                                Text("Check out how your sonic journey is going so far.")
+                                Text("...")
                                     .font(.subheadline)
                                     .foregroundColor(Color.gray)
                                     .lineLimit(2)
@@ -123,17 +106,14 @@ struct MasterView: View {
                         }
                     }
                 }
-                
             }
-        }
-        .navigationBarTitle("SynthTrainer")
+        }.navigationBarTitle("Tutorials")
     }
 }
 
 
-
-struct HomeVCSwiftUIView_Previews: PreviewProvider {
+struct TutorialsMenu_Previews: PreviewProvider {
     static var previews: some View {
-        HomeVCSwiftUIView()
+        TutorialsMenu()
     }
 }
