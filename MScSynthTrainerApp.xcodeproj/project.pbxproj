@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		210A95452880696400AD6472 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210A95442880696400AD6472 /* Service.swift */; };
+		210A954728806E3100AD6472 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210A954628806E3100AD6472 /* Todo.swift */; };
+		210A954928806F8400AD6472 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210A954828806F8400AD6472 /* ViewModel.swift */; };
 		211C71C52869FD40003D6342 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 211C71C42869FD40003D6342 /* GoogleService-Info.plist */; };
+		21292C90288094C60044F7B4 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21292C8F288094C60044F7B4 /* UserDefaults.swift */; };
 		21427A51287B3AFC00E9EEB5 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 21427A50287B3AFC00E9EEB5 /* AudioKit */; };
 		21427A54287B3B1400E9EEB5 /* AudioKitUI in Frameworks */ = {isa = PBXBuildFile; productRef = 21427A53287B3B1400E9EEB5 /* AudioKitUI */; };
 		21427A57287B3B6C00E9EEB5 /* AudioKitEX in Frameworks */ = {isa = PBXBuildFile; productRef = 21427A56287B3B6C00E9EEB5 /* AudioKitEX */; };
@@ -35,7 +39,11 @@
 
 /* Begin PBXFileReference section */
 		11D24E5B16A5AB1BB15E00DA /* Pods-MScSynthTrainerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MScSynthTrainerApp.release.xcconfig"; path = "Target Support Files/Pods-MScSynthTrainerApp/Pods-MScSynthTrainerApp.release.xcconfig"; sourceTree = "<group>"; };
+		210A95442880696400AD6472 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		210A954628806E3100AD6472 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		210A954828806F8400AD6472 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		211C71C42869FD40003D6342 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		21292C8F288094C60044F7B4 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		21427A67287B41E800E9EEB5 /* TutorialsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialsMenu.swift; sourceTree = "<group>"; };
 		21427A69287B424100E9EEB5 /* DynamicOscillatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicOscillatorView.swift; sourceTree = "<group>"; };
 		218C8CA32862662000154F87 /* MScSynthTrainerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MScSynthTrainerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				21F276F52874D80E00152B32 /* SwiftUIViews */,
-				218F57EF286484750052B064 /* Helpers */,
 				218C8CC42862669F00154F87 /* View Controllers */,
 				218C8CA62862662000154F87 /* AppDelegate.swift */,
 				218C8CA82862662000154F87 /* SceneDelegate.swift */,
@@ -127,6 +134,10 @@
 			children = (
 				218F57EC2864843B0052B064 /* Utilities.swift */,
 				21D9D903286A0F7000DB0153 /* Constants.swift */,
+				210A95442880696400AD6472 /* Service.swift */,
+				210A954628806E3100AD6472 /* Todo.swift */,
+				210A954828806F8400AD6472 /* ViewModel.swift */,
+				21292C8F288094C60044F7B4 /* UserDefaults.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -136,6 +147,7 @@
 			children = (
 				21F276F62874D83900152B32 /* HomeVCSwiftUIView.swift */,
 				21427A67287B41E800E9EEB5 /* TutorialsMenu.swift */,
+				218F57EF286484750052B064 /* Helpers */,
 				21427A69287B424100E9EEB5 /* DynamicOscillatorView.swift */,
 			);
 			path = SwiftUIViews;
@@ -298,11 +310,15 @@
 				218F57ED2864843C0052B064 /* Utilities.swift in Sources */,
 				218C8CBC2862667100154F87 /* SignUpViewController.swift in Sources */,
 				21427A6A287B424100E9EEB5 /* DynamicOscillatorView.swift in Sources */,
+				210A95452880696400AD6472 /* Service.swift in Sources */,
+				210A954928806F8400AD6472 /* ViewModel.swift in Sources */,
 				21F276F72874D83900152B32 /* HomeVCSwiftUIView.swift in Sources */,
 				218C8CBF2862668A00154F87 /* LoginViewController.swift in Sources */,
 				21427A68287B41E800E9EEB5 /* TutorialsMenu.swift in Sources */,
 				218C8CA92862662000154F87 /* SceneDelegate.swift in Sources */,
+				21292C90288094C60044F7B4 /* UserDefaults.swift in Sources */,
 				218C8CC22862669700154F87 /* HomeViewController.swift in Sources */,
+				210A954728806E3100AD6472 /* Todo.swift in Sources */,
 				21D9D904286A0F7000DB0153 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

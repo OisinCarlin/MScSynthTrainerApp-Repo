@@ -15,7 +15,12 @@ import AVFoundation
 // Only need one NavigationView Instance for Menu navigation
 // .. in primary menu screen HomeVCSwiftUIView
 // Can imbed multiple NavigationLink destinations between SwiftUI files
+
+
+
 struct HomeVCSwiftUIView: View {
+    
+
     var body: some View {
         // If reverting from Menu Navigation view, delete MasterView, TutorialsMenu and DynamicOscillatorView and just present text
         
@@ -28,10 +33,18 @@ struct HomeVCSwiftUIView: View {
 }
 
 struct MasterView: View {
+    
+    // Completion to dismiss SwiftUIView
+    var dismiss: (() -> Void)?
+    var present: (()->Void)?
+    
+  
+    let userFirstName = UserDefaults.standard.getUserFirstName()
+    
     var body: some View {
         Form {
             Group {
-                Section(header: Text("Main Menu")) {
+                Section(header: Text(userFirstName)) {
                     NavigationLink(destination: TutorialsMenu()){
                         HStack {
                             Image("hello")
@@ -127,6 +140,12 @@ struct MasterView: View {
             }
         }
         .navigationBarTitle("SynthTrainer")
+        .navigationBarItems(
+            trailing:
+                HStack{
+//                    
+                }
+        )
     }
 }
 

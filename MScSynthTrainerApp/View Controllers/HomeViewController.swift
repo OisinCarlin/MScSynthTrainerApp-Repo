@@ -7,6 +7,10 @@
 
 import UIKit
 import SwiftUI
+import FirebaseAuth
+import FirebaseCore
+import FirebaseAnalytics
+import FirebaseFirestore
 
 class HomeViewController: UIViewController {
     
@@ -16,15 +20,34 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var theContainer : UIView!
 
     override func viewDidLoad() {
+        
+        
         super.viewDidLoad()
+        
+        
         
         let childView = UIHostingController(rootView: HomeVCSwiftUIView())
         addChild(childView)
         childView.view.frame = theContainer.bounds
         theContainer.addSubview(childView.view)
+        
 
+        
         // Do any additional setup after loading the view.
     }
+    
+    
+    
+    // Handling sign out - Ref. 'Lets Build That App'
+    // www.youtube.com/watch?v=gjYAIXjpIS8&t=90s&ab_channel=LetsBuildThatApp
+    func handleSignOut(){
+        UserDefaults.standard.setLoggedIn(value: false)
+        
+        let viewController = ViewController()
+        present(viewController, animated: true, completion: nil)
+    }
+    
+
     
 
     /*

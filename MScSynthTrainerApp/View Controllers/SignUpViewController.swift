@@ -124,6 +124,9 @@ class SignUpViewController: UIViewController {
                         }
                     }
                     
+                    
+                    
+                    
                     // Transition to the home screen
                      self.transitionToHome()
                     
@@ -143,10 +146,44 @@ class SignUpViewController: UIViewController {
     // Transition to Home ViewController
     func transitionToHome(){
         
-        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
+        // 11/7/22: Capturing user data from Firebase to store upon Login
+        // Make this functionality available after Signing Up too, or transition to Login Instead
+        let db = Firestore.firestore()
+        let uid = Auth.auth().currentUser?.uid
         
-        view.window?.rootViewController = homeViewController
-        view.window?.makeKeyAndVisible()
+        
+        db.collection("users").whereField("uid", isEqualTo: uid!)
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        // print("\(document.documentID) => \(document.data())")
+                        
+                        // let data = document.data()
+                        let docID = document.documentID
+                        let userID = document["uid"] as? String ?? ""
+                        let userFirstName = document["firstname"] as? String ?? ""
+                        let userLastName = document["lastname"] as? String ?? ""
+                        
+
+                        UserDefaults.standard.setUserDocumentID(value: docID)
+                        UserDefaults.standard.setUserID(value: userID)
+                        UserDefaults.standard.setUserFirstName(value: userFirstName)
+                        UserDefaults.standard.setUserLastName(value: userLastName)
+                        
+                        // Set Login status boolean
+                        UserDefaults.standard.setLoggedIn(value: true)
+                        
+                }
+            }
+        
+        
+        
+        let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
+        
+        self.view.window?.rootViewController = homeViewController
+        self.view.window?.makeKeyAndVisible()
         
     }
     
@@ -170,4 +207,5 @@ class SignUpViewController: UIViewController {
     
     
     
+}
 }
