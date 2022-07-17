@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		210A95452880696400AD6472 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210A95442880696400AD6472 /* Service.swift */; };
-		210A954728806E3100AD6472 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210A954628806E3100AD6472 /* Todo.swift */; };
-		210A954928806F8400AD6472 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210A954828806F8400AD6472 /* ViewModel.swift */; };
 		211C71C52869FD40003D6342 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 211C71C42869FD40003D6342 /* GoogleService-Info.plist */; };
 		21292C90288094C60044F7B4 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21292C8F288094C60044F7B4 /* UserDefaults.swift */; };
 		21427A51287B3AFC00E9EEB5 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 21427A50287B3AFC00E9EEB5 /* AudioKit */; };
@@ -22,6 +19,7 @@
 		21427A66287B3C9600E9EEB5 /* STKAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 21427A65287B3C9600E9EEB5 /* STKAudioKit */; };
 		21427A68287B41E800E9EEB5 /* TutorialsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21427A67287B41E800E9EEB5 /* TutorialsMenu.swift */; };
 		21427A6A287B424100E9EEB5 /* DynamicOscillatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21427A69287B424100E9EEB5 /* DynamicOscillatorView.swift */; };
+		215844262881FDB300257013 /* BasicControlsTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215844252881FDB300257013 /* BasicControlsTutorial.swift */; };
 		218C8CA72862662000154F87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218C8CA62862662000154F87 /* AppDelegate.swift */; };
 		218C8CA92862662000154F87 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218C8CA82862662000154F87 /* SceneDelegate.swift */; };
 		218C8CAB2862662000154F87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218C8CAA2862662000154F87 /* ViewController.swift */; };
@@ -34,18 +32,20 @@
 		218F57ED2864843C0052B064 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218F57EC2864843B0052B064 /* Utilities.swift */; };
 		21D9D904286A0F7000DB0153 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D9D903286A0F7000DB0153 /* Constants.swift */; };
 		21F276F72874D83900152B32 /* HomeVCSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F276F62874D83900152B32 /* HomeVCSwiftUIView.swift */; };
+		21F4F13928849459003CED52 /* NavigationHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F4F13828849459003CED52 /* NavigationHelpers.swift */; };
+		21F4F13B28849494003CED52 /* KeyboardControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F4F13A28849494003CED52 /* KeyboardControl.swift */; };
+		21F4F13D288494F6003CED52 /* ParameterSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F4F13C288494F6003CED52 /* ParameterSlider.swift */; };
+		21F4F1412884956A003CED52 /* OscillatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F4F1402884956A003CED52 /* OscillatorView.swift */; };
 		28BE6BB3F14603C4B7D18515 /* Pods_MScSynthTrainerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 598DDB911E4C3500E6CE66E5 /* Pods_MScSynthTrainerApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		11D24E5B16A5AB1BB15E00DA /* Pods-MScSynthTrainerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MScSynthTrainerApp.release.xcconfig"; path = "Target Support Files/Pods-MScSynthTrainerApp/Pods-MScSynthTrainerApp.release.xcconfig"; sourceTree = "<group>"; };
-		210A95442880696400AD6472 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
-		210A954628806E3100AD6472 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
-		210A954828806F8400AD6472 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		211C71C42869FD40003D6342 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		21292C8F288094C60044F7B4 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		21427A67287B41E800E9EEB5 /* TutorialsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialsMenu.swift; sourceTree = "<group>"; };
 		21427A69287B424100E9EEB5 /* DynamicOscillatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicOscillatorView.swift; sourceTree = "<group>"; };
+		215844252881FDB300257013 /* BasicControlsTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicControlsTutorial.swift; sourceTree = "<group>"; };
 		218C8CA32862662000154F87 /* MScSynthTrainerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MScSynthTrainerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		218C8CA62862662000154F87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		218C8CA82862662000154F87 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +60,10 @@
 		218F57EC2864843B0052B064 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		21D9D903286A0F7000DB0153 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		21F276F62874D83900152B32 /* HomeVCSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCSwiftUIView.swift; sourceTree = "<group>"; };
+		21F4F13828849459003CED52 /* NavigationHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelpers.swift; sourceTree = "<group>"; };
+		21F4F13A28849494003CED52 /* KeyboardControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardControl.swift; sourceTree = "<group>"; };
+		21F4F13C288494F6003CED52 /* ParameterSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterSlider.swift; sourceTree = "<group>"; };
+		21F4F1402884956A003CED52 /* OscillatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OscillatorView.swift; sourceTree = "<group>"; };
 		2A2A2F9EAD9608F314CAA89F /* Pods-MScSynthTrainerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MScSynthTrainerApp.debug.xcconfig"; path = "Target Support Files/Pods-MScSynthTrainerApp/Pods-MScSynthTrainerApp.debug.xcconfig"; sourceTree = "<group>"; };
 		598DDB911E4C3500E6CE66E5 /* Pods_MScSynthTrainerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MScSynthTrainerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -134,9 +138,6 @@
 			children = (
 				218F57EC2864843B0052B064 /* Utilities.swift */,
 				21D9D903286A0F7000DB0153 /* Constants.swift */,
-				210A95442880696400AD6472 /* Service.swift */,
-				210A954628806E3100AD6472 /* Todo.swift */,
-				210A954828806F8400AD6472 /* ViewModel.swift */,
 				21292C8F288094C60044F7B4 /* UserDefaults.swift */,
 			);
 			path = Helpers;
@@ -145,12 +146,33 @@
 		21F276F52874D80E00152B32 /* SwiftUIViews */ = {
 			isa = PBXGroup;
 			children = (
+				21F4F137288493E8003CED52 /* Cookbook Helpers+Components */,
 				21F276F62874D83900152B32 /* HomeVCSwiftUIView.swift */,
 				21427A67287B41E800E9EEB5 /* TutorialsMenu.swift */,
+				215844252881FDB300257013 /* BasicControlsTutorial.swift */,
 				218F57EF286484750052B064 /* Helpers */,
 				21427A69287B424100E9EEB5 /* DynamicOscillatorView.swift */,
 			);
 			path = SwiftUIViews;
+			sourceTree = "<group>";
+		};
+		21F4F137288493E8003CED52 /* Cookbook Helpers+Components */ = {
+			isa = PBXGroup;
+			children = (
+				21F4F13E2884950D003CED52 /* Cookbook Recipies */,
+				21F4F13828849459003CED52 /* NavigationHelpers.swift */,
+				21F4F13A28849494003CED52 /* KeyboardControl.swift */,
+				21F4F13C288494F6003CED52 /* ParameterSlider.swift */,
+			);
+			path = "Cookbook Helpers+Components";
+			sourceTree = "<group>";
+		};
+		21F4F13E2884950D003CED52 /* Cookbook Recipies */ = {
+			isa = PBXGroup;
+			children = (
+				21F4F1402884956A003CED52 /* OscillatorView.swift */,
+			);
+			path = "Cookbook Recipies";
 			sourceTree = "<group>";
 		};
 		913339862C876B95A4BDD8CC /* Pods */ = {
@@ -305,20 +327,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				215844262881FDB300257013 /* BasicControlsTutorial.swift in Sources */,
+				21F4F13928849459003CED52 /* NavigationHelpers.swift in Sources */,
 				218C8CAB2862662000154F87 /* ViewController.swift in Sources */,
 				218C8CA72862662000154F87 /* AppDelegate.swift in Sources */,
+				21F4F13D288494F6003CED52 /* ParameterSlider.swift in Sources */,
 				218F57ED2864843C0052B064 /* Utilities.swift in Sources */,
 				218C8CBC2862667100154F87 /* SignUpViewController.swift in Sources */,
 				21427A6A287B424100E9EEB5 /* DynamicOscillatorView.swift in Sources */,
-				210A95452880696400AD6472 /* Service.swift in Sources */,
-				210A954928806F8400AD6472 /* ViewModel.swift in Sources */,
 				21F276F72874D83900152B32 /* HomeVCSwiftUIView.swift in Sources */,
 				218C8CBF2862668A00154F87 /* LoginViewController.swift in Sources */,
+				21F4F1412884956A003CED52 /* OscillatorView.swift in Sources */,
 				21427A68287B41E800E9EEB5 /* TutorialsMenu.swift in Sources */,
+				21F4F13B28849494003CED52 /* KeyboardControl.swift in Sources */,
 				218C8CA92862662000154F87 /* SceneDelegate.swift in Sources */,
 				21292C90288094C60044F7B4 /* UserDefaults.swift in Sources */,
 				218C8CC22862669700154F87 /* HomeViewController.swift in Sources */,
-				210A954728806E3100AD6472 /* Todo.swift in Sources */,
 				21D9D904286A0F7000DB0153 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

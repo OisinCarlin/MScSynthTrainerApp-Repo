@@ -15,7 +15,7 @@ struct TutorialsMenu: View {
         Form {
             Group {
                 Section(header: Text("Topics")) {
-                    NavigationLink(destination: TutorialsMenu()){
+                    NavigationLink(destination: BasicControlsTutorial()){
                         HStack {
                             Image("controls")
                                 .resizable()
