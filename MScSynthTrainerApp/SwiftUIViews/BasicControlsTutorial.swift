@@ -30,6 +30,16 @@ struct BasicControlsTutorial: View {
                         title: "Pitch",
                         description: "'Pitch' (or 'Frequency') is another common sound control you can find on synths. It changes how 'high' or 'low' a sound is. A lot of musical instruments or even your own voice can make high or low pitches.")
             BasicControlsPitchOscillatorView()
+            OnboardView(systemImageName1: "keyboardSynth",
+                        systemImageName2: "keyboardSynth2",
+                        title: "Keyboards",
+                        description: "Some synths have musical keyboards as a control for the pitch of sounds, or 'notes' they make. The pitch is 'lower' the further left of the keyboard and 'higher' the further right. A sound is played when a key is pressed and stops when the key is released.")
+            BasicControlsKeyboardOscillatorView()
+            OnboardView(systemImageName1: "skater",
+                        systemImageName2: "trombone",
+                        title: "Glide",
+                        description: "'Glide' (or 'Portamento') is a control which makes the next note you play 'glide' up or down to it. The control sets the time it takes for the sound to 'glide' from one note to the next. Trombones make gliding sounds when the player moves the slider out or in while playing.")
+            BasicControlsGlideOscillatorView()
         }
         .tabViewStyle(PageTabViewStyle())
         
@@ -86,7 +96,7 @@ struct BasicControlsOscillatorData {
     var isPlaying: Bool = false
     var frequency: AUValue = 440
     var amplitude: AUValue = 0.1
-    var rampDuration: AUValue = 1
+    var rampDuration: AUValue = 0.01
 }
 
 class BasicControlsOscillatorConductor: ObservableObject, KeyboardDelegate {
@@ -193,6 +203,72 @@ struct BasicControlsPitchOscillatorView: View {
 //                            delegate: conductor)
 
         }.cookbookNavBarTitle("Play with Pitch")
+        .onAppear {
+            self.conductor.start()
+        }
+        .onDisappear {
+            self.conductor.stop()
+        }
+    }
+}
+
+struct BasicControlsKeyboardOscillatorView: View {
+    @StateObject var conductor = BasicControlsOscillatorConductor()
+
+    var body: some View {
+        VStack {
+//            Text(self.conductor.data.isPlaying ? "Pause" : "Play").onTapGesture {
+//                self.conductor.data.isPlaying.toggle()
+//            }
+//            ParameterSlider(text: "Frequency",
+//                            parameter: self.$conductor.data.frequency,
+//                            range: 220...880).padding()
+            ParameterSlider(text: "Amplitude",
+                            parameter: self.$conductor.data.amplitude,
+                            range: 0 ... 1).padding()
+//            ParameterSlider(text: "Ramp Duration",
+//                            parameter: self.$conductor.data.rampDuration,
+//                            range: 0...10).padding()
+            NodeOutputView(conductor.osc)
+            KeyboardControl(firstOctave: 3,
+                            octaveCount: 2,
+                            polyphonicMode: false,
+                            delegate: conductor)
+
+        }.cookbookNavBarTitle("Play using the keyboard")
+        .onAppear {
+            self.conductor.start()
+        }
+        .onDisappear {
+            self.conductor.stop()
+        }
+    }
+}
+
+struct BasicControlsGlideOscillatorView: View {
+    @StateObject var conductor = BasicControlsOscillatorConductor()
+
+    var body: some View {
+        VStack {
+//            Text(self.conductor.data.isPlaying ? "Pause" : "Play").onTapGesture {
+//                self.conductor.data.isPlaying.toggle()
+//            }
+//            ParameterSlider(text: "Frequency",
+//                            parameter: self.$conductor.data.frequency,
+//                            range: 220...880).padding()
+            ParameterSlider(text: "Amplitude",
+                            parameter: self.$conductor.data.amplitude,
+                            range: 0 ... 1).padding()
+            ParameterSlider(text: "Glide Time",
+                            parameter: self.$conductor.data.rampDuration,
+                            range: 0...10).padding()
+            NodeOutputView(conductor.osc)
+            KeyboardControl(firstOctave: 3,
+                            octaveCount: 2,
+                            polyphonicMode: false,
+                            delegate: conductor)
+
+        }.cookbookNavBarTitle("Play with Glide")
         .onAppear {
             self.conductor.start()
         }
