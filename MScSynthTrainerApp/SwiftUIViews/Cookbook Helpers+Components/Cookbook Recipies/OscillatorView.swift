@@ -3,7 +3,7 @@
 //
 //
 //
-// Possibly Refactor to OscillatorView
+// Possibly 
 //
 //  App initator calls the structure method
 //

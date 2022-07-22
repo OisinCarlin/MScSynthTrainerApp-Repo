@@ -54,41 +54,6 @@ struct BasicControlsTutorial_Previews: PreviewProvider {
     }
 }
 
-struct OnboardView: View {
-    
-    let systemImageName1: String
-    let systemImageName2: String
-    let title: String
-    let description: String
-    
-    var body: some View {
-        
-        VStack(spacing: 20){
-            HStack{
-                Image(systemImageName1)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 100, height: 100)
-                    .foregroundColor(.blue)
-                Image(systemImageName2)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 100, height: 100)
-                    .foregroundColor(.blue)
-            }
-
-            
-            Text(title)
-                .font(.title).bold()
-            
-            Text(description)
-                .multilineTextAlignment(.center)
-                .foregroundColor(.secondary)
-        }
-        .padding(.horizontal, 40)
-    }
-}
-
 // **************** Oscillator Data *****************************
 
 

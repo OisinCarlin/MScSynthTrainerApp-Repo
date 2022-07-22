@@ -33,7 +33,25 @@ struct TutorialsMenu: View {
                             }
                         }
                     }
-                    NavigationLink(destination: TutorialsMenu()){
+                    NavigationLink(destination: SoundWavesTutorial()){
+                        HStack {
+                            Image("soundWave2")
+                                .resizable()
+                                .renderingMode(.original)
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 80, height: 80)
+                            VStack(alignment: .leading) {
+                                Text("Sound Waves")
+                                    .font(.headline)
+                                    .fontWeight(.bold)
+                                Text("...")
+                                    .font(.subheadline)
+                                    .foregroundColor(Color.gray)
+                                    .lineLimit(2)
+                            }
+                        }
+                    }
+                    NavigationLink(destination: OscillatorsAndWaveformsTutorial()){
                         HStack {
                             Image("waveOscillator")
                                 .resizable()

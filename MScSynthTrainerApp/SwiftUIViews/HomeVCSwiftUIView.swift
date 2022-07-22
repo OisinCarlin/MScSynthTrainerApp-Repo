@@ -99,42 +99,42 @@ struct MasterView: View {
                             }
                         }
                     }
-                    NavigationLink(destination: TutorialsMenu()){
-                        HStack {
-                            Image("quiz")
-                                .resizable()
-                                .renderingMode(.original)
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 80, height: 80)
-                            VStack(alignment: .leading) {
-                                Text("Quiz")
-                                    .font(.headline)
-                                    .fontWeight(.bold)
-                                Text("Test your learning so far with our quizzes!")
-                                    .font(.subheadline)
-                                    .foregroundColor(Color.gray)
-                                    .lineLimit(2)
-                            }
-                        }
-                    }
-                    NavigationLink(destination: TutorialsMenu()){
-                        HStack {
-                            Image("progress")
-                                .resizable()
-                                .renderingMode(.original)
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 80, height: 80)
-                            VStack(alignment: .leading) {
-                                Text("Progress")
-                                    .font(.headline)
-                                    .fontWeight(.bold)
-                                Text("Check out how your sonic journey is going so far.")
-                                    .font(.subheadline)
-                                    .foregroundColor(Color.gray)
-                                    .lineLimit(2)
-                            }
-                        }
-                    }
+//                    NavigationLink(destination: TutorialsMenu()){
+//                        HStack {
+//                            Image("quiz")
+//                                .resizable()
+//                                .renderingMode(.original)
+//                                .aspectRatio(contentMode: .fit)
+//                                .frame(width: 80, height: 80)
+//                            VStack(alignment: .leading) {
+//                                Text("Quiz")
+//                                    .font(.headline)
+//                                    .fontWeight(.bold)
+//                                Text("Test your learning so far with our quizzes!")
+//                                    .font(.subheadline)
+//                                    .foregroundColor(Color.gray)
+//                                    .lineLimit(2)
+//                            }
+//                        }
+//                    }
+//                    NavigationLink(destination: TutorialsMenu()){
+//                        HStack {
+//                            Image("progress")
+//                                .resizable()
+//                                .renderingMode(.original)
+//                                .aspectRatio(contentMode: .fit)
+//                                .frame(width: 80, height: 80)
+//                            VStack(alignment: .leading) {
+//                                Text("Progress")
+//                                    .font(.headline)
+//                                    .fontWeight(.bold)
+//                                Text("Check out how your sonic journey is going so far.")
+//                                    .font(.subheadline)
+//                                    .foregroundColor(Color.gray)
+//                                    .lineLimit(2)
+//                            }
+//                        }
+//                    }
                 }
                 
             }

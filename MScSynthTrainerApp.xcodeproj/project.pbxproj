@@ -19,6 +19,9 @@
 		21427A66287B3C9600E9EEB5 /* STKAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 21427A65287B3C9600E9EEB5 /* STKAudioKit */; };
 		21427A68287B41E800E9EEB5 /* TutorialsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21427A67287B41E800E9EEB5 /* TutorialsMenu.swift */; };
 		21427A6A287B424100E9EEB5 /* DynamicOscillatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21427A69287B424100E9EEB5 /* DynamicOscillatorView.swift */; };
+		214F474D2889B65A003DA5F3 /* OscillatorsAndWaveformsTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F474C2889B65A003DA5F3 /* OscillatorsAndWaveformsTutorial.swift */; };
+		214F4751288AA418003DA5F3 /* SoundWavesTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F4750288AA418003DA5F3 /* SoundWavesTutorial.swift */; };
+		214F4755288AA757003DA5F3 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F4754288AA757003DA5F3 /* OnboardView.swift */; };
 		215844262881FDB300257013 /* BasicControlsTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215844252881FDB300257013 /* BasicControlsTutorial.swift */; };
 		218C8CA72862662000154F87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218C8CA62862662000154F87 /* AppDelegate.swift */; };
 		218C8CA92862662000154F87 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218C8CA82862662000154F87 /* SceneDelegate.swift */; };
@@ -45,6 +48,9 @@
 		21292C8F288094C60044F7B4 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		21427A67287B41E800E9EEB5 /* TutorialsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialsMenu.swift; sourceTree = "<group>"; };
 		21427A69287B424100E9EEB5 /* DynamicOscillatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicOscillatorView.swift; sourceTree = "<group>"; };
+		214F474C2889B65A003DA5F3 /* OscillatorsAndWaveformsTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OscillatorsAndWaveformsTutorial.swift; sourceTree = "<group>"; };
+		214F4750288AA418003DA5F3 /* SoundWavesTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundWavesTutorial.swift; sourceTree = "<group>"; };
+		214F4754288AA757003DA5F3 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
 		215844252881FDB300257013 /* BasicControlsTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicControlsTutorial.swift; sourceTree = "<group>"; };
 		218C8CA32862662000154F87 /* MScSynthTrainerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MScSynthTrainerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		218C8CA62862662000154F87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -149,7 +155,10 @@
 				21F4F137288493E8003CED52 /* Cookbook Helpers+Components */,
 				21F276F62874D83900152B32 /* HomeVCSwiftUIView.swift */,
 				21427A67287B41E800E9EEB5 /* TutorialsMenu.swift */,
+				214F4754288AA757003DA5F3 /* OnboardView.swift */,
 				215844252881FDB300257013 /* BasicControlsTutorial.swift */,
+				214F4750288AA418003DA5F3 /* SoundWavesTutorial.swift */,
+				214F474C2889B65A003DA5F3 /* OscillatorsAndWaveformsTutorial.swift */,
 				218F57EF286484750052B064 /* Helpers */,
 				21427A69287B424100E9EEB5 /* DynamicOscillatorView.swift */,
 			);
@@ -328,7 +337,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				215844262881FDB300257013 /* BasicControlsTutorial.swift in Sources */,
+				214F4751288AA418003DA5F3 /* SoundWavesTutorial.swift in Sources */,
 				21F4F13928849459003CED52 /* NavigationHelpers.swift in Sources */,
+				214F474D2889B65A003DA5F3 /* OscillatorsAndWaveformsTutorial.swift in Sources */,
 				218C8CAB2862662000154F87 /* ViewController.swift in Sources */,
 				218C8CA72862662000154F87 /* AppDelegate.swift in Sources */,
 				21F4F13D288494F6003CED52 /* ParameterSlider.swift in Sources */,
@@ -341,6 +352,7 @@
 				21427A68287B41E800E9EEB5 /* TutorialsMenu.swift in Sources */,
 				21F4F13B28849494003CED52 /* KeyboardControl.swift in Sources */,
 				218C8CA92862662000154F87 /* SceneDelegate.swift in Sources */,
+				214F4755288AA757003DA5F3 /* OnboardView.swift in Sources */,
 				21292C90288094C60044F7B4 /* UserDefaults.swift in Sources */,
 				218C8CC22862669700154F87 /* HomeViewController.swift in Sources */,
 				21D9D904286A0F7000DB0153 /* Constants.swift in Sources */,
