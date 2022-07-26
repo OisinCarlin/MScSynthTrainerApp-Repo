@@ -9,106 +9,52 @@
 //  Created by Oisin Carlin on 21/07/2022.
 //
 
+// Talk about square/pulse wave modulation
+// Possibly after the last waveform show or as part of the square wave
+
+
+
 import SwiftUI
 import AudioKit
 import AudioKitUI
 import SoundpipeAudioKit
 import SwiftUI
 import AudioToolbox
+import AVFoundation
+import AudioKitEX
+import CAudioKitEX
 
 
 struct OscillatorsAndWaveformsTutorial: View {
     var body: some View {
         TabView{
-            OWOnboardView(systemImageName1: "fly",
-                        systemImageName2: "speaker",
-                        title: "Good Vibrations",
-                        description: "Sound is made when things vibrate, for example a fly flapping its wings or a speaker moving in and out. The faster the fly flaps its wings or the speaker moves, the higher pitch of the sound. The slower the vibrations, the lower the pitch.")
-            OWOnboardViewOneImage(systemImageName1: "wave",
-                        title: "Waves",
-                        description: "When a speaker pushes out and pulls back, or when a fly moves its wings up and down it makes waves in the air - just like the wind pushes and pulls the water to make waves in the sea.")
-            OWOnboardViewOneImage(systemImageName1: "soundWaveEar",
-                        title: "Waves",
-                        description: "These waves travel through the air to your eardrum and vibrate it so you hear the sound. Whether the speaker is pushing or pulling at a certain time can be represented by a 'waveform' as shown in the picture.")
-            OWOnboardViewOneImage(systemImageName1: "highLowFreq",
-                        title: "Frequency",
-                        description: "Let's have another look at the 'pitch' or 'frequency' of a sound. The waves of higher pitched sounds move more quickly, or 'frequently' over time than lower pitched sounds - and a speaker making a higher pitched sound would move faster. Play with pitch again and watch how the waves move on the screen.")
-            BasicControlsPitchOscillatorView()
-            OWOnboardViewOneImage(systemImageName1: "quietLoud",
-                        title: "Amplitude",
-                        description: "Let's have another look at the 'amplitude' of a sound. The waves of louder sounds move further up and down than quieter sounds. This means a speaker would push and pull the air harder to make a louder sound. Play with amplitude again and watch how the waves moBasicControlsAmplitudeOscillatorView()")
-
-            BasicControlsAmplitudeOscillatorView()
+            OnboardViewOneImage(systemImageName1: "differentWaveforms",
+                        title: "Waveforms",
+                        description: "Sound waves come in many different shapes called 'waveforms'. The sounds of these waveforms have different characteristics, or 'timbres'. There are four main 'basic waveforms' you will often find when using synthesisers: sine, square, triangle and sawtooth.")
+            OnboardViewOneImage(systemImageName1: "vco",
+                        title: "Oscillators",
+                        description: "'Oscillators' (or 'VCOs') are the parts of synths that make sounds from different waveforms you can choose. Other synth parts can then sculpt these basic sounds into more interesting sounds. There may be one or more oscillators on a synth which you can combine or turn on and off.")
+            OnboardViewOneImage(systemImageName1: "sineWave",
+                        title: "Sine Waveform",
+                        description: "Sine waves are smooth, curved waves that do not have any corners or sharp drops. They make smooth, clear whistling or vocal-like sounds. Because of their cleanness or lack of a 'grit' you may find in other waveforms, it may be harder to hear lower-pitched sine-wave tones through smaller speakers.")
+            OWSineOscillatorView()
+            OnboardViewOneImage(systemImageName1: "triangleWave",
+                        title: "Triangle Waveform",
+                        description: "Triangle waves are like sine wave but with corners instead of curves - making them triangle shaped. They sound not as smooth but a bit clearer and brighter than a sine wave. Instead of a person whistling a triangle-wave tone might remind you of a recorder or a flute.")
+            OWTriangleOscillatorView()
+            OnboardViewOneImage(systemImageName1: "sawWave",
+                        title: "Sawtooth Waveform",
+                        description: "Sawtooth waves are jagged shaped like the teeth of a saw. The waves rise up a slope then sharply drop down with tight corners. This makes them very rich and buzzy sounding. You can imagine a sawtooth-like tone being made by a violin or cello - the bow pulls the string out and then it quickly snaps back before being pulled again.")
+            OWSawtoothOscillatorView()
+            OnboardViewOneImage(systemImageName1: "squareWave",
+                        title: "Square (Pulse) Waveform",
+                        description: "Square waves are a type of evenly shaped 'Pulse' waveform (other pulse waves have bigger then smaller rectangle shapes). Nearly all the waves's cycle is spent at the very top or bottom with sharp drops between. This makes sound quite buzzy like the sawtooth waveform - but the space between the waves makes them sound quite hollow. Think of woodwind instruments like clarinets.")
+            OWSquareOscillatorView()
         }
         .tabViewStyle(PageTabViewStyle())
         
         // To display page dots on bottom of view
         .indexViewStyle(.page(backgroundDisplayMode: .always))
-    }
-}
-
-struct OWOnboardView: View {
-    
-    let systemImageName1: String
-    let systemImageName2: String
-    let title: String
-    let description: String
-    
-    var body: some View {
-        
-        VStack(spacing: 20){
-            HStack{
-                Image(systemImageName1)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 100, height: 100)
-                    .foregroundColor(.blue)
-                Image(systemImageName2)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 100, height: 100)
-                    .foregroundColor(.blue)
-            }
-
-            
-            Text(title)
-                .font(.title).bold()
-            
-            Text(description)
-                .multilineTextAlignment(.center)
-                .foregroundColor(.secondary)
-        }
-        .padding(.horizontal, 40)
-    }
-}
-
-struct OWOnboardViewOneImage: View {
-    
-    let systemImageName1: String
-    let title: String
-    let description: String
-    
-    var body: some View {
-        
-        VStack(spacing: 20){
-            HStack{
-                Image(systemImageName1)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 400, height: 300)
-                    .foregroundColor(.blue)
-
-            }
-
-            
-            Text(title)
-                .font(.title).bold()
-            
-            Text(description)
-                .multilineTextAlignment(.center)
-                .foregroundColor(.secondary)
-        }
-        .padding(.horizontal, 40)
     }
 }
 
@@ -120,22 +66,24 @@ struct OWOscillatorData {
     var frequency: AUValue = 440
     var amplitude: AUValue = 0.1
     var rampDuration: AUValue = 0.01
+    
+    var showKeyboard = false
 }
 
 class OWOscillatorConductor: ObservableObject, KeyboardDelegate {
-
+    
     let engine = AudioEngine()
-
+    
     func noteOn(note: MIDINoteNumber) {
         data.isPlaying = true
         data.frequency = note.midiNoteToFrequency()
     }
-
+    
     func noteOff(note: MIDINoteNumber) {
         data.isPlaying = false
     }
-
-    @Published var data = BasicControlsOscillatorData() {
+    
+    @Published var data = OscillatorData() {
         didSet {
             if data.isPlaying {
                 osc.start()
@@ -146,13 +94,13 @@ class OWOscillatorConductor: ObservableObject, KeyboardDelegate {
             }
         }
     }
-
+    
     var osc = Oscillator()
-
+    
     init() {
         engine.output = osc
     }
-
+    
     func start() {
         osc.amplitude = 0.2
         do {
@@ -161,7 +109,7 @@ class OWOscillatorConductor: ObservableObject, KeyboardDelegate {
             Log(err)
         }
     }
-
+    
     func stop() {
         data.isPlaying = false
         osc.stop()
@@ -169,38 +117,375 @@ class OWOscillatorConductor: ObservableObject, KeyboardDelegate {
     }
 }
 
-struct OWOscillatorView: View {
-    @StateObject var conductor = BasicControlsOscillatorConductor()
-
+struct OWSineOscillatorView: View {
+    @StateObject var conductor = OscillatorConductor()
+    
     var body: some View {
         VStack {
             Text(self.conductor.data.isPlaying ? "Pause" : "Play").onTapGesture {
                 self.conductor.data.isPlaying.toggle()
+                
+                // Do on show/hide keyboard also
+                self.conductor.osc.setWaveform(Table(.sine))
             }
-//            ParameterSlider(text: "Frequency",
-//                            parameter: self.$conductor.data.frequency,
-//                            range: 220...880).padding()
+//                        HStack {
+//                            Spacer()
+//                            Text("Sine").onTapGesture {
+//                                self.conductor.osc.setWaveform(Table(.sine))
+//                            }
+//                            Spacer()
+//                            Text("Square").onTapGesture {
+//                                self.conductor.osc.setWaveform(Table(.square))
+//                            }
+//                            Spacer()
+//                            Text("Triangle").onTapGesture {
+//                                self.conductor.osc.setWaveform(Table(.triangle))
+//                            }
+//                            Spacer()
+//                            Text("Sawtooth").onTapGesture {
+//                                self.conductor.osc.setWaveform(Table(.sawtooth))
+//                            }
+//                            Spacer()
+//                        }
+            
+            if(self.conductor.data.showKeyboard == false){
+                ParameterSlider(text: "Frequency",
+                                parameter: self.$conductor.data.frequency,
+                                range: 20...880).padding()
+            }
+            
             ParameterSlider(text: "Amplitude",
                             parameter: self.$conductor.data.amplitude,
                             range: 0 ... 1).padding()
-//            ParameterSlider(text: "Ramp Duration",
-//                            parameter: self.$conductor.data.rampDuration,
-//                            range: 0...10).padding()
+                        ParameterSlider(text: "Glide",
+                                        parameter: self.$conductor.data.rampDuration,
+                                        range: 0...10).padding()
+            
+            //Show Keyboard button
+            
+            Text(self.conductor.data.showKeyboard ? "Hide Keyboard" : "Show Keyboard").onTapGesture {
+                self.conductor.data.showKeyboard.toggle()
+                
+                self.conductor.osc.setWaveform(Table(.sine))
+                
+            }
+            
             NodeOutputView(conductor.osc)
-//            KeyboardControl(firstOctave: 0,
-//                            octaveCount: 2,
-//                            polyphonicMode: false,
-//                            delegate: conductor)
-
-        }.cookbookNavBarTitle("Play with Amplitude")
-        .onAppear {
-            self.conductor.start()
-        }
-        .onDisappear {
-            self.conductor.stop()
-        }
+            
+            if(self.conductor.data.showKeyboard){
+                KeyboardControl(firstOctave: 3,
+                                octaveCount: 2,
+                                polyphonicMode: false,
+                                delegate: conductor)
+            }
+        }.cookbookNavBarTitle("Play Sine Wave")
+            .onAppear {
+                self.conductor.start()
+            }
+            .onDisappear {
+                self.conductor.stop()
+            }
     }
 }
+
+struct OWTriangleOscillatorView: View {
+    @StateObject var conductor = OscillatorConductor()
+    
+    var body: some View {
+        VStack {
+            Text(self.conductor.data.isPlaying ? "Pause" : "Play").onTapGesture {
+                self.conductor.data.isPlaying.toggle()
+                
+                // Do on show/hide keyboard also
+                self.conductor.osc.setWaveform(Table(.triangle))
+            }
+//                        HStack {
+//                            Spacer()
+//                            Text("Sine").onTapGesture {
+//                                self.conductor.osc.setWaveform(Table(.sine))
+//                            }
+//                            Spacer()
+//                            Text("Square").onTapGesture {
+//                                self.conductor.osc.setWaveform(Table(.square))
+//                            }
+//                            Spacer()
+//                            Text("Triangle").onTapGesture {
+//                                self.conductor.osc.setWaveform(Table(.triangle))
+//                            }
+//                            Spacer()
+//                            Text("Sawtooth").onTapGesture {
+//                                self.conductor.osc.setWaveform(Table(.sawtooth))
+//                            }
+//                            Spacer()
+//                        }
+            
+            if(self.conductor.data.showKeyboard == false){
+                ParameterSlider(text: "Frequency",
+                                parameter: self.$conductor.data.frequency,
+                                range: 20...880).padding()
+            }
+            
+            ParameterSlider(text: "Amplitude",
+                            parameter: self.$conductor.data.amplitude,
+                            range: 0 ... 1).padding()
+                        ParameterSlider(text: "Glide",
+                                        parameter: self.$conductor.data.rampDuration,
+                                        range: 0...10).padding()
+            
+            //Show Keyboard button
+            
+            Text(self.conductor.data.showKeyboard ? "Hide Keyboard" : "Show Keyboard").onTapGesture {
+                self.conductor.data.showKeyboard.toggle()
+                
+                self.conductor.osc.setWaveform(Table(.triangle))
+                
+            }
+            
+            NodeOutputView(conductor.osc)
+            
+            if(self.conductor.data.showKeyboard){
+                KeyboardControl(firstOctave: 3,
+                                octaveCount: 2,
+                                polyphonicMode: false,
+                                delegate: conductor)
+            }
+        }.cookbookNavBarTitle("Play Triangle Wave")
+            .onAppear {
+                self.conductor.start()
+            }
+            .onDisappear {
+                self.conductor.stop()
+            }
+    }
+    
+}
+
+struct OWSawtoothOscillatorView: View {
+    @StateObject var conductor = OscillatorConductor()
+    
+    var body: some View {
+        VStack {
+            Text(self.conductor.data.isPlaying ? "Pause" : "Play").onTapGesture {
+                self.conductor.data.isPlaying.toggle()
+                
+                // Do on show/hide keyboard also
+                self.conductor.osc.setWaveform(Table(.sawtooth))
+            }
+//                        HStack {
+//                            Spacer()
+//                            Text("Sine").onTapGesture {
+//                                self.conductor.osc.setWaveform(Table(.sine))
+//                            }
+//                            Spacer()
+//                            Text("Square").onTapGesture {
+//                                self.conductor.osc.setWaveform(Table(.square))
+//                            }
+//                            Spacer()
+//                            Text("Triangle").onTapGesture {
+//                                self.conductor.osc.setWaveform(Table(.triangle))
+//                            }
+//                            Spacer()
+//                            Text("Sawtooth").onTapGesture {
+//                                self.conductor.osc.setWaveform(Table(.sawtooth))
+//                            }
+//                            Spacer()
+//                        }
+            
+            if(self.conductor.data.showKeyboard == false){
+                ParameterSlider(text: "Frequency",
+                                parameter: self.$conductor.data.frequency,
+                                range: 20...880).padding()
+            }
+            
+            ParameterSlider(text: "Amplitude",
+                            parameter: self.$conductor.data.amplitude,
+                            range: 0 ... 1).padding()
+                        ParameterSlider(text: "Glide",
+                                        parameter: self.$conductor.data.rampDuration,
+                                        range: 0...10).padding()
+            
+            //Show Keyboard button
+            
+            Text(self.conductor.data.showKeyboard ? "Hide Keyboard" : "Show Keyboard").onTapGesture {
+                self.conductor.data.showKeyboard.toggle()
+                
+                self.conductor.osc.setWaveform(Table(.sawtooth))
+                
+            }
+            
+            NodeOutputView(conductor.osc)
+            
+            if(self.conductor.data.showKeyboard){
+                KeyboardControl(firstOctave: 3,
+                                octaveCount: 2,
+                                polyphonicMode: false,
+                                delegate: conductor)
+            }
+        }.cookbookNavBarTitle("Play Sawtooth Wave")
+            .onAppear {
+                self.conductor.start()
+            }
+            .onDisappear {
+                self.conductor.stop()
+            }
+    }
+    
+}
+
+struct OWSquareOscillatorView: View {
+    @StateObject var conductor = OscillatorConductor()
+    
+    var body: some View {
+        VStack {
+            Text(self.conductor.data.isPlaying ? "Pause" : "Play").onTapGesture {
+                self.conductor.data.isPlaying.toggle()
+                
+                // Do on show/hide keyboard also
+                self.conductor.osc.setWaveform(Table(.square))
+            }
+//                        HStack {
+//                            Spacer()
+//                            Text("Sine").onTapGesture {
+//                                self.conductor.osc.setWaveform(Table(.sine))
+//                            }
+//                            Spacer()
+//                            Text("Square").onTapGesture {
+//                                self.conductor.osc.setWaveform(Table(.square))
+//                            }
+//                            Spacer()
+//                            Text("Triangle").onTapGesture {
+//                                self.conductor.osc.setWaveform(Table(.triangle))
+//                            }
+//                            Spacer()
+//                            Text("Sawtooth").onTapGesture {
+//                                self.conductor.osc.setWaveform(Table(.sawtooth))
+//                            }
+//                            Spacer()
+//                        }
+            
+            if(self.conductor.data.showKeyboard == false){
+                ParameterSlider(text: "Frequency",
+                                parameter: self.$conductor.data.frequency,
+                                range: 20...880).padding()
+            }
+            
+            ParameterSlider(text: "Amplitude",
+                            parameter: self.$conductor.data.amplitude,
+                            range: 0 ... 1).padding()
+                        ParameterSlider(text: "Glide",
+                                        parameter: self.$conductor.data.rampDuration,
+                                        range: 0...10).padding()
+            
+            //Show Keyboard button
+            
+            Text(self.conductor.data.showKeyboard ? "Hide Keyboard" : "Show Keyboard").onTapGesture {
+                self.conductor.data.showKeyboard.toggle()
+                
+                self.conductor.osc.setWaveform(Table(.square))
+                
+            }
+            
+            NodeOutputView(conductor.osc)
+            
+            if(self.conductor.data.showKeyboard){
+                KeyboardControl(firstOctave: 3,
+                                octaveCount: 2,
+                                polyphonicMode: false,
+                                delegate: conductor)
+            }
+        }.cookbookNavBarTitle("Play Square Wave")
+            .onAppear {
+                self.conductor.start()
+            }
+            .onDisappear {
+                self.conductor.stop()
+            }
+    }
+    
+}
+
+struct OWOscillatorView: View {
+    @StateObject var conductor = OscillatorConductor()
+    
+    var body: some View {
+        VStack {
+            
+//            if(self.conductor.data.showKeyboard == false){
+            Text(self.conductor.data.isPlaying ? "Pause" : "Play").onTapGesture {
+                self.conductor.data.isPlaying.toggle()
+//            }
+                // Do on show/hide keyboard also
+//                self.conductor.osc.setWaveform(Table(.triangle))
+            }
+            
+            
+            
+            
+            
+                        HStack {
+                            Spacer()
+                            Text("Sine").onTapGesture {
+                                self.conductor.osc.setWaveform(Table(.sine))
+                            }
+                            Spacer()
+                            Text("Square").onTapGesture {
+                                self.conductor.osc.setWaveform(Table(.square))
+                            }
+                            Spacer()
+                            Text("Triangle").onTapGesture {
+                                self.conductor.osc.setWaveform(Table(.triangle))
+                            }
+                            Spacer()
+                            Text("Sawtooth").onTapGesture {
+                                self.conductor.osc.setWaveform(Table(.sawtooth))
+                            }
+                            Spacer()
+                        }
+            
+            
+            
+            
+            
+            if(self.conductor.data.showKeyboard == false){
+                ParameterSlider(text: "Frequency",
+                                parameter: self.$conductor.data.frequency,
+                                range: 20...880).padding()
+            }
+            
+            ParameterSlider(text: "Amplitude",
+                            parameter: self.$conductor.data.amplitude,
+                            range: 0 ... 1).padding()
+                        ParameterSlider(text: "Glide",
+                                        parameter: self.$conductor.data.rampDuration,
+                                        range: 0...10).padding()
+            
+            //Show Keyboard button
+            
+            Text(self.conductor.data.showKeyboard ? "Hide Keyboard" : "Show Keyboard").onTapGesture {
+                self.conductor.data.showKeyboard.toggle()
+                
+//                self.conductor.osc.setWaveform(Table(.triangle))
+//
+            }
+            
+            NodeOutputView(conductor.osc)
+            
+            if(self.conductor.data.showKeyboard){
+                KeyboardControl(firstOctave: 3,
+                                octaveCount: 2,
+                                polyphonicMode: false,
+                                delegate: conductor)
+            }
+        }.cookbookNavBarTitle("Oscillator")
+            .onAppear {
+                self.conductor.start()
+            }
+            .onDisappear {
+                self.conductor.stop()
+            }
+    }
+}
+
 
 
 struct OscillatorsAndWaveformsTutorial_Previews: PreviewProvider {

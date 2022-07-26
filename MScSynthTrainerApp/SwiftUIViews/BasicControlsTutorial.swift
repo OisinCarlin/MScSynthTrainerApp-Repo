@@ -33,7 +33,7 @@ struct BasicControlsTutorial: View {
             OnboardView(systemImageName1: "keyboardSynth",
                         systemImageName2: "keyboardSynth2",
                         title: "Keyboards",
-                        description: "Some synths have musical keyboards as a control for the pitch of sounds, or 'notes' they make. The pitch is 'lower' the further left of the keyboard and 'higher' the further right. A sound is played when a key is pressed and stops when the key is released.")
+                        description: "Some synths have musical keyboards as a control for the pitch of sounds, or 'notes' they make. The pitch is 'lower' the further left of the keyboard and 'higher' the further right. A sound is played when a key is pressed and stops when the key is released. The octave controls let you go further up or down the keyboard, or show more or less keys.")
             BasicControlsKeyboardOscillatorView()
             OnboardView(systemImageName1: "skater",
                         systemImageName2: "trombone",
@@ -154,7 +154,7 @@ struct BasicControlsPitchOscillatorView: View {
             }
             ParameterSlider(text: "Frequency",
                             parameter: self.$conductor.data.frequency,
-                            range: 220...880).padding()
+                            range: 20...880).padding()
 //            ParameterSlider(text: "Amplitude",
 //                            parameter: self.$conductor.data.amplitude,
 //                            range: 0 ... 1).padding()

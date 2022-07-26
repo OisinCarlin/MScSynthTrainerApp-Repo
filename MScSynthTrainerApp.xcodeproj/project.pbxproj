@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2100FF1F288C091500808241 /* Oscillator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100FF1E288C091500808241 /* Oscillator.swift */; };
 		211C71C52869FD40003D6342 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 211C71C42869FD40003D6342 /* GoogleService-Info.plist */; };
 		21292C90288094C60044F7B4 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21292C8F288094C60044F7B4 /* UserDefaults.swift */; };
 		21427A51287B3AFC00E9EEB5 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 21427A50287B3AFC00E9EEB5 /* AudioKit */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		11D24E5B16A5AB1BB15E00DA /* Pods-MScSynthTrainerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MScSynthTrainerApp.release.xcconfig"; path = "Target Support Files/Pods-MScSynthTrainerApp/Pods-MScSynthTrainerApp.release.xcconfig"; sourceTree = "<group>"; };
+		2100FF1E288C091500808241 /* Oscillator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oscillator.swift; sourceTree = "<group>"; };
 		211C71C42869FD40003D6342 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		21292C8F288094C60044F7B4 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		21427A67287B41E800E9EEB5 /* TutorialsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialsMenu.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				21F4F13828849459003CED52 /* NavigationHelpers.swift */,
 				21F4F13A28849494003CED52 /* KeyboardControl.swift */,
 				21F4F13C288494F6003CED52 /* ParameterSlider.swift */,
+				2100FF1E288C091500808241 /* Oscillator.swift */,
 			);
 			path = "Cookbook Helpers+Components";
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				21F4F1412884956A003CED52 /* OscillatorView.swift in Sources */,
 				21427A68287B41E800E9EEB5 /* TutorialsMenu.swift in Sources */,
 				21F4F13B28849494003CED52 /* KeyboardControl.swift in Sources */,
+				2100FF1F288C091500808241 /* Oscillator.swift in Sources */,
 				218C8CA92862662000154F87 /* SceneDelegate.swift in Sources */,
 				214F4755288AA757003DA5F3 /* OnboardView.swift in Sources */,
 				21292C90288094C60044F7B4 /* UserDefaults.swift in Sources */,

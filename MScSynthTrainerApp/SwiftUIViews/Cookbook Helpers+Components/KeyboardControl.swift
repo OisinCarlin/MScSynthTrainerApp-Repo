@@ -17,26 +17,26 @@ struct KeyboardControl: View {
     weak var delegate: KeyboardDelegate?
 
     var body: some View {
-//        HStack {
-//            VStack {
-//                Text("First Octave")
-//                    .fontWeight(.bold)
-//                HStack {
-//                    Button("-", action: decreaseFirstOctave)
-//                    Text("\(firstOctave)")
-//                    Button("+", action: increaseFirstOctave)
-//                }
-//            }
-//            .padding()
-//            VStack {
-//                Text("Octave Count")
-//                    .fontWeight(.bold)
-//                HStack {
-//                    Button("-", action: decreaseOctaveCount)
-//                    Text("\(octaveCount)")
-//                    Button("+", action: increaseOctaveCount)
-//                }
-//            }
+        HStack {
+            VStack {
+                Text("First Octave")
+                    .fontWeight(.bold)
+                HStack {
+                    Button("-", action: decreaseFirstOctave)
+                    Text("\(firstOctave)")
+                    Button("+", action: increaseFirstOctave)
+                }
+            }
+            .padding()
+            VStack {
+                Text("Octave Count")
+                    .fontWeight(.bold)
+                HStack {
+                    Button("-", action: decreaseOctaveCount)
+                    Text("\(octaveCount)")
+                    Button("+", action: increaseOctaveCount)
+                }
+            }
 //            .padding()
 //            VStack {
 //                Text("Polyphonic Mode")
@@ -46,7 +46,7 @@ struct KeyboardControl: View {
 //                    polyphonicMode ? Text("ON") : Text("OFF")
 //                }
 //            }
-//        }
+        }
         KeyboardWidget(delegate: delegate,
                        firstOctave: firstOctave,
                        octaveCount: octaveCount,
