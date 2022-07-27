@@ -48,7 +48,7 @@ struct OscillatorsAndWaveformsTutorial: View {
             OWSawtoothOscillatorView()
             OnboardViewOneImage(systemImageName1: "squareWave",
                         title: "Square (Pulse) Waveform",
-                        description: "Square waves are a type of evenly shaped 'Pulse' waveform (other pulse waves have bigger then smaller rectangle shapes). Nearly all the waves's cycle is spent at the very top or bottom with sharp drops between. This makes sound quite buzzy like the sawtooth waveform - but the space between the waves makes them sound quite hollow. Think of woodwind instruments like clarinets.")
+                        description: "Square waves are a type of evenly sized 'Pulse' waveform (other pulse waves alternate between wide then narrow rectangle shapes). Nearly all the waves's cycle is spent at the very top or bottom with sharp drops between. This makes sound quite buzzy like the sawtooth waveform - but the space between the waves makes them sound quite hollow. Think of woodwind instruments like clarinets.")
             OWSquareOscillatorView()
         }
         .tabViewStyle(PageTabViewStyle())
@@ -337,12 +337,16 @@ struct OWSquareOscillatorView: View {
     
     var body: some View {
         VStack {
+            NavigationLink(destination: OWOscillatorView()){
+                Text("Show all waveforms")
+            }
             Text(self.conductor.data.isPlaying ? "Pause" : "Play").onTapGesture {
                 self.conductor.data.isPlaying.toggle()
                 
                 // Do on show/hide keyboard also
                 self.conductor.osc.setWaveform(Table(.square))
             }
+
 //                        HStack {
 //                            Spacer()
 //                            Text("Sine").onTapGesture {
@@ -476,7 +480,7 @@ struct OWOscillatorView: View {
                                 polyphonicMode: false,
                                 delegate: conductor)
             }
-        }.cookbookNavBarTitle("Oscillator")
+        }.cookbookNavBarTitle("Oscillator Waveforms")
             .onAppear {
                 self.conductor.start()
             }

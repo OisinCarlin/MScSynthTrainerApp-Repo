@@ -105,24 +105,24 @@ struct TutorialsMenu: View {
                             }
                         }
                     }
-                    NavigationLink(destination: TutorialsMenu()){
-                        HStack {
-                            Image("map")
-                                .resizable()
-                                .renderingMode(.original)
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 80, height: 80)
-                            VStack(alignment: .leading) {
-                                Text("Approaches")
-                                    .font(.headline)
-                                    .fontWeight(.bold)
-                                Text("...")
-                                    .font(.subheadline)
-                                    .foregroundColor(Color.gray)
-                                    .lineLimit(2)
-                            }
-                        }
-                    }
+//                    NavigationLink(destination: TutorialsMenu()){
+//                        HStack {
+//                            Image("map")
+//                                .resizable()
+//                                .renderingMode(.original)
+//                                .aspectRatio(contentMode: .fit)
+//                                .frame(width: 80, height: 80)
+//                            VStack(alignment: .leading) {
+//                                Text("Approaches")
+//                                    .font(.headline)
+//                                    .fontWeight(.bold)
+//                                Text("...")
+//                                    .font(.subheadline)
+//                                    .foregroundColor(Color.gray)
+//                                    .lineLimit(2)
+//                            }
+//                        }
+//                    }
                 }
             }
         }.navigationBarTitle("Tutorials")
