@@ -127,7 +127,7 @@ struct OWSineOscillatorView: View {
                 
                 // Do on show/hide keyboard also
                 self.conductor.osc.setWaveform(Table(.sine))
-            }
+            }.foregroundColor(.green).font(Font.body.bold())
 //                        HStack {
 //                            Spacer()
 //                            Text("Sine").onTapGesture {
@@ -168,11 +168,12 @@ struct OWSineOscillatorView: View {
                 
                 self.conductor.osc.setWaveform(Table(.sine))
                 
-            }
-            
+            }.foregroundColor(.red).font(Font.body.bold())
+
             NodeOutputView(conductor.osc)
             
             if(self.conductor.data.showKeyboard){
+                Text("Hold key to hold the note")
                 KeyboardControl(firstOctave: 3,
                                 octaveCount: 2,
                                 polyphonicMode: false,
@@ -198,7 +199,7 @@ struct OWTriangleOscillatorView: View {
                 
                 // Do on show/hide keyboard also
                 self.conductor.osc.setWaveform(Table(.triangle))
-            }
+            }.foregroundColor(.green).font(Font.body.bold())
 //                        HStack {
 //                            Spacer()
 //                            Text("Sine").onTapGesture {
@@ -239,11 +240,12 @@ struct OWTriangleOscillatorView: View {
                 
                 self.conductor.osc.setWaveform(Table(.triangle))
                 
-            }
+            }.foregroundColor(.red).font(Font.body.bold())
             
             NodeOutputView(conductor.osc)
             
             if(self.conductor.data.showKeyboard){
+                Text("Hold key to hold the note")
                 KeyboardControl(firstOctave: 3,
                                 octaveCount: 2,
                                 polyphonicMode: false,
@@ -270,7 +272,7 @@ struct OWSawtoothOscillatorView: View {
                 
                 // Do on show/hide keyboard also
                 self.conductor.osc.setWaveform(Table(.sawtooth))
-            }
+            }.foregroundColor(.green).font(Font.body.bold())
 //                        HStack {
 //                            Spacer()
 //                            Text("Sine").onTapGesture {
@@ -311,11 +313,12 @@ struct OWSawtoothOscillatorView: View {
                 
                 self.conductor.osc.setWaveform(Table(.sawtooth))
                 
-            }
+            }.foregroundColor(.red).font(Font.body.bold())
             
             NodeOutputView(conductor.osc)
             
             if(self.conductor.data.showKeyboard){
+                Text("Hold key to hold the note")
                 KeyboardControl(firstOctave: 3,
                                 octaveCount: 2,
                                 polyphonicMode: false,
@@ -338,14 +341,14 @@ struct OWSquareOscillatorView: View {
     var body: some View {
         VStack {
             NavigationLink(destination: OWOscillatorView()){
-                Text("Show all waveforms")
-            }
+                Text("Show all waveforms").foregroundColor(.purple).font(Font.body.bold())
+            }.padding()
             Text(self.conductor.data.isPlaying ? "Pause" : "Play").onTapGesture {
                 self.conductor.data.isPlaying.toggle()
                 
                 // Do on show/hide keyboard also
                 self.conductor.osc.setWaveform(Table(.square))
-            }
+            }.foregroundColor(.green).font(Font.body.bold())
 
 //                        HStack {
 //                            Spacer()
@@ -387,11 +390,12 @@ struct OWSquareOscillatorView: View {
                 
                 self.conductor.osc.setWaveform(Table(.square))
                 
-            }
+            }.foregroundColor(.red).font(Font.body.bold())
             
             NodeOutputView(conductor.osc)
             
             if(self.conductor.data.showKeyboard){
+                Text("Hold key to hold the note")
                 KeyboardControl(firstOctave: 3,
                                 octaveCount: 2,
                                 polyphonicMode: false,
@@ -420,7 +424,7 @@ struct OWOscillatorView: View {
 //            }
                 // Do on show/hide keyboard also
 //                self.conductor.osc.setWaveform(Table(.triangle))
-            }
+            }.foregroundColor(.green).font(Font.body.bold())
             
             
             
@@ -470,11 +474,12 @@ struct OWOscillatorView: View {
                 
 //                self.conductor.osc.setWaveform(Table(.triangle))
 //
-            }
+            }.foregroundColor(.red).font(Font.body.bold())
             
             NodeOutputView(conductor.osc)
             
             if(self.conductor.data.showKeyboard){
+                Text("Hold key to hold the note")
                 KeyboardControl(firstOctave: 3,
                                 octaveCount: 2,
                                 polyphonicMode: false,

@@ -45,24 +45,24 @@ struct MasterView: View {
         Form {
             Group {
                 Section(header: Text(userFirstName)) {
-                    NavigationLink(destination: TutorialsMenu()){
-                        HStack {
-                            Image("hello")
-                                .resizable()
-                                .renderingMode(.original)
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 80, height: 80)
-                            VStack(alignment: .leading) {
-                                Text("Welcome")
-                                    .font(.headline)
-                                    .fontWeight(.bold)
-                                Text("Welcome to SynthTrainer! Here's a quick introduction to our app.")
-                                    .font(.subheadline)
-                                    .foregroundColor(Color.gray)
-                                    .lineLimit(2)
-                            }
-                        }
-                    }
+//                    NavigationLink(destination: TutorialsMenu()){
+//                        HStack {
+//                            Image("hello")
+//                                .resizable()
+//                                .renderingMode(.original)
+//                                .aspectRatio(contentMode: .fit)
+//                                .frame(width: 80, height: 80)
+//                            VStack(alignment: .leading) {
+//                                Text("Welcome")
+//                                    .font(.headline)
+//                                    .fontWeight(.bold)
+//                                Text("Welcome to SynthTrainer! Here's a quick introduction to our app.")
+//                                    .font(.subheadline)
+//                                    .foregroundColor(Color.gray)
+//                                    .lineLimit(2)
+//                            }
+//                        }
+//                    }
                     NavigationLink(destination: TutorialsMenu()){
                         HStack {
                             Image("teacherInMusic")
@@ -81,24 +81,24 @@ struct MasterView: View {
                             }
                         }
                     }
-                    NavigationLink(destination: TutorialsMenu()){
-                        HStack {
-                            Image("playKeyBoard")
-                                .resizable()
-                                .renderingMode(.original)
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 80, height: 80)
-                            VStack(alignment: .leading) {
-                                Text("Play")
-                                    .font(.headline)
-                                    .fontWeight(.bold)
-                                Text("Been through the tutorials? Play about with synthesiser parts and see what sounds you can make.")
-                                    .font(.subheadline)
-                                    .foregroundColor(Color.gray)
-                                    .lineLimit(2)
-                            }
-                        }
-                    }
+//                    NavigationLink(destination: TutorialsMenu()){
+//                        HStack {
+//                            Image("playKeyBoard")
+//                                .resizable()
+//                                .renderingMode(.original)
+//                                .aspectRatio(contentMode: .fit)
+//                                .frame(width: 80, height: 80)
+//                            VStack(alignment: .leading) {
+//                                Text("Play")
+//                                    .font(.headline)
+//                                    .fontWeight(.bold)
+//                                Text("Been through the tutorials? Play about with synthesiser parts and see what sounds you can make.")
+//                                    .font(.subheadline)
+//                                    .foregroundColor(Color.gray)
+//                                    .lineLimit(2)
+//                            }
+//                        }
+//                    }
 //                    NavigationLink(destination: TutorialsMenu()){
 //                        HStack {
 //                            Image("quiz")

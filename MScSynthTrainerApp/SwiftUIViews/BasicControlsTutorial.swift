@@ -118,7 +118,7 @@ struct BasicControlsAmplitudeOscillatorView: View {
         VStack {
             Text(self.conductor.data.isPlaying ? "Pause" : "Play").onTapGesture {
                 self.conductor.data.isPlaying.toggle()
-            }
+            }.foregroundColor(.green).font(Font.body.bold())
 //            ParameterSlider(text: "Frequency",
 //                            parameter: self.$conductor.data.frequency,
 //                            range: 220...880).padding()
@@ -137,6 +137,9 @@ struct BasicControlsAmplitudeOscillatorView: View {
         }.cookbookNavBarTitle("Play with Amplitude")
         .onAppear {
             self.conductor.start()
+            
+            // Do on show/hide keyboard also
+            self.conductor.osc.setWaveform(Table(.sine))
         }
         .onDisappear {
             self.conductor.stop()
@@ -151,7 +154,8 @@ struct BasicControlsPitchOscillatorView: View {
         VStack {
             Text(self.conductor.data.isPlaying ? "Pause" : "Play").onTapGesture {
                 self.conductor.data.isPlaying.toggle()
-            }
+                
+            }.foregroundColor(.green).font(Font.body.bold())
             ParameterSlider(text: "Frequency",
                             parameter: self.$conductor.data.frequency,
                             range: 20...880).padding()
@@ -170,6 +174,9 @@ struct BasicControlsPitchOscillatorView: View {
         }.cookbookNavBarTitle("Play with Pitch")
         .onAppear {
             self.conductor.start()
+            
+            // Do on show/hide keyboard also
+            self.conductor.osc.setWaveform(Table(.sine))
         }
         .onDisappear {
             self.conductor.stop()
@@ -181,6 +188,7 @@ struct BasicControlsKeyboardOscillatorView: View {
     @StateObject var conductor = BasicControlsOscillatorConductor()
 
     var body: some View {
+        
         VStack {
 //            Text(self.conductor.data.isPlaying ? "Pause" : "Play").onTapGesture {
 //                self.conductor.data.isPlaying.toggle()
@@ -203,6 +211,9 @@ struct BasicControlsKeyboardOscillatorView: View {
         }.cookbookNavBarTitle("Play using the keyboard")
         .onAppear {
             self.conductor.start()
+            
+            // Do on show/hide keyboard also
+            self.conductor.osc.setWaveform(Table(.sine))
         }
         .onDisappear {
             self.conductor.stop()
@@ -236,6 +247,8 @@ struct BasicControlsGlideOscillatorView: View {
         }.cookbookNavBarTitle("Play with Glide")
         .onAppear {
             self.conductor.start()
+            // Do on show/hide keyboard also
+            self.conductor.osc.setWaveform(Table(.sine))
         }
         .onDisappear {
             self.conductor.stop()

@@ -131,7 +131,8 @@ class SignUpViewController: UIViewController {
                      self.transitionToHome()
                     
                     // Transition to the home screen
-//                    self.transitionToLogin()
+                    
+                    
                 }
             }
         }
@@ -151,32 +152,33 @@ class SignUpViewController: UIViewController {
         let db = Firestore.firestore()
         let uid = Auth.auth().currentUser?.uid
         
-        
-        db.collection("users").whereField("uid", isEqualTo: uid!)
-            .getDocuments() { (querySnapshot, err) in
-                if let err = err {
-                    print("Error getting documents: \(err)")
-                } else {
-                    for document in querySnapshot!.documents {
-                        // print("\(document.documentID) => \(document.data())")
-                        
-                        // let data = document.data()
-                        let docID = document.documentID
-                        let userID = document["uid"] as? String ?? ""
-                        let userFirstName = document["firstname"] as? String ?? ""
-                        let userLastName = document["lastname"] as? String ?? ""
-                        
 
-                        UserDefaults.standard.setUserDocumentID(value: docID)
-                        UserDefaults.standard.setUserID(value: userID)
-                        UserDefaults.standard.setUserFirstName(value: userFirstName)
-                        UserDefaults.standard.setUserLastName(value: userLastName)
-                        
-                        // Set Login status boolean
-                        UserDefaults.standard.setLoggedIn(value: true)
-                        
+            db.collection("users").whereField("uid", isEqualTo: uid!)
+                .getDocuments() { (querySnapshot, err) in
+                    if let err = err {
+                        print("Error getting documents: \(err)")
+                    } else {
+                        for document in querySnapshot!.documents {
+                            // print("\(document.documentID) => \(document.data())")
+                            
+                            // let data = document.data()
+                            let docID = document.documentID
+                            let userID = document["uid"] as? String ?? ""
+                            let userFirstName = document["firstname"] as? String ?? ""
+                            let userLastName = document["lastname"] as? String ?? ""
+                            
+
+                            UserDefaults.standard.setUserDocumentID(value: docID)
+                            UserDefaults.standard.setUserID(value: userID)
+                            UserDefaults.standard.setUserFirstName(value: userFirstName)
+                            UserDefaults.standard.setUserLastName(value: userLastName)
+                            
+                            // Set Login status boolean
+                            UserDefaults.standard.setLoggedIn(value: true)
+                            
+                    }
                 }
-            }
+        }
         
         
         
@@ -208,4 +210,4 @@ class SignUpViewController: UIViewController {
     
     
 }
-}
+
