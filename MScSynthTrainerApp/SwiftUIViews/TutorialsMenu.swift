@@ -69,7 +69,7 @@ struct TutorialsMenu: View {
                             }
                         }
                     }
-                    NavigationLink(destination: TutorialsMenu()){
+                    NavigationLink(destination: FiltersTutorial()){
                         HStack {
                             Image("lowPassFilter")
                                 .resizable()
