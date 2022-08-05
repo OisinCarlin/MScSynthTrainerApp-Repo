@@ -415,6 +415,11 @@ struct OWSquareOscillatorView: View {
 struct OWOscillatorView: View {
     @StateObject var conductor = OscillatorConductor()
     
+    @State private var didTapSine:Bool = false
+    @State private var didTapSquare:Bool = false
+    @State private var didTapTriangle:Bool = false
+    @State private var didTapSawtooth:Bool = false
+    
     var body: some View {
         VStack {
             
@@ -430,25 +435,50 @@ struct OWOscillatorView: View {
             
             
             
-                        HStack {
-                            Spacer()
-                            Text("Sine").onTapGesture {
-                                self.conductor.osc.setWaveform(Table(.sine))
-                            }
-                            Spacer()
-                            Text("Square").onTapGesture {
-                                self.conductor.osc.setWaveform(Table(.square))
-                            }
-                            Spacer()
-                            Text("Triangle").onTapGesture {
-                                self.conductor.osc.setWaveform(Table(.triangle))
-                            }
-                            Spacer()
-                            Text("Sawtooth").onTapGesture {
-                                self.conductor.osc.setWaveform(Table(.sawtooth))
-                            }
-                            Spacer()
-                        }
+            HStack {
+                Spacer()
+                Text("Sine").onTapGesture {
+                    self.conductor.osc.setWaveform(Table(.sine))
+                    
+                    self.didTapSine = true
+                    self.didTapSquare = false
+                    self.didTapTriangle = false
+                    self.didTapSawtooth = false
+                }
+                .foregroundColor(didTapSine ? Color.red : Color.black).font(Font.body.bold())
+                Spacer()
+                
+                Text("Square").onTapGesture {
+                    self.conductor.osc.setWaveform(Table(.square))
+                    
+                    self.didTapSine = false
+                    self.didTapSquare = true
+                    self.didTapTriangle = false
+                    self.didTapSawtooth = false
+                }
+                .foregroundColor(didTapSquare ? Color.red : Color.black).font(Font.body.bold())
+                Spacer()
+                
+                Text("Triangle").onTapGesture {
+                    self.conductor.osc.setWaveform(Table(.triangle))
+                    
+                    self.didTapSine = false
+                    self.didTapSquare = false
+                    self.didTapTriangle = true
+                    self.didTapSawtooth = false
+                }                .foregroundColor(didTapTriangle ? Color.red : Color.black).font(Font.body.bold())
+                Spacer()
+                
+                Text("Sawtooth").onTapGesture {
+                    self.conductor.osc.setWaveform(Table(.sawtooth))
+                    
+                    self.didTapSine = false
+                    self.didTapSquare = false
+                    self.didTapTriangle = false
+                    self.didTapSawtooth = true
+                }                .foregroundColor(didTapSawtooth ? Color.red : Color.black).font(Font.body.bold())
+                Spacer()
+            }
             
             
             
@@ -488,6 +518,11 @@ struct OWOscillatorView: View {
         }.cookbookNavBarTitle("Oscillator Waveforms")
             .onAppear {
                 self.conductor.start()
+                
+                self.didTapSine = true
+                self.didTapSquare = false
+                self.didTapTriangle = false
+                self.didTapSawtooth = false
             }
             .onDisappear {
                 self.conductor.stop()

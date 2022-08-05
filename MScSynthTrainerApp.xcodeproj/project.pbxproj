@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2100BD62289D540500CBF322 /* HighPassFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100BD61289D540500CBF322 /* HighPassFilter.swift */; };
 		2100FF1F288C091500808241 /* Oscillator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100FF1E288C091500808241 /* Oscillator.swift */; };
 		211C71C52869FD40003D6342 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 211C71C42869FD40003D6342 /* GoogleService-Info.plist */; };
 		21292C90288094C60044F7B4 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21292C8F288094C60044F7B4 /* UserDefaults.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		11D24E5B16A5AB1BB15E00DA /* Pods-MScSynthTrainerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MScSynthTrainerApp.release.xcconfig"; path = "Target Support Files/Pods-MScSynthTrainerApp/Pods-MScSynthTrainerApp.release.xcconfig"; sourceTree = "<group>"; };
+		2100BD61289D540500CBF322 /* HighPassFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighPassFilter.swift; sourceTree = "<group>"; };
 		2100FF1E288C091500808241 /* Oscillator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oscillator.swift; sourceTree = "<group>"; };
 		211C71C42869FD40003D6342 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		21292C8F288094C60044F7B4 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				214F474C2889B65A003DA5F3 /* OscillatorsAndWaveformsTutorial.swift */,
 				2154D56F289AF1CD00FCCB2F /* Filter Helpers */,
 				21A4C9B228997F1600366ED0 /* LowPassFilter.swift */,
+				2100BD61289D540500CBF322 /* HighPassFilter.swift */,
 				2154D570289AF1FB00FCCB2F /* FiltersTutorial.swift */,
 				218F57EF286484750052B064 /* Helpers */,
 				21427A69287B424100E9EEB5 /* DynamicOscillatorView.swift */,
@@ -365,6 +368,7 @@
 				21F4F13928849459003CED52 /* NavigationHelpers.swift in Sources */,
 				214F474D2889B65A003DA5F3 /* OscillatorsAndWaveformsTutorial.swift in Sources */,
 				218C8CAB2862662000154F87 /* ViewController.swift in Sources */,
+				2100BD62289D540500CBF322 /* HighPassFilter.swift in Sources */,
 				218C8CA72862662000154F87 /* AppDelegate.swift in Sources */,
 				21F4F13D288494F6003CED52 /* ParameterSlider.swift in Sources */,
 				218F57ED2864843C0052B064 /* Utilities.swift in Sources */,

@@ -1,3 +1,10 @@
+//
+//  HighPassFilter.swift
+//  MScSynthTrainerApp
+//
+//  Created by Oisin Carlin on 05/08/2022.
+//
+
 
 import AudioKit
 import AudioKitUI
@@ -10,7 +17,7 @@ import CAudioKitEX
 
 
 
-struct LPFOscillatorData {
+struct HPFOscillatorData {
     var isPlaying: Bool = false
     var frequency: AUValue = 440
     var amplitude: AUValue = 0.1
@@ -23,11 +30,11 @@ struct LPFOscillatorData {
     var balance: AUValue = 1
 }
 
-class LPFOscillatorConductor: ObservableObject, KeyboardDelegate {
+class HPFOscillatorConductor: ObservableObject, KeyboardDelegate {
     var osc = Oscillator()
     
     let engine = AudioEngine()
-    let filter: LowPassFilter
+    let filter: HighPassFilter
     let dryWetMixer: DryWetMixer
     
     
@@ -40,7 +47,7 @@ class LPFOscillatorConductor: ObservableObject, KeyboardDelegate {
         data.isPlaying = false
     }
     
-    @Published var data = LPFOscillatorData() {
+    @Published var data = HPFOscillatorData() {
         didSet {
             filter.cutoffFrequency = data.cutoffFrequency
             filter.resonance = data.resonance
@@ -58,7 +65,7 @@ class LPFOscillatorConductor: ObservableObject, KeyboardDelegate {
     }
     
     init() {
-        filter = LowPassFilter(osc)
+        filter = HighPassFilter(osc)
         dryWetMixer = DryWetMixer(osc, filter)
         engine.output = dryWetMixer
     }
@@ -81,8 +88,8 @@ class LPFOscillatorConductor: ObservableObject, KeyboardDelegate {
 
 
 
-struct LowPassFilterView: View {
-    @StateObject var conductor = LPFOscillatorConductor()
+struct HighPassFilterView: View {
+    @StateObject var conductor = HPFOscillatorConductor()
     
     @State private var didTapSine:Bool = false
     @State private var didTapSquare:Bool = false
@@ -92,10 +99,12 @@ struct LowPassFilterView: View {
     var body: some View {
         //                ScrollView {
         VStack {
+            // Play button
             Text(self.conductor.data.isPlaying ? "Pause" : "Play").onTapGesture {
                 self.conductor.data.isPlaying.toggle()
             }.foregroundColor(.green).font(Font.body.bold())
             
+            // Waveform selector buttons
             HStack {
                 Spacer()
                 Text("Sine").onTapGesture {
@@ -166,7 +175,7 @@ struct LowPassFilterView: View {
             }
             
             
-            Text("Low Pass Filter Controls:").foregroundColor(.pink).font(Font.body.bold()).padding()
+            Text("High Pass Filter Controls:").foregroundColor(.pink).font(Font.body.bold()).padding()
             ParameterSlider(text: "Cutoff Frequency",
                             parameter: self.$conductor.data.cutoffFrequency,
                             range: 12.0...3_000.0,
@@ -186,7 +195,7 @@ struct LowPassFilterView: View {
         DryWetMixView(dry: conductor.osc, wet: conductor.filter, mix: conductor.dryWetMixer)
 
 
-                    .cookbookNavBarTitle("Low Pass Filter")
+                    .cookbookNavBarTitle("High Pass Filter")
             .onAppear {
                 self.conductor.start()
                 
@@ -206,11 +215,14 @@ struct LowPassFilterView: View {
 }
 
 
-struct LowPassFilter_Previews: PreviewProvider {
+struct HighPassFilter_Previews: PreviewProvider {
     static var previews: some View {
-        LowPassFilterView()
+        HighPassFilterView()
     }
 }
+
+
+
 
 
 
