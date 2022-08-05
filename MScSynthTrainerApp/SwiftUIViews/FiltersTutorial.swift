@@ -19,6 +19,12 @@ struct FiltersTutorial: View {
             HPFLinkView(systemImageName1: "lowPassFilter",
                         title: "High Pass Filter",
                         description: "Click to Play with High Pass Filter")
+            BPFLinkView(systemImageName1: "lowPassFilter",
+                        title: "Band Pass Filter",
+                        description: "Click to Play with Band Pass Filter")
+            BRFLinkView(systemImageName1: "lowPassFilter",
+                        title: "Band Reject Filter",
+                        description: "Click to Play with Band Reject Filter")
         }
         
         
@@ -93,6 +99,76 @@ struct HPFLinkView: View {
             
             NavigationLink(destination: HighPassFilterView()){
                 Text("Play with High Pass Filter").foregroundColor(.purple).font(Font.body.bold())
+            }.padding()
+        }
+        .padding(.horizontal, 40)
+    }
+}
+
+struct BPFLinkView: View {
+    
+    let systemImageName1: String
+    let title: String
+    let description: String
+    
+    
+    var body: some View {
+        
+        VStack(spacing: 20){
+            HStack{
+                Image(systemImageName1)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 400, height: 300)
+                    .foregroundColor(.blue)
+
+            }
+
+            
+            Text(title)
+                .font(.title).bold()
+            
+            Text(description)
+                .multilineTextAlignment(.center)
+                .foregroundColor(.secondary)
+            
+            NavigationLink(destination: BandPassFilterView()){
+                Text("Play with Band Pass Filter").foregroundColor(.purple).font(Font.body.bold())
+            }.padding()
+        }
+        .padding(.horizontal, 40)
+    }
+}
+
+struct BRFLinkView: View {
+    
+    let systemImageName1: String
+    let title: String
+    let description: String
+    
+    
+    var body: some View {
+        
+        VStack(spacing: 20){
+            HStack{
+                Image(systemImageName1)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 400, height: 300)
+                    .foregroundColor(.blue)
+
+            }
+
+            
+            Text(title)
+                .font(.title).bold()
+            
+            Text(description)
+                .multilineTextAlignment(.center)
+                .foregroundColor(.secondary)
+            
+            NavigationLink(destination: BandRejectFilterView()){
+                Text("Play with Band Reject Filter").foregroundColor(.purple).font(Font.body.bold())
             }.padding()
         }
         .padding(.horizontal, 40)
