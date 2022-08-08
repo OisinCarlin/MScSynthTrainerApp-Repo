@@ -100,6 +100,7 @@ struct BandPassFilterView: View {
     var body: some View {
         //                ScrollView {
         VStack {
+            
             Text(self.conductor.data.isPlaying ? "Pause" : "Play").onTapGesture {
                 self.conductor.data.isPlaying.toggle()
             }.foregroundColor(.green).font(Font.body.bold())
