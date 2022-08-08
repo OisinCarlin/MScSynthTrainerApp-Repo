@@ -28,6 +28,7 @@
 		214F4755288AA757003DA5F3 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F4754288AA757003DA5F3 /* OnboardView.swift */; };
 		2154D571289AF1FB00FCCB2F /* FiltersTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2154D570289AF1FB00FCCB2F /* FiltersTutorial.swift */; };
 		215844262881FDB300257013 /* BasicControlsTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215844252881FDB300257013 /* BasicControlsTutorial.swift */; };
+		216E0A4428A163A80010E840 /* OscillatorData+Conductors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216E0A4328A163A80010E840 /* OscillatorData+Conductors.swift */; };
 		218C8CA72862662000154F87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218C8CA62862662000154F87 /* AppDelegate.swift */; };
 		218C8CA92862662000154F87 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218C8CA82862662000154F87 /* SceneDelegate.swift */; };
 		218C8CAB2862662000154F87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218C8CAA2862662000154F87 /* ViewController.swift */; };
@@ -46,7 +47,6 @@
 		21F4F13928849459003CED52 /* NavigationHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F4F13828849459003CED52 /* NavigationHelpers.swift */; };
 		21F4F13B28849494003CED52 /* KeyboardControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F4F13A28849494003CED52 /* KeyboardControl.swift */; };
 		21F4F13D288494F6003CED52 /* ParameterSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F4F13C288494F6003CED52 /* ParameterSlider.swift */; };
-		21F4F1412884956A003CED52 /* OscillatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F4F1402884956A003CED52 /* OscillatorView.swift */; };
 		28BE6BB3F14603C4B7D18515 /* Pods_MScSynthTrainerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 598DDB911E4C3500E6CE66E5 /* Pods_MScSynthTrainerApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +65,7 @@
 		214F4754288AA757003DA5F3 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
 		2154D570289AF1FB00FCCB2F /* FiltersTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersTutorial.swift; sourceTree = "<group>"; };
 		215844252881FDB300257013 /* BasicControlsTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicControlsTutorial.swift; sourceTree = "<group>"; };
+		216E0A4328A163A80010E840 /* OscillatorData+Conductors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OscillatorData+Conductors.swift"; sourceTree = "<group>"; };
 		218C8CA32862662000154F87 /* MScSynthTrainerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MScSynthTrainerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		218C8CA62862662000154F87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		218C8CA82862662000154F87 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,7 +86,6 @@
 		21F4F13828849459003CED52 /* NavigationHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelpers.swift; sourceTree = "<group>"; };
 		21F4F13A28849494003CED52 /* KeyboardControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardControl.swift; sourceTree = "<group>"; };
 		21F4F13C288494F6003CED52 /* ParameterSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterSlider.swift; sourceTree = "<group>"; };
-		21F4F1402884956A003CED52 /* OscillatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OscillatorView.swift; sourceTree = "<group>"; };
 		2A2A2F9EAD9608F314CAA89F /* Pods-MScSynthTrainerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MScSynthTrainerApp.debug.xcconfig"; path = "Target Support Files/Pods-MScSynthTrainerApp/Pods-MScSynthTrainerApp.debug.xcconfig"; sourceTree = "<group>"; };
 		598DDB911E4C3500E6CE66E5 /* Pods_MScSynthTrainerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MScSynthTrainerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -117,6 +117,14 @@
 				21A4C9B428997F6000366ED0 /* DryWetMixer.swift */,
 			);
 			path = "Filter Helpers";
+			sourceTree = "<group>";
+		};
+		216E0A4228A163640010E840 /* Oscillator Data+Conductors */ = {
+			isa = PBXGroup;
+			children = (
+				216E0A4328A163A80010E840 /* OscillatorData+Conductors.swift */,
+			);
+			path = "Oscillator Data+Conductors";
 			sourceTree = "<group>";
 		};
 		218C8C9A2862662000154F87 = {
@@ -177,6 +185,7 @@
 		21F276F52874D80E00152B32 /* SwiftUIViews */ = {
 			isa = PBXGroup;
 			children = (
+				216E0A4228A163640010E840 /* Oscillator Data+Conductors */,
 				21F4F137288493E8003CED52 /* Cookbook Helpers+Components */,
 				21F276F62874D83900152B32 /* HomeVCSwiftUIView.swift */,
 				21427A67287B41E800E9EEB5 /* TutorialsMenu.swift */,
@@ -199,21 +208,12 @@
 		21F4F137288493E8003CED52 /* Cookbook Helpers+Components */ = {
 			isa = PBXGroup;
 			children = (
-				21F4F13E2884950D003CED52 /* Cookbook Recipies */,
 				21F4F13828849459003CED52 /* NavigationHelpers.swift */,
 				21F4F13A28849494003CED52 /* KeyboardControl.swift */,
 				21F4F13C288494F6003CED52 /* ParameterSlider.swift */,
 				2100FF1E288C091500808241 /* Oscillator.swift */,
 			);
 			path = "Cookbook Helpers+Components";
-			sourceTree = "<group>";
-		};
-		21F4F13E2884950D003CED52 /* Cookbook Recipies */ = {
-			isa = PBXGroup;
-			children = (
-				21F4F1402884956A003CED52 /* OscillatorView.swift */,
-			);
-			path = "Cookbook Recipies";
 			sourceTree = "<group>";
 		};
 		913339862C876B95A4BDD8CC /* Pods */ = {
@@ -383,7 +383,7 @@
 				21427A6A287B424100E9EEB5 /* DynamicOscillatorView.swift in Sources */,
 				21F276F72874D83900152B32 /* HomeVCSwiftUIView.swift in Sources */,
 				218C8CBF2862668A00154F87 /* LoginViewController.swift in Sources */,
-				21F4F1412884956A003CED52 /* OscillatorView.swift in Sources */,
+				216E0A4428A163A80010E840 /* OscillatorData+Conductors.swift in Sources */,
 				21427A68287B41E800E9EEB5 /* TutorialsMenu.swift in Sources */,
 				2100BD6A289DB23D00CBF322 /* BandRejectFilter.swift in Sources */,
 				21F4F13B28849494003CED52 /* KeyboardControl.swift in Sources */,

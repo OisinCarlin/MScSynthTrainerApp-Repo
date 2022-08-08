@@ -63,7 +63,7 @@ struct LPFLinkView: View {
                 .foregroundColor(.secondary)
             
             NavigationLink(destination: LowPassFilterView()){
-                Text("Play with Low Pass Filter").foregroundColor(.purple).font(Font.body.bold())
+                Text("Tap here to Play with Low Pass Filter").foregroundColor(.red).font(Font.body.bold())
             }.padding()
         }
         .padding(.horizontal, 40)
@@ -98,7 +98,7 @@ struct HPFLinkView: View {
                 .foregroundColor(.secondary)
             
             NavigationLink(destination: HighPassFilterView()){
-                Text("Play with High Pass Filter").foregroundColor(.purple).font(Font.body.bold())
+                Text("Tap here to Play with High Pass Filter").foregroundColor(.red).font(Font.body.bold())
             }.padding()
         }
         .padding(.horizontal, 40)
@@ -133,7 +133,7 @@ struct BPFLinkView: View {
                 .foregroundColor(.secondary)
             
             NavigationLink(destination: BandPassFilterView()){
-                Text("Play with Band Pass Filter").foregroundColor(.purple).font(Font.body.bold())
+                Text("Tap here to Play with Band Pass Filter").foregroundColor(.red).font(Font.body.bold())
             }.padding()
         }
         .padding(.horizontal, 40)
@@ -168,7 +168,7 @@ struct BRFLinkView: View {
                 .foregroundColor(.secondary)
             
             NavigationLink(destination: BandRejectFilterView()){
-                Text("Play with Band Reject Filter").foregroundColor(.purple).font(Font.body.bold())
+                Text("Tap here to Play with Band Reject Filter").foregroundColor(.red).font(Font.body.bold())
             }.padding()
         }
         .padding(.horizontal, 40)

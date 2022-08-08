@@ -256,10 +256,6 @@ struct BasicControlsGlideOscillatorView: View {
     }
 }
 
-struct BasicControlsOscillatorView_Previews: PreviewProvider {
-    static var previews: some View {
-        OscillatorView()
-    }
-}
+
 
 // *************End of Oscillator Data **************************
