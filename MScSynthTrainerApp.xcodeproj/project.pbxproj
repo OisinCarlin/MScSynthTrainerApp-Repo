@@ -22,13 +22,14 @@
 		21427A63287B3C3F00E9EEB5 /* SporthAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 21427A62287B3C3F00E9EEB5 /* SporthAudioKit */; };
 		21427A66287B3C9600E9EEB5 /* STKAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 21427A65287B3C9600E9EEB5 /* STKAudioKit */; };
 		21427A68287B41E800E9EEB5 /* TutorialsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21427A67287B41E800E9EEB5 /* TutorialsMenu.swift */; };
-		21427A6A287B424100E9EEB5 /* DynamicOscillatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21427A69287B424100E9EEB5 /* DynamicOscillatorView.swift */; };
 		214F474D2889B65A003DA5F3 /* OscillatorsAndWaveformsTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F474C2889B65A003DA5F3 /* OscillatorsAndWaveformsTutorial.swift */; };
 		214F4751288AA418003DA5F3 /* SoundWavesTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F4750288AA418003DA5F3 /* SoundWavesTutorial.swift */; };
 		214F4755288AA757003DA5F3 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F4754288AA757003DA5F3 /* OnboardView.swift */; };
 		2154D571289AF1FB00FCCB2F /* FiltersTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2154D570289AF1FB00FCCB2F /* FiltersTutorial.swift */; };
 		215844262881FDB300257013 /* BasicControlsTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215844252881FDB300257013 /* BasicControlsTutorial.swift */; };
 		216E0A4428A163A80010E840 /* OscillatorData+Conductors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216E0A4328A163A80010E840 /* OscillatorData+Conductors.swift */; };
+		21711E6F28A28913009E03C4 /* OWLinkViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21711E6E28A28913009E03C4 /* OWLinkViews.swift */; };
+		21711E7128A28997009E03C4 /* OWOscillatorViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21711E7028A28997009E03C4 /* OWOscillatorViews.swift */; };
 		218C8CA72862662000154F87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218C8CA62862662000154F87 /* AppDelegate.swift */; };
 		218C8CA92862662000154F87 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218C8CA82862662000154F87 /* SceneDelegate.swift */; };
 		218C8CAB2862662000154F87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218C8CAA2862662000154F87 /* ViewController.swift */; };
@@ -59,13 +60,14 @@
 		211C71C42869FD40003D6342 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		21292C8F288094C60044F7B4 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		21427A67287B41E800E9EEB5 /* TutorialsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialsMenu.swift; sourceTree = "<group>"; };
-		21427A69287B424100E9EEB5 /* DynamicOscillatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicOscillatorView.swift; sourceTree = "<group>"; };
 		214F474C2889B65A003DA5F3 /* OscillatorsAndWaveformsTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OscillatorsAndWaveformsTutorial.swift; sourceTree = "<group>"; };
 		214F4750288AA418003DA5F3 /* SoundWavesTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundWavesTutorial.swift; sourceTree = "<group>"; };
 		214F4754288AA757003DA5F3 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
 		2154D570289AF1FB00FCCB2F /* FiltersTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersTutorial.swift; sourceTree = "<group>"; };
 		215844252881FDB300257013 /* BasicControlsTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicControlsTutorial.swift; sourceTree = "<group>"; };
 		216E0A4328A163A80010E840 /* OscillatorData+Conductors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OscillatorData+Conductors.swift"; sourceTree = "<group>"; };
+		21711E6E28A28913009E03C4 /* OWLinkViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWLinkViews.swift; sourceTree = "<group>"; };
+		21711E7028A28997009E03C4 /* OWOscillatorViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWOscillatorViews.swift; sourceTree = "<group>"; };
 		218C8CA32862662000154F87 /* MScSynthTrainerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MScSynthTrainerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		218C8CA62862662000154F87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		218C8CA82862662000154F87 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,62 @@
 			path = "Oscillator Data+Conductors";
 			sourceTree = "<group>";
 		};
+		21711E7228A28A84009E03C4 /* OscillatorsAndWaveformsTutorial */ = {
+			isa = PBXGroup;
+			children = (
+				214F474C2889B65A003DA5F3 /* OscillatorsAndWaveformsTutorial.swift */,
+				21711E7028A28997009E03C4 /* OWOscillatorViews.swift */,
+				21711E6E28A28913009E03C4 /* OWLinkViews.swift */,
+			);
+			path = OscillatorsAndWaveformsTutorial;
+			sourceTree = "<group>";
+		};
+		21711E7328A28AA9009E03C4 /* FiltersTutorial */ = {
+			isa = PBXGroup;
+			children = (
+				2154D56F289AF1CD00FCCB2F /* Filter Helpers */,
+				2154D570289AF1FB00FCCB2F /* FiltersTutorial.swift */,
+				21A4C9B228997F1600366ED0 /* LowPassFilter.swift */,
+				2100BD61289D540500CBF322 /* HighPassFilter.swift */,
+				2100BD69289DB23D00CBF322 /* BandRejectFilter.swift */,
+				2100BD65289DA4AC00CBF322 /* BandPassFilter.swift */,
+			);
+			path = FiltersTutorial;
+			sourceTree = "<group>";
+		};
+		21711E7428A28D1F009E03C4 /* Home+Menus */ = {
+			isa = PBXGroup;
+			children = (
+				21F276F62874D83900152B32 /* HomeVCSwiftUIView.swift */,
+				21427A67287B41E800E9EEB5 /* TutorialsMenu.swift */,
+			);
+			path = "Home+Menus";
+			sourceTree = "<group>";
+		};
+		21711E7528A28D41009E03C4 /* OnboardViews */ = {
+			isa = PBXGroup;
+			children = (
+				214F4754288AA757003DA5F3 /* OnboardView.swift */,
+			);
+			path = OnboardViews;
+			sourceTree = "<group>";
+		};
+		21711E7628A28D6D009E03C4 /* BasicControlsTutorial */ = {
+			isa = PBXGroup;
+			children = (
+				215844252881FDB300257013 /* BasicControlsTutorial.swift */,
+			);
+			path = BasicControlsTutorial;
+			sourceTree = "<group>";
+		};
+		21711E7728A28DA8009E03C4 /* SoundWavesTutorial */ = {
+			isa = PBXGroup;
+			children = (
+				214F4750288AA418003DA5F3 /* SoundWavesTutorial.swift */,
+			);
+			path = SoundWavesTutorial;
+			sourceTree = "<group>";
+		};
 		218C8C9A2862662000154F87 = {
 			isa = PBXGroup;
 			children = (
@@ -148,8 +206,9 @@
 		218C8CA52862662000154F87 /* MScSynthTrainerApp */ = {
 			isa = PBXGroup;
 			children = (
+				218C8CC42862669F00154F87 /* UIKitViewControllers */,
+				218F57EF286484750052B064 /* UserDefaults+Helpers */,
 				21F276F52874D80E00152B32 /* SwiftUIViews */,
-				218C8CC42862669F00154F87 /* View Controllers */,
 				218C8CA62862662000154F87 /* AppDelegate.swift */,
 				218C8CA82862662000154F87 /* SceneDelegate.swift */,
 				218C8CAC2862662000154F87 /* Main.storyboard */,
@@ -161,7 +220,7 @@
 			path = MScSynthTrainerApp;
 			sourceTree = "<group>";
 		};
-		218C8CC42862669F00154F87 /* View Controllers */ = {
+		218C8CC42862669F00154F87 /* UIKitViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				218C8CAA2862662000154F87 /* ViewController.swift */,
@@ -169,43 +228,35 @@
 				218C8CBE2862668A00154F87 /* LoginViewController.swift */,
 				218C8CC12862669700154F87 /* HomeViewController.swift */,
 			);
-			path = "View Controllers";
+			path = UIKitViewControllers;
 			sourceTree = "<group>";
 		};
-		218F57EF286484750052B064 /* Helpers */ = {
+		218F57EF286484750052B064 /* UserDefaults+Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				216E0A4228A163640010E840 /* Oscillator Data+Conductors */,
+				21F4F137288493E8003CED52 /* CookbookHelpers+Components */,
 				218F57EC2864843B0052B064 /* Utilities.swift */,
 				21D9D903286A0F7000DB0153 /* Constants.swift */,
 				21292C8F288094C60044F7B4 /* UserDefaults.swift */,
 			);
-			path = Helpers;
+			path = "UserDefaults+Helpers";
 			sourceTree = "<group>";
 		};
 		21F276F52874D80E00152B32 /* SwiftUIViews */ = {
 			isa = PBXGroup;
 			children = (
-				216E0A4228A163640010E840 /* Oscillator Data+Conductors */,
-				21F4F137288493E8003CED52 /* Cookbook Helpers+Components */,
-				21F276F62874D83900152B32 /* HomeVCSwiftUIView.swift */,
-				21427A67287B41E800E9EEB5 /* TutorialsMenu.swift */,
-				214F4754288AA757003DA5F3 /* OnboardView.swift */,
-				215844252881FDB300257013 /* BasicControlsTutorial.swift */,
-				214F4750288AA418003DA5F3 /* SoundWavesTutorial.swift */,
-				214F474C2889B65A003DA5F3 /* OscillatorsAndWaveformsTutorial.swift */,
-				2154D56F289AF1CD00FCCB2F /* Filter Helpers */,
-				21A4C9B228997F1600366ED0 /* LowPassFilter.swift */,
-				2100BD61289D540500CBF322 /* HighPassFilter.swift */,
-				2100BD65289DA4AC00CBF322 /* BandPassFilter.swift */,
-				2100BD69289DB23D00CBF322 /* BandRejectFilter.swift */,
-				2154D570289AF1FB00FCCB2F /* FiltersTutorial.swift */,
-				218F57EF286484750052B064 /* Helpers */,
-				21427A69287B424100E9EEB5 /* DynamicOscillatorView.swift */,
+				21711E7528A28D41009E03C4 /* OnboardViews */,
+				21711E7428A28D1F009E03C4 /* Home+Menus */,
+				21711E7628A28D6D009E03C4 /* BasicControlsTutorial */,
+				21711E7728A28DA8009E03C4 /* SoundWavesTutorial */,
+				21711E7228A28A84009E03C4 /* OscillatorsAndWaveformsTutorial */,
+				21711E7328A28AA9009E03C4 /* FiltersTutorial */,
 			);
 			path = SwiftUIViews;
 			sourceTree = "<group>";
 		};
-		21F4F137288493E8003CED52 /* Cookbook Helpers+Components */ = {
+		21F4F137288493E8003CED52 /* CookbookHelpers+Components */ = {
 			isa = PBXGroup;
 			children = (
 				21F4F13828849459003CED52 /* NavigationHelpers.swift */,
@@ -213,7 +264,7 @@
 				21F4F13C288494F6003CED52 /* ParameterSlider.swift */,
 				2100FF1E288C091500808241 /* Oscillator.swift */,
 			);
-			path = "Cookbook Helpers+Components";
+			path = "CookbookHelpers+Components";
 			sourceTree = "<group>";
 		};
 		913339862C876B95A4BDD8CC /* Pods */ = {
@@ -376,11 +427,11 @@
 				218C8CAB2862662000154F87 /* ViewController.swift in Sources */,
 				2100BD62289D540500CBF322 /* HighPassFilter.swift in Sources */,
 				218C8CA72862662000154F87 /* AppDelegate.swift in Sources */,
+				21711E7128A28997009E03C4 /* OWOscillatorViews.swift in Sources */,
 				21F4F13D288494F6003CED52 /* ParameterSlider.swift in Sources */,
 				218F57ED2864843C0052B064 /* Utilities.swift in Sources */,
 				21A4C9B528997F6000366ED0 /* DryWetMixer.swift in Sources */,
 				218C8CBC2862667100154F87 /* SignUpViewController.swift in Sources */,
-				21427A6A287B424100E9EEB5 /* DynamicOscillatorView.swift in Sources */,
 				21F276F72874D83900152B32 /* HomeVCSwiftUIView.swift in Sources */,
 				218C8CBF2862668A00154F87 /* LoginViewController.swift in Sources */,
 				216E0A4428A163A80010E840 /* OscillatorData+Conductors.swift in Sources */,
@@ -390,6 +441,7 @@
 				2100FF1F288C091500808241 /* Oscillator.swift in Sources */,
 				218C8CA92862662000154F87 /* SceneDelegate.swift in Sources */,
 				214F4755288AA757003DA5F3 /* OnboardView.swift in Sources */,
+				21711E6F28A28913009E03C4 /* OWLinkViews.swift in Sources */,
 				21A4C9B728997F9200366ED0 /* PlotView.swift in Sources */,
 				21292C90288094C60044F7B4 /* UserDefaults.swift in Sources */,
 				218C8CC22862669700154F87 /* HomeViewController.swift in Sources */,

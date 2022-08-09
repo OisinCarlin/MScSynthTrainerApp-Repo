@@ -1,9 +1,10 @@
 //
-//  BandRejectFilter.swift
+//  HighPassFilter.swift
 //  MScSynthTrainerApp
 //
 //  Created by Oisin Carlin on 05/08/2022.
 //
+
 
 import AudioKit
 import AudioKitUI
@@ -16,7 +17,7 @@ import CAudioKitEX
 
 
 
-struct BRFOscillatorData {
+struct HPFOscillatorData {
     var isPlaying: Bool = false
     var frequency: AUValue = 440
     var amplitude: AUValue = 0.1
@@ -24,17 +25,16 @@ struct BRFOscillatorData {
     
     var showKeyboard = false
     
-    var centerFrequency: AUValue = 2_000.0
-    var bandwidth: AUValue = 100.0
-//    var rampDuration: AUValue = 0.02
+    var cutoffFrequency: AUValue = 1_000
+    var resonance: AUValue = 0
     var balance: AUValue = 1
 }
 
-class BRFOscillatorConductor: ObservableObject, KeyboardDelegate {
+class HPFOscillatorConductor: ObservableObject, KeyboardDelegate {
     var osc = Oscillator()
     
     let engine = AudioEngine()
-    let filter: BandRejectButterworthFilter
+    let filter: HighPassFilter
     let dryWetMixer: DryWetMixer
     
     
@@ -47,12 +47,11 @@ class BRFOscillatorConductor: ObservableObject, KeyboardDelegate {
         data.isPlaying = false
     }
     
-    @Published var data = BRFOscillatorData() {
+    @Published var data = HPFOscillatorData() {
         didSet {
-            filter.$centerFrequency.ramp(to: data.centerFrequency, duration: data.rampDuration)
-            filter.$bandwidth.ramp(to: data.bandwidth, duration: data.rampDuration)
+            filter.cutoffFrequency = data.cutoffFrequency
+            filter.resonance = data.resonance
             dryWetMixer.balance = data.balance
-            
             
             
             if data.isPlaying {
@@ -66,7 +65,7 @@ class BRFOscillatorConductor: ObservableObject, KeyboardDelegate {
     }
     
     init() {
-        filter = BandRejectButterworthFilter(osc)
+        filter = HighPassFilter(osc)
         dryWetMixer = DryWetMixer(osc, filter)
         engine.output = dryWetMixer
     }
@@ -89,8 +88,8 @@ class BRFOscillatorConductor: ObservableObject, KeyboardDelegate {
 
 
 
-struct BandRejectFilterView: View {
-    @StateObject var conductor = BRFOscillatorConductor()
+struct HighPassFilterView: View {
+    @StateObject var conductor = HPFOscillatorConductor()
     
     @State private var didTapSine:Bool = false
     @State private var didTapSquare:Bool = false
@@ -100,10 +99,19 @@ struct BandRejectFilterView: View {
     var body: some View {
         //                ScrollView {
         VStack {
+            
+            // Play button
+            //            Text(self.conductor.data.isPlaying ? "Pause" : "Play").onTapGesture {
+            //                self.conductor.data.isPlaying.toggle()
+            //            }.foregroundColor(.green).font(Font.body.bold())
+            
             Text(self.conductor.data.isPlaying ? "Pause" : "Play").onTapGesture {
                 self.conductor.data.isPlaying.toggle()
-            }.foregroundColor(.green).font(Font.body.bold())
+            }.foregroundColor(self.conductor.data.isPlaying ? .orange : .green).font(Font.body.bold())
+                .padding()
+                .border(self.conductor.data.isPlaying ? .orange : .green, width: 4)
             
+            // Waveform selector buttons
             HStack {
                 Spacer()
                 Text("Sine").onTapGesture {
@@ -174,15 +182,15 @@ struct BandRejectFilterView: View {
             }
             
             
-            Text("Band Reject Filter Controls:").foregroundColor(.pink).font(Font.body.bold()).padding()
-            ParameterSlider(text: "Center Frequency",
-                            parameter: self.$conductor.data.centerFrequency,
-                            range: 12.0...20_000.0,
+            Text("High Pass Filter Controls:").foregroundColor(.pink).font(Font.body.bold()).padding()
+            ParameterSlider(text: "Cutoff Frequency",
+                            parameter: self.$conductor.data.cutoffFrequency,
+                            range: 12.0...3_000.0,
                             units: "Hertz")
-            ParameterSlider(text: "Bandwidth",
-                            parameter: self.$conductor.data.bandwidth,
-                            range: 0.0...20_000.0,
-                            units: "Hertz")
+            ParameterSlider(text: "Resonance",
+                            parameter: self.$conductor.data.resonance,
+                            range: -20...40,
+                            units: "dB")
             ParameterSlider(text: "Filter Mix",
                             parameter: self.$conductor.data.balance,
                             range: 0...1,
@@ -194,7 +202,7 @@ struct BandRejectFilterView: View {
         DryWetMixView(dry: conductor.osc, wet: conductor.filter, mix: conductor.dryWetMixer)
         
         
-            .cookbookNavBarTitle("Band Reject Filter")
+            .cookbookNavBarTitle("High Pass Filter")
             .onAppear {
                 self.conductor.start()
                 
@@ -214,9 +222,14 @@ struct BandRejectFilterView: View {
 }
 
 
-struct BandRejectFilter_Previews: PreviewProvider {
+struct HighPassFilter_Previews: PreviewProvider {
     static var previews: some View {
-        BandRejectFilterView()
+        HighPassFilterView()
     }
 }
+
+
+
+
+
 

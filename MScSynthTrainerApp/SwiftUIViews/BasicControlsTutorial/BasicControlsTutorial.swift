@@ -116,9 +116,26 @@ struct BasicControlsAmplitudeOscillatorView: View {
 
     var body: some View {
         VStack {
+            
+            
+//            Text(self.conductor.data.isPlaying ? "Pause" : "Play").onTapGesture {
+//                self.conductor.data.isPlaying.toggle()
+//            }.foregroundColor(.green).font(Font.body.bold()).border(.green)
+            
             Text(self.conductor.data.isPlaying ? "Pause" : "Play").onTapGesture {
                 self.conductor.data.isPlaying.toggle()
-            }.foregroundColor(.green).font(Font.body.bold())
+            }.foregroundColor(self.conductor.data.isPlaying ? .orange : .green).font(Font.body.bold())
+                .padding()
+                    .border(self.conductor.data.isPlaying ? .orange : .green, width: 4)
+            
+            
+//            Text(self.conductor.data.isPlaying ? "Pause" : "Play").onTapGesture {
+//                self.conductor.data.isPlaying.toggle()
+//            }.foregroundColor(.green).font(.largeTitle)
+//
+//
+            
+            
 //            ParameterSlider(text: "Frequency",
 //                            parameter: self.$conductor.data.frequency,
 //                            range: 220...880).padding()
@@ -152,10 +169,19 @@ struct BasicControlsPitchOscillatorView: View {
 
     var body: some View {
         VStack {
+            
+            
+//            Text(self.conductor.data.isPlaying ? "Pause" : "Play").onTapGesture {
+//                self.conductor.data.isPlaying.toggle()
+//                
+//            }.foregroundColor(.green).font(Font.body.bold())
+            
             Text(self.conductor.data.isPlaying ? "Pause" : "Play").onTapGesture {
                 self.conductor.data.isPlaying.toggle()
-                
-            }.foregroundColor(.green).font(Font.body.bold())
+            }.foregroundColor(self.conductor.data.isPlaying ? .orange : .green).font(Font.body.bold())
+                .padding()
+                    .border(self.conductor.data.isPlaying ? .orange : .green, width: 4)
+            
             ParameterSlider(text: "Frequency",
                             parameter: self.$conductor.data.frequency,
                             range: 20...880).padding()
