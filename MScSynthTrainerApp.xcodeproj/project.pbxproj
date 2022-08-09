@@ -30,6 +30,10 @@
 		216E0A4428A163A80010E840 /* OscillatorData+Conductors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216E0A4328A163A80010E840 /* OscillatorData+Conductors.swift */; };
 		21711E6F28A28913009E03C4 /* OWLinkViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21711E6E28A28913009E03C4 /* OWLinkViews.swift */; };
 		21711E7128A28997009E03C4 /* OWOscillatorViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21711E7028A28997009E03C4 /* OWOscillatorViews.swift */; };
+		21711E8028A2CF14009E03C4 /* AmplitudeEnvelope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21711E7F28A2CF14009E03C4 /* AmplitudeEnvelope.swift */; };
+		21711E8228A2CF53009E03C4 /* ADSRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21711E8128A2CF53009E03C4 /* ADSRView.swift */; };
+		21711E8428A2CFBE009E03C4 /* LPFAmplitudeEnvelope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21711E8328A2CFBE009E03C4 /* LPFAmplitudeEnvelope.swift */; };
+		21711E8628A2CFD9009E03C4 /* EnvelopesTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21711E8528A2CFD9009E03C4 /* EnvelopesTutorial.swift */; };
 		218C8CA72862662000154F87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218C8CA62862662000154F87 /* AppDelegate.swift */; };
 		218C8CA92862662000154F87 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218C8CA82862662000154F87 /* SceneDelegate.swift */; };
 		218C8CAB2862662000154F87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218C8CAA2862662000154F87 /* ViewController.swift */; };
@@ -68,6 +72,10 @@
 		216E0A4328A163A80010E840 /* OscillatorData+Conductors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OscillatorData+Conductors.swift"; sourceTree = "<group>"; };
 		21711E6E28A28913009E03C4 /* OWLinkViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWLinkViews.swift; sourceTree = "<group>"; };
 		21711E7028A28997009E03C4 /* OWOscillatorViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWOscillatorViews.swift; sourceTree = "<group>"; };
+		21711E7F28A2CF14009E03C4 /* AmplitudeEnvelope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmplitudeEnvelope.swift; sourceTree = "<group>"; };
+		21711E8128A2CF53009E03C4 /* ADSRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADSRView.swift; sourceTree = "<group>"; };
+		21711E8328A2CFBE009E03C4 /* LPFAmplitudeEnvelope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPFAmplitudeEnvelope.swift; sourceTree = "<group>"; };
+		21711E8528A2CFD9009E03C4 /* EnvelopesTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopesTutorial.swift; sourceTree = "<group>"; };
 		218C8CA32862662000154F87 /* MScSynthTrainerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MScSynthTrainerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		218C8CA62862662000154F87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		218C8CA82862662000154F87 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -185,6 +193,17 @@
 			path = SoundWavesTutorial;
 			sourceTree = "<group>";
 		};
+		21711E7E28A2CE9B009E03C4 /* EnvelopesTutorial */ = {
+			isa = PBXGroup;
+			children = (
+				21711E7F28A2CF14009E03C4 /* AmplitudeEnvelope.swift */,
+				21711E8128A2CF53009E03C4 /* ADSRView.swift */,
+				21711E8328A2CFBE009E03C4 /* LPFAmplitudeEnvelope.swift */,
+				21711E8528A2CFD9009E03C4 /* EnvelopesTutorial.swift */,
+			);
+			path = EnvelopesTutorial;
+			sourceTree = "<group>";
+		};
 		218C8C9A2862662000154F87 = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +271,7 @@
 				21711E7728A28DA8009E03C4 /* SoundWavesTutorial */,
 				21711E7228A28A84009E03C4 /* OscillatorsAndWaveformsTutorial */,
 				21711E7328A28AA9009E03C4 /* FiltersTutorial */,
+				21711E7E28A2CE9B009E03C4 /* EnvelopesTutorial */,
 			);
 			path = SwiftUIViews;
 			sourceTree = "<group>";
@@ -419,6 +439,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21711E8628A2CFD9009E03C4 /* EnvelopesTutorial.swift in Sources */,
 				2154D571289AF1FB00FCCB2F /* FiltersTutorial.swift in Sources */,
 				215844262881FDB300257013 /* BasicControlsTutorial.swift in Sources */,
 				214F4751288AA418003DA5F3 /* SoundWavesTutorial.swift in Sources */,
@@ -442,11 +463,14 @@
 				218C8CA92862662000154F87 /* SceneDelegate.swift in Sources */,
 				214F4755288AA757003DA5F3 /* OnboardView.swift in Sources */,
 				21711E6F28A28913009E03C4 /* OWLinkViews.swift in Sources */,
+				21711E8028A2CF14009E03C4 /* AmplitudeEnvelope.swift in Sources */,
 				21A4C9B728997F9200366ED0 /* PlotView.swift in Sources */,
 				21292C90288094C60044F7B4 /* UserDefaults.swift in Sources */,
+				21711E8428A2CFBE009E03C4 /* LPFAmplitudeEnvelope.swift in Sources */,
 				218C8CC22862669700154F87 /* HomeViewController.swift in Sources */,
 				21D9D904286A0F7000DB0153 /* Constants.swift in Sources */,
 				2100BD66289DA4AC00CBF322 /* BandPassFilter.swift in Sources */,
+				21711E8228A2CF53009E03C4 /* ADSRView.swift in Sources */,
 				21A4C9B328997F1600366ED0 /* LowPassFilter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

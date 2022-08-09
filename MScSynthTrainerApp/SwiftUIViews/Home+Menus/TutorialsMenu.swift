@@ -87,7 +87,7 @@ struct TutorialsMenu: View {
                             }
                         }
                     }
-                    NavigationLink(destination: TutorialsMenu()){
+                    NavigationLink(destination: EnvelopesTutorial()){
                         HStack {
                             Image("envelope")
                                 .resizable()
