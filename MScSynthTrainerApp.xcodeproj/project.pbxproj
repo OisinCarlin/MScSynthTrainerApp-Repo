@@ -34,6 +34,11 @@
 		21711E8228A2CF53009E03C4 /* ADSRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21711E8128A2CF53009E03C4 /* ADSRView.swift */; };
 		21711E8428A2CFBE009E03C4 /* LPFAmplitudeEnvelope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21711E8328A2CFBE009E03C4 /* LPFAmplitudeEnvelope.swift */; };
 		21711E8628A2CFD9009E03C4 /* EnvelopesTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21711E8528A2CFD9009E03C4 /* EnvelopesTutorial.swift */; };
+		21711E8E28A2F672009E03C4 /* HPFAmplitudeEnvelope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21711E8D28A2F672009E03C4 /* HPFAmplitudeEnvelope.swift */; };
+		21711E9028A2F688009E03C4 /* BPFAmplitudeEnvelope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21711E8F28A2F688009E03C4 /* BPFAmplitudeEnvelope.swift */; };
+		21711E9228A2F697009E03C4 /* BRFAmplitudeEnvelope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21711E9128A2F697009E03C4 /* BRFAmplitudeEnvelope.swift */; };
+		21711E9428A2F783009E03C4 /* AmpEnvLinkViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21711E9328A2F783009E03C4 /* AmpEnvLinkViews.swift */; };
+		21711E9628A2F83F009E03C4 /* FiltersLinkViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21711E9528A2F83F009E03C4 /* FiltersLinkViews.swift */; };
 		218C8CA72862662000154F87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218C8CA62862662000154F87 /* AppDelegate.swift */; };
 		218C8CA92862662000154F87 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218C8CA82862662000154F87 /* SceneDelegate.swift */; };
 		218C8CAB2862662000154F87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218C8CAA2862662000154F87 /* ViewController.swift */; };
@@ -76,6 +81,11 @@
 		21711E8128A2CF53009E03C4 /* ADSRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADSRView.swift; sourceTree = "<group>"; };
 		21711E8328A2CFBE009E03C4 /* LPFAmplitudeEnvelope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPFAmplitudeEnvelope.swift; sourceTree = "<group>"; };
 		21711E8528A2CFD9009E03C4 /* EnvelopesTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopesTutorial.swift; sourceTree = "<group>"; };
+		21711E8D28A2F672009E03C4 /* HPFAmplitudeEnvelope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPFAmplitudeEnvelope.swift; sourceTree = "<group>"; };
+		21711E8F28A2F688009E03C4 /* BPFAmplitudeEnvelope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPFAmplitudeEnvelope.swift; sourceTree = "<group>"; };
+		21711E9128A2F697009E03C4 /* BRFAmplitudeEnvelope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRFAmplitudeEnvelope.swift; sourceTree = "<group>"; };
+		21711E9328A2F783009E03C4 /* AmpEnvLinkViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmpEnvLinkViews.swift; sourceTree = "<group>"; };
+		21711E9528A2F83F009E03C4 /* FiltersLinkViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersLinkViews.swift; sourceTree = "<group>"; };
 		218C8CA32862662000154F87 /* MScSynthTrainerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MScSynthTrainerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		218C8CA62862662000154F87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		218C8CA82862662000154F87 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +162,7 @@
 			children = (
 				2154D56F289AF1CD00FCCB2F /* Filter Helpers */,
 				2154D570289AF1FB00FCCB2F /* FiltersTutorial.swift */,
+				21711E9528A2F83F009E03C4 /* FiltersLinkViews.swift */,
 				21A4C9B228997F1600366ED0 /* LowPassFilter.swift */,
 				2100BD61289D540500CBF322 /* HighPassFilter.swift */,
 				2100BD69289DB23D00CBF322 /* BandRejectFilter.swift */,
@@ -196,10 +207,14 @@
 		21711E7E28A2CE9B009E03C4 /* EnvelopesTutorial */ = {
 			isa = PBXGroup;
 			children = (
+				21711E8528A2CFD9009E03C4 /* EnvelopesTutorial.swift */,
+				21711E9328A2F783009E03C4 /* AmpEnvLinkViews.swift */,
 				21711E7F28A2CF14009E03C4 /* AmplitudeEnvelope.swift */,
 				21711E8128A2CF53009E03C4 /* ADSRView.swift */,
 				21711E8328A2CFBE009E03C4 /* LPFAmplitudeEnvelope.swift */,
-				21711E8528A2CFD9009E03C4 /* EnvelopesTutorial.swift */,
+				21711E8D28A2F672009E03C4 /* HPFAmplitudeEnvelope.swift */,
+				21711E8F28A2F688009E03C4 /* BPFAmplitudeEnvelope.swift */,
+				21711E9128A2F697009E03C4 /* BRFAmplitudeEnvelope.swift */,
 			);
 			path = EnvelopesTutorial;
 			sourceTree = "<group>";
@@ -439,6 +454,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21711E9428A2F783009E03C4 /* AmpEnvLinkViews.swift in Sources */,
 				21711E8628A2CFD9009E03C4 /* EnvelopesTutorial.swift in Sources */,
 				2154D571289AF1FB00FCCB2F /* FiltersTutorial.swift in Sources */,
 				215844262881FDB300257013 /* BasicControlsTutorial.swift in Sources */,
@@ -449,6 +465,8 @@
 				2100BD62289D540500CBF322 /* HighPassFilter.swift in Sources */,
 				218C8CA72862662000154F87 /* AppDelegate.swift in Sources */,
 				21711E7128A28997009E03C4 /* OWOscillatorViews.swift in Sources */,
+				21711E8E28A2F672009E03C4 /* HPFAmplitudeEnvelope.swift in Sources */,
+				21711E9628A2F83F009E03C4 /* FiltersLinkViews.swift in Sources */,
 				21F4F13D288494F6003CED52 /* ParameterSlider.swift in Sources */,
 				218F57ED2864843C0052B064 /* Utilities.swift in Sources */,
 				21A4C9B528997F6000366ED0 /* DryWetMixer.swift in Sources */,
@@ -468,9 +486,11 @@
 				21292C90288094C60044F7B4 /* UserDefaults.swift in Sources */,
 				21711E8428A2CFBE009E03C4 /* LPFAmplitudeEnvelope.swift in Sources */,
 				218C8CC22862669700154F87 /* HomeViewController.swift in Sources */,
+				21711E9028A2F688009E03C4 /* BPFAmplitudeEnvelope.swift in Sources */,
 				21D9D904286A0F7000DB0153 /* Constants.swift in Sources */,
 				2100BD66289DA4AC00CBF322 /* BandPassFilter.swift in Sources */,
 				21711E8228A2CF53009E03C4 /* ADSRView.swift in Sources */,
+				21711E9228A2F697009E03C4 /* BRFAmplitudeEnvelope.swift in Sources */,
 				21A4C9B328997F1600366ED0 /* LowPassFilter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

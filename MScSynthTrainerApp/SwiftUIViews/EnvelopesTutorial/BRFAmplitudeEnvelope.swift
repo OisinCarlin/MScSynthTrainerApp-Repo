@@ -1,69 +1,83 @@
 //
-//  AmplitudeEnvelope.swift
+//  BRFAmplitudeEnvelope.swift
 //  MScSynthTrainerApp
 //
 //  Created by Oisin Carlin on 09/08/2022.
 //
 
-
 import AudioKit
-import AudioKitEX
 import AudioKitUI
-import AudioToolbox
-import AVFoundation
 import SoundpipeAudioKit
 import SwiftUI
-
-//: ## Amplitude Envelope
-//: A surprising amount of character can be added to a sound by changing its amplitude over time.
-//: A very common means of defining the shape of amplitude is to use an ADSR envelope which stands for
-//: Attack, Sustain, Decay, Release.
-//: * Attack is the amount of time it takes a sound to reach its maximum volume.  An example of a fast attack is a
-//:   piano, where as a cello can have a longer attack time.
-//: * Decay is the amount of time after which the peak amplitude is reached for a lower amplitude to arrive.
-//: * Sustain is not a time, but a percentage of the peak amplitude that will be the the sustained amplitude.
-//: * Release is the amount of time after a note is let go for the sound to die away to zero.
+import AudioToolbox
+import AVFoundation
+import AudioKitEX
+import CAudioKitEX
 
 
-struct AmpEnvData {
+
+struct BRFAmpEnvData {
+    var isPlaying: Bool = false
+    var frequency: AUValue = 440
     var amplitude: AUValue = 0.5
     var rampDuration: AUValue = 0.1
+    
+    var showKeyboard = false
+        
+    var centerFrequency: AUValue = 2_000.0
+    var bandwidth: AUValue = 100.0
+//    var rampDuration: AUValue = 0.02
+    var balance: AUValue = 1
 }
 
-class AmplitudeEnvelopeConductor: ObservableObject, KeyboardDelegate {
+class BRFAmpEnvConductor: ObservableObject, KeyboardDelegate {
+    var osc = Oscillator()
+    
     let engine = AudioEngine()
+    let filter: BandPassFilter
+    let dryWetMixer: DryWetMixer
+    
     var currentNote = 0
-
+    
+    
     func noteOn(note: MIDINoteNumber) {
+        
         if note != currentNote {
             env.closeGate()
         }
         osc.frequency = note.midiNoteToFrequency()
         env.openGate()
     }
-
+    
     func noteOff(note: MIDINoteNumber) {
         env.closeGate()
     }
-
-    var osc: Oscillator
+    
     var env: AmplitudeEnvelope
     var fader: Fader
     
-    @Published var data = AmpEnvData() {
+    @Published var data = BRFAmpEnvData() {
         didSet {
+            
+            filter.centerFrequency = data.centerFrequency
+            filter.bandwidth = data.bandwidth
+
             osc.$amplitude.ramp(to: data.amplitude, duration: data.rampDuration)
         }
     }
-
+    
     init() {
         osc = Oscillator()
         env = AmplitudeEnvelope(osc)
         fader = Fader(env)
         osc.amplitude = 1
-        engine.output = fader
+        
+        
+        filter = BandPassFilter(fader)
+        dryWetMixer = DryWetMixer(fader, filter)
+        engine.output = dryWetMixer
     }
-
+    
     func start() {
         osc.start()
         do {
@@ -72,25 +86,29 @@ class AmplitudeEnvelopeConductor: ObservableObject, KeyboardDelegate {
             Log(err)
         }
     }
-
+    
     func stop() {
+        data.isPlaying = false
         osc.stop()
         engine.stop()
     }
 }
 
-struct AmplitudeEnvelopeView: View {
-    @StateObject var conductor = AmplitudeEnvelopeConductor()
+
+
+struct BRFAmpEnvView: View {
+    @StateObject var conductor = BRFAmpEnvConductor()
     
     @State private var didTapSine:Bool = false
     @State private var didTapSquare:Bool = false
     @State private var didTapTriangle:Bool = false
     @State private var didTapSawtooth:Bool = false
-
+    
     var body: some View {
+        //                ScrollView {
         VStack {
-            
-            Text("Amplitude Envelope ADSR Controls:").foregroundColor(.pink).font(Font.body.bold()).padding()
+//            Text("Envelope and Oscillator Controls:").foregroundColor(.pink).font(Font.body.bold())
+////                .padding()
             
             ADSRWidget { att, dec, sus, rel in
                 self.conductor.env.attackDuration = att
@@ -99,9 +117,10 @@ struct AmplitudeEnvelopeView: View {
                 self.conductor.env.releaseDuration = rel
             }
 //            NodeOutputView(conductor.env)
-            NodeRollingView(conductor.fader, color: .red)
             
-            Text("Oscillator Waveform Controls:").foregroundColor(.pink).font(Font.body.bold()).padding()
+            
+            NodeRollingView(conductor.dryWetMixer, color: .red)
+            
             
             HStack {
                 Spacer()
@@ -147,35 +166,57 @@ struct AmplitudeEnvelopeView: View {
                 }                .foregroundColor(didTapSawtooth ? Color.red : Color.black).font(Font.body.bold())
                 Spacer()
             }
+
             
             ParameterSlider(text: " Master Amplitude",
                             parameter: self.$conductor.data.amplitude,
                             range: 0 ... 1)
-            
+
             KeyboardControl(firstOctave: 3,
                             octaveCount: 2,
                             polyphonicMode: false,
                             delegate: conductor)
-
-        }.cookbookNavBarTitle("Amplitude Envelope")
-            .onAppear {
-                self.conductor.start()
-                
-                self.conductor.osc.setWaveform(Table(.sine))
-                
-                self.didTapSine = true
-                self.didTapSquare = false
-                self.didTapTriangle = false
-                self.didTapSawtooth = false
-            }
-            .onDisappear {
-                self.conductor.stop()
-            }
+ 
+            Text("Band Reject Filter Controls:").foregroundColor(.pink).font(Font.body.bold()).padding()
+            ParameterSlider(text: "Center Frequency",
+                            parameter: self.$conductor.data.centerFrequency,
+                            range: 12.0...20_000.0,
+                            units: "Hertz")
+            ParameterSlider(text: "Bandwidth",
+                            parameter: self.$conductor.data.bandwidth,
+                            range: 0.0...20_000.0,
+                            units: "Hertz")
+            ParameterSlider(text: "Filter Mix",
+                            parameter: self.$conductor.data.balance,
+                            range: 0...1,
+                            units: "%")
+            
+            
+        }
+  
+        
+        .cookbookNavBarTitle("BRF and Envelope")
+        .onAppear {
+            self.conductor.start()
+            
+            self.conductor.osc.setWaveform(Table(.sine))
+            
+            self.didTapSine = true
+            self.didTapSquare = false
+            self.didTapTriangle = false
+            self.didTapSawtooth = false
+        }
+        .onDisappear {
+            self.conductor.stop()
+        }
+        
     }
+    
 }
 
-struct AmplitudeEnvelopeView_Previews: PreviewProvider {
+
+struct BRFAmpEnv_Previews: PreviewProvider {
     static var previews: some View {
-        AmplitudeEnvelopeView()
+        BRFAmpEnvView()
     }
 }

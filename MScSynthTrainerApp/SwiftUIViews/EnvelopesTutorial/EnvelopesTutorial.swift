@@ -16,6 +16,15 @@ struct EnvelopesTutorial: View {
             LPFAmpEnvLinkView(systemImageName1: "envelope",
                            title: "LPF and Amplitude Envelope",
                            description: "")
+            HPFAmpEnvLinkView(systemImageName1: "envelope",
+                           title: "HPF and Amplitude Envelope",
+                           description: "")
+            BPFAmpEnvLinkView(systemImageName1: "envelope",
+                           title: "BPF and Amplitude Envelope",
+                           description: "")
+            BRFAmpEnvLinkView(systemImageName1: "envelope",
+                           title: "BRF and Amplitude Envelope",
+                           description: "")
 
         }
         
@@ -27,76 +36,6 @@ struct EnvelopesTutorial: View {
     }
 }
 
-
-struct AmpEnvLinkView: View {
-    
-    let systemImageName1: String
-    let title: String
-    let description: String
-    
-    
-    var body: some View {
-        
-        VStack(spacing: 20){
-            HStack{
-                Image(systemImageName1)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 400, height: 300)
-                    .foregroundColor(.blue)
-                
-            }
-            
-            
-            Text(title)
-                .font(.title).bold()
-            
-            Text(description)
-                .multilineTextAlignment(.center)
-                .foregroundColor(.secondary)
-            
-            NavigationLink(destination: AmplitudeEnvelopeView()){
-                Text("Tap here to Play with Amplitude Envelope").foregroundColor(.red).font(Font.body.bold())
-            }.padding()
-        }
-        .padding(.horizontal, 40)
-    }
-}
-
-struct LPFAmpEnvLinkView: View {
-    
-    let systemImageName1: String
-    let title: String
-    let description: String
-    
-    
-    var body: some View {
-        
-        VStack(spacing: 20){
-            HStack{
-                Image(systemImageName1)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 400, height: 300)
-                    .foregroundColor(.blue)
-                
-            }
-            
-            
-            Text(title)
-                .font(.title).bold()
-            
-            Text(description)
-                .multilineTextAlignment(.center)
-                .foregroundColor(.secondary)
-            
-            NavigationLink(destination: LPFAmpEnvView()){
-                Text("Tap here to Play with Amplitude Envelope through Low Pass Filter").foregroundColor(.red).font(Font.body.bold())
-            }.padding()
-        }
-        .padding(.horizontal, 40)
-    }
-}
 
 struct EnvelopesTutorial_Previews: PreviewProvider {
     static var previews: some View {
