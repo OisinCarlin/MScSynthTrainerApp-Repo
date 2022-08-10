@@ -1,137 +1,120 @@
 //
-//  TutorialsMenu.swift
+//  PlayOscillatorsAndWaveforms.swift
 //  MScSynthTrainerApp
 //
-//  Created by Oisin Carlin on 10/07/2022.
+//  Created by Oisin Carlin on 10/08/2022.
 //
 
 import SwiftUI
 
-// Only need one NavigationView Instance for Menu navigation
-// .. in primary menu screen HomeVCSwiftUIView
-// Can imbed multiple NavigationLink destinations between SwiftUI files
-struct TutorialsMenu: View {
+struct PlayOscillatorsAndWaveforms: View {
     var body: some View {
         Form {
             Group {
-                Section(header: Text("Tutorials Topics")) {
-                    NavigationLink(destination: BasicControlsTutorial()){
+                Section(header: Text("Play Oscillators and Waveforms")) {
+                    
+                    NavigationLink(destination: OWSineOscillatorView()){
                         HStack {
-                            Image("controls")
+                            Image("sineWave")
                                 .resizable()
                                 .renderingMode(.original)
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 80, height: 80)
                             VStack(alignment: .leading) {
-                                Text("Basic Controls")
+                                Text("Sine Waveform")
                                     .font(.headline)
                                     .fontWeight(.bold)
-                                Text("Up, down, high, low. Learn the basics here")
+                                Text("")
                                     .font(.subheadline)
                                     .foregroundColor(Color.gray)
                                     .lineLimit(2)
                             }
                         }
                     }
-                    NavigationLink(destination: SoundWavesTutorial()){
+                    
+                    NavigationLink(destination: OWSquareOscillatorView()){
                         HStack {
-                            Image("soundWave2")
+                            Image("squareWave")
                                 .resizable()
                                 .renderingMode(.original)
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 80, height: 80)
                             VStack(alignment: .leading) {
-                                Text("Sound Waves")
+                                Text("Square Waveform")
                                     .font(.headline)
                                     .fontWeight(.bold)
-                                Text("...")
+                                Text("")
                                     .font(.subheadline)
                                     .foregroundColor(Color.gray)
                                     .lineLimit(2)
                             }
                         }
                     }
-                    NavigationLink(destination: OscillatorsAndWaveformsTutorial()){
+                    
+                    NavigationLink(destination: OWTriangleOscillatorView()){
                         HStack {
-                            Image("waveOscillator")
+                            Image("triangleWave")
                                 .resizable()
                                 .renderingMode(.original)
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 80, height: 80)
                             VStack(alignment: .leading) {
-                                Text("Oscillators and Waveforms")
+                                Text("Triangle Waveform")
                                     .font(.headline)
                                     .fontWeight(.bold)
-                                Text("...")
+                                Text("")
                                     .font(.subheadline)
                                     .foregroundColor(Color.gray)
                                     .lineLimit(2)
                             }
                         }
                     }
-                    NavigationLink(destination: FiltersTutorial()){
+                    
+                    NavigationLink(destination: OWSawtoothOscillatorView()){
                         HStack {
-                            Image("lowPassFilter")
+                            Image("sawWave")
                                 .resizable()
                                 .renderingMode(.original)
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 80, height: 80)
                             VStack(alignment: .leading) {
-                                Text("Filters")
+                                Text("Sawtooth Waveform")
                                     .font(.headline)
                                     .fontWeight(.bold)
-                                Text("...")
+                                Text("")
                                     .font(.subheadline)
                                     .foregroundColor(Color.gray)
                                     .lineLimit(2)
                             }
                         }
                     }
-                    NavigationLink(destination: EnvelopesTutorial()){
+                    
+                    NavigationLink(destination: PWMOscillatorView()){
                         HStack {
-                            Image("envelope")
+                            Image("pwm")
                                 .resizable()
                                 .renderingMode(.original)
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 80, height: 80)
                             VStack(alignment: .leading) {
-                                Text("Envelopes")
+                                Text("Pulse Width Modulation")
                                     .font(.headline)
                                     .fontWeight(.bold)
-                                Text("...")
+                                Text("")
                                     .font(.subheadline)
                                     .foregroundColor(Color.gray)
                                     .lineLimit(2)
                             }
                         }
-                    }
-//                    NavigationLink(destination: TutorialsMenu()){
-//                        HStack {
-//                            Image("map")
-//                                .resizable()
-//                                .renderingMode(.original)
-//                                .aspectRatio(contentMode: .fit)
-//                                .frame(width: 80, height: 80)
-//                            VStack(alignment: .leading) {
-//                                Text("Approaches")
-//                                    .font(.headline)
-//                                    .fontWeight(.bold)
-//                                Text("...")
-//                                    .font(.subheadline)
-//                                    .foregroundColor(Color.gray)
-//                                    .lineLimit(2)
-//                            }
-//                        }
-//                    }
+                    }  
                 }
             }
-        }.navigationBarTitle("Tutorials")
+        }.navigationBarTitle("Play")
     }
 }
 
-
-struct TutorialsMenu_Previews: PreviewProvider {
+struct PlayOscillatorsAndWaveforms_Previews: PreviewProvider {
     static var previews: some View {
-        TutorialsMenu()
+        PlayOscillatorsAndWaveforms()
     }
 }

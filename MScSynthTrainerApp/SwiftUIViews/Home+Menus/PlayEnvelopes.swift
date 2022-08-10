@@ -1,75 +1,38 @@
 //
-//  TutorialsMenu.swift
+//  PlayEnvelopes.swift
 //  MScSynthTrainerApp
 //
-//  Created by Oisin Carlin on 10/07/2022.
+//  Created by Oisin Carlin on 10/08/2022.
 //
 
 import SwiftUI
 
-// Only need one NavigationView Instance for Menu navigation
-// .. in primary menu screen HomeVCSwiftUIView
-// Can imbed multiple NavigationLink destinations between SwiftUI files
-struct TutorialsMenu: View {
+struct PlayEnvelopes: View {
     var body: some View {
         Form {
             Group {
-                Section(header: Text("Tutorials Topics")) {
-                    NavigationLink(destination: BasicControlsTutorial()){
+                Section(header: Text("Play ADSR Amplitude Envelopes")) {
+                    
+                    NavigationLink(destination: AmplitudeEnvelopeView()){
                         HStack {
-                            Image("controls")
+                            Image("appADSR")
                                 .resizable()
                                 .renderingMode(.original)
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 80, height: 80)
                             VStack(alignment: .leading) {
-                                Text("Basic Controls")
+                                Text("ADSR Amplitude Envelope")
                                     .font(.headline)
                                     .fontWeight(.bold)
-                                Text("Up, down, high, low. Learn the basics here")
+                                Text("")
                                     .font(.subheadline)
                                     .foregroundColor(Color.gray)
                                     .lineLimit(2)
                             }
                         }
                     }
-                    NavigationLink(destination: SoundWavesTutorial()){
-                        HStack {
-                            Image("soundWave2")
-                                .resizable()
-                                .renderingMode(.original)
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 80, height: 80)
-                            VStack(alignment: .leading) {
-                                Text("Sound Waves")
-                                    .font(.headline)
-                                    .fontWeight(.bold)
-                                Text("...")
-                                    .font(.subheadline)
-                                    .foregroundColor(Color.gray)
-                                    .lineLimit(2)
-                            }
-                        }
-                    }
-                    NavigationLink(destination: OscillatorsAndWaveformsTutorial()){
-                        HStack {
-                            Image("waveOscillator")
-                                .resizable()
-                                .renderingMode(.original)
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 80, height: 80)
-                            VStack(alignment: .leading) {
-                                Text("Oscillators and Waveforms")
-                                    .font(.headline)
-                                    .fontWeight(.bold)
-                                Text("...")
-                                    .font(.subheadline)
-                                    .foregroundColor(Color.gray)
-                                    .lineLimit(2)
-                            }
-                        }
-                    }
-                    NavigationLink(destination: FiltersTutorial()){
+                    
+                    NavigationLink(destination: LPFAmpEnvView()){
                         HStack {
                             Image("lowPassFilter")
                                 .resizable()
@@ -77,61 +40,83 @@ struct TutorialsMenu: View {
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 80, height: 80)
                             VStack(alignment: .leading) {
-                                Text("Filters")
+                                Text("ADSR through Low Pass Filter")
                                     .font(.headline)
                                     .fontWeight(.bold)
-                                Text("...")
+                                Text("")
                                     .font(.subheadline)
                                     .foregroundColor(Color.gray)
                                     .lineLimit(2)
                             }
                         }
                     }
-                    NavigationLink(destination: EnvelopesTutorial()){
+                    
+                    NavigationLink(destination: HPFAmpEnvView()){
                         HStack {
-                            Image("envelope")
+                            Image("highPassFilter")
                                 .resizable()
                                 .renderingMode(.original)
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 80, height: 80)
                             VStack(alignment: .leading) {
-                                Text("Envelopes")
+                                Text("ADSR through High Pass Filter")
                                     .font(.headline)
                                     .fontWeight(.bold)
-                                Text("...")
+                                Text("")
                                     .font(.subheadline)
                                     .foregroundColor(Color.gray)
                                     .lineLimit(2)
                             }
                         }
                     }
-//                    NavigationLink(destination: TutorialsMenu()){
-//                        HStack {
-//                            Image("map")
-//                                .resizable()
-//                                .renderingMode(.original)
-//                                .aspectRatio(contentMode: .fit)
-//                                .frame(width: 80, height: 80)
-//                            VStack(alignment: .leading) {
-//                                Text("Approaches")
-//                                    .font(.headline)
-//                                    .fontWeight(.bold)
-//                                Text("...")
-//                                    .font(.subheadline)
-//                                    .foregroundColor(Color.gray)
-//                                    .lineLimit(2)
-//                            }
-//                        }
-//                    }
+                    
+                    NavigationLink(destination: BPFAmpEnvView()){
+                        HStack {
+                            Image("bandPassFilter")
+                                .resizable()
+                                .renderingMode(.original)
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 80, height: 80)
+                            VStack(alignment: .leading) {
+                                Text("ADSR through Band Pass Filter")
+                                    .font(.headline)
+                                    .fontWeight(.bold)
+                                Text("")
+                                    .font(.subheadline)
+                                    .foregroundColor(Color.gray)
+                                    .lineLimit(2)
+                            }
+                        }
+                    }
+                    
+                    NavigationLink(destination: BRFAmpEnvView()){
+                        HStack {
+                            Image("bandRejectFilter")
+                                .resizable()
+                                .renderingMode(.original)
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 80, height: 80)
+                            VStack(alignment: .leading) {
+                                Text("ADSR through Band Reject Filter")
+                                    .font(.headline)
+                                    .fontWeight(.bold)
+                                Text("")
+                                    .font(.subheadline)
+                                    .foregroundColor(Color.gray)
+                                    .lineLimit(2)
+                            }
+                        }
+                    }
+
+
                 }
             }
-        }.navigationBarTitle("Tutorials")
+        }.navigationBarTitle("Play")
     }
 }
 
-
-struct TutorialsMenu_Previews: PreviewProvider {
+struct PlayEnvelopes_Previews: PreviewProvider {
     static var previews: some View {
-        TutorialsMenu()
+        PlayEnvelopes()
     }
 }
