@@ -32,7 +32,7 @@ struct OWSineLinkView: View {
                 Image(systemImageName1)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 400, height: 300)
+                    .frame(width: 300, height: 200)
                     .foregroundColor(.blue)
                 
             }
@@ -67,7 +67,7 @@ struct OWSquareLinkView: View {
                 Image(systemImageName1)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 400, height: 300)
+                    .frame(width: 300, height: 200)
                     .foregroundColor(.blue)
             }
 
@@ -99,7 +99,7 @@ struct OWTriangleLinkView: View {
                 Image(systemImageName1)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 400, height: 300)
+                    .frame(width: 300, height: 200)
                     .foregroundColor(.blue)
             }
             Text(title)
@@ -131,7 +131,7 @@ struct OWSawtoothLinkView: View {
                 Image(systemImageName1)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 400, height: 300)
+                    .frame(width: 300, height: 200)
                     .foregroundColor(.blue)
             }
 
@@ -164,7 +164,7 @@ struct OWPWMLinkView: View {
                 Image(systemImageName1)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 400, height: 300)
+                    .frame(width: 300, height: 200)
                     .foregroundColor(.blue)
 
             }
@@ -199,7 +199,7 @@ struct OWVCOLinkView: View {
                 Image(systemImageName1)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 400, height: 300)
+                    .frame(width: 300, height: 200)
                     .foregroundColor(.blue)
                 
             }

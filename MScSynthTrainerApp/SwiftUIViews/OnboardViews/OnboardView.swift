@@ -55,7 +55,7 @@ struct OnboardViewOneImage: View {
                 Image(systemImageName1)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 400, height: 300)
+                    .frame(width: 300, height: 200)
                     .foregroundColor(.blue)
 
             }
