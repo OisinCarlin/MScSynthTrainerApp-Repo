@@ -13,6 +13,7 @@
 		2100FF1F288C091500808241 /* Oscillator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100FF1E288C091500808241 /* Oscillator.swift */; };
 		211C71C52869FD40003D6342 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 211C71C42869FD40003D6342 /* GoogleService-Info.plist */; };
 		21292C90288094C60044F7B4 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21292C8F288094C60044F7B4 /* UserDefaults.swift */; };
+		2132F83B28A675AD00F4342F /* SoundWavesLinkViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2132F83A28A675AD00F4342F /* SoundWavesLinkViews.swift */; };
 		21427A51287B3AFC00E9EEB5 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 21427A50287B3AFC00E9EEB5 /* AudioKit */; };
 		21427A54287B3B1400E9EEB5 /* AudioKitUI in Frameworks */ = {isa = PBXBuildFile; productRef = 21427A53287B3B1400E9EEB5 /* AudioKitUI */; };
 		21427A57287B3B6C00E9EEB5 /* AudioKitEX in Frameworks */ = {isa = PBXBuildFile; productRef = 21427A56287B3B6C00E9EEB5 /* AudioKitEX */; };
@@ -75,6 +76,7 @@
 		2100FF1E288C091500808241 /* Oscillator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oscillator.swift; sourceTree = "<group>"; };
 		211C71C42869FD40003D6342 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		21292C8F288094C60044F7B4 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		2132F83A28A675AD00F4342F /* SoundWavesLinkViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundWavesLinkViews.swift; sourceTree = "<group>"; };
 		21427A67287B41E800E9EEB5 /* TutorialsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialsMenu.swift; sourceTree = "<group>"; };
 		214F474C2889B65A003DA5F3 /* OscillatorsAndWaveformsTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OscillatorsAndWaveformsTutorial.swift; sourceTree = "<group>"; };
 		214F4750288AA418003DA5F3 /* SoundWavesTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundWavesTutorial.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				214F4750288AA418003DA5F3 /* SoundWavesTutorial.swift */,
+				2132F83A28A675AD00F4342F /* SoundWavesLinkViews.swift */,
 			);
 			path = SoundWavesTutorial;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21711E9428A2F783009E03C4 /* AmpEnvLinkViews.swift in Sources */,
+				2132F83B28A675AD00F4342F /* SoundWavesLinkViews.swift in Sources */,
 				21711E8628A2CFD9009E03C4 /* EnvelopesTutorial.swift in Sources */,
 				2154D571289AF1FB00FCCB2F /* FiltersTutorial.swift in Sources */,
 				215844262881FDB300257013 /* BasicControlsTutorial.swift in Sources */,

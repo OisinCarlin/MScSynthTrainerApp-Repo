@@ -63,7 +63,7 @@ struct OWSineOscillatorView: View {
             if(self.conductor.data.showKeyboard){
                 Text("Hold key to hold the note")
                 KeyboardControl(firstOctave: 3,
-                                octaveCount: 2,
+                                octaveCount: 1,
                                 polyphonicMode: false,
                                 delegate: conductor)
             }
@@ -128,7 +128,7 @@ struct OWTriangleOscillatorView: View {
             if(self.conductor.data.showKeyboard){
                 Text("Hold key to hold the note")
                 KeyboardControl(firstOctave: 3,
-                                octaveCount: 2,
+                                octaveCount: 1,
                                 polyphonicMode: false,
                                 delegate: conductor)
             }
@@ -193,7 +193,7 @@ struct OWSawtoothOscillatorView: View {
             if(self.conductor.data.showKeyboard){
                 Text("Hold key to hold the note")
                 KeyboardControl(firstOctave: 3,
-                                octaveCount: 2,
+                                octaveCount: 1,
                                 polyphonicMode: false,
                                 delegate: conductor)
             }
@@ -259,7 +259,7 @@ struct OWSquareOscillatorView: View {
             if(self.conductor.data.showKeyboard){
                 Text("Hold key to hold the note")
                 KeyboardControl(firstOctave: 3,
-                                octaveCount: 2,
+                                octaveCount: 1,
                                 polyphonicMode: false,
                                 delegate: conductor)
             }
@@ -333,7 +333,7 @@ struct PWMOscillatorView: View {
             if(self.conductor.data.showKeyboard){
                 Text("Hold key to hold the note")
                 KeyboardControl(firstOctave: 3,
-                                octaveCount: 2,
+                                octaveCount: 1,
                                 polyphonicMode: false,
                                 delegate: conductor)
             }
@@ -405,7 +405,7 @@ struct PWMGlideOscillatorView: View {
             if(self.conductor.data.showKeyboard){
                 Text("Hold key to hold the note")
                 KeyboardControl(firstOctave: 3,
-                                octaveCount: 2,
+                                octaveCount: 1,
                                 polyphonicMode: false,
                                 delegate: conductor)
             }
@@ -535,7 +535,7 @@ struct OWOscillatorView: View {
             if(self.conductor.data.showKeyboard){
                 Text("Hold key to hold the note")
                 KeyboardControl(firstOctave: 3,
-                                octaveCount: 2,
+                                octaveCount: 1,
                                 polyphonicMode: false,
                                 delegate: conductor)
             }

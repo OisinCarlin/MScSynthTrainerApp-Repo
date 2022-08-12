@@ -157,7 +157,7 @@ struct BasicControlsKeyboardOscillatorView: View {
 //                            range: 0 ... 1).padding()
             NodeOutputView(conductor.osc)
             KeyboardControl(firstOctave: 3,
-                            octaveCount: 2,
+                            octaveCount: 1,
                             polyphonicMode: false,
                             delegate: conductor)
             
@@ -197,7 +197,7 @@ struct BasicControlsGlideOscillatorView: View {
             
             NodeOutputView(conductor.osc)
             KeyboardControl(firstOctave: 3,
-                            octaveCount: 2,
+                            octaveCount: 1,
                             polyphonicMode: false,
                             delegate: conductor)
             

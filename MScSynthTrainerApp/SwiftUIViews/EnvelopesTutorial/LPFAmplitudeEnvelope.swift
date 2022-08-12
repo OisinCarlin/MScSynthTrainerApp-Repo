@@ -181,7 +181,7 @@ struct LPFAmpEnvView: View {
             }
 
             KeyboardControl(firstOctave: 3,
-                            octaveCount: 2,
+                            octaveCount: 1,
                             polyphonicMode: false,
                             delegate: conductor)
  
