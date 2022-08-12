@@ -168,9 +168,16 @@ struct BRFAmpEnvView: View {
             }
 
             
-            ParameterSlider(text: " Master Amplitude",
-                            parameter: self.$conductor.data.amplitude,
-                            range: 0 ... 1)
+            HStack{
+                ParameterSlider(text: " Master Amplitude",
+                                parameter: self.$conductor.data.amplitude,
+                                range: 0 ... 1).padding()
+                VStack{
+                    Text(" /1   ")
+                    Text(" ")
+                    Text(" ")
+                }
+            }
 
             KeyboardControl(firstOctave: 3,
                             octaveCount: 2,

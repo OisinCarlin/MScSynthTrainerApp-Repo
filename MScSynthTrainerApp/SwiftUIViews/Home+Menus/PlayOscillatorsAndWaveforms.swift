@@ -106,7 +106,26 @@ struct PlayOscillatorsAndWaveforms: View {
                                     .lineLimit(2)
                             }
                         }
-                    }  
+                    }
+                    
+                    NavigationLink(destination:  OWOscillatorView()){
+                        HStack {
+                            Image("vco")
+                                .resizable()
+                                .renderingMode(.original)
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 80, height: 80)
+                            VStack(alignment: .leading) {
+                                Text("Oscillator with Pitch and Amplitude")
+                                    .font(.headline)
+                                    .fontWeight(.bold)
+                                Text("")
+                                    .font(.subheadline)
+                                    .foregroundColor(Color.gray)
+                                    .lineLimit(2)
+                            }
+                        }
+                    }
                 }
             }
         }.navigationBarTitle("Play")
@@ -118,3 +137,4 @@ struct PlayOscillatorsAndWaveforms_Previews: PreviewProvider {
         PlayOscillatorsAndWaveforms()
     }
 }
+

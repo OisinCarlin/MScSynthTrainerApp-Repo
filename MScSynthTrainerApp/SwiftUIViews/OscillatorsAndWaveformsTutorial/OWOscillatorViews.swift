@@ -22,24 +22,32 @@ struct OWSineOscillatorView: View {
     var body: some View {
         VStack {
             
-            Text(self.conductor.data.isPlaying ? "Pause" : "Play").onTapGesture {
+            Text(self.conductor.data.isPlaying ? "||" : "▶︎").onTapGesture {
                 self.conductor.data.isPlaying.toggle()
             }.foregroundColor(self.conductor.data.isPlaying ? .orange : .green).font(Font.body.bold())
                 .padding()
                 .border(self.conductor.data.isPlaying ? .orange : .green, width: 4)
             
             if(self.conductor.data.showKeyboard == false){
-                ParameterSlider(text: "Frequency",
-                                parameter: self.$conductor.data.frequency,
-                                range: 20...880).padding()
+                HStack{
+                    ParameterSlider(text: "Frequency",
+                                    parameter: self.$conductor.data.frequency,
+                                    range: 20...880).padding()
+                    VStack{
+                        Text("Hz ")
+                        Text(" ")
+                        Text(" ")
+                    }
+                    
+                }
             }
             
-            ParameterSlider(text: "Amplitude",
-                            parameter: self.$conductor.data.amplitude,
-                            range: 0 ... 1).padding()
-            ParameterSlider(text: "Glide",
-                            parameter: self.$conductor.data.rampDuration,
-                            range: 0...10).padding()
+//            ParameterSlider(text: "Amplitude",
+//                            parameter: self.$conductor.data.amplitude,
+//                            range: 0 ... 1).padding()
+//            ParameterSlider(text: "Glide",
+//                            parameter: self.$conductor.data.rampDuration,
+//                            range: 0...10).padding()
             
             //Show Keyboard button
             
@@ -77,7 +85,7 @@ struct OWTriangleOscillatorView: View {
     var body: some View {
         VStack {
             
-            Text(self.conductor.data.isPlaying ? "Pause" : "Play").onTapGesture {
+            Text(self.conductor.data.isPlaying ? "||" : "▶︎").onTapGesture {
                 self.conductor.data.isPlaying.toggle()
             }.foregroundColor(self.conductor.data.isPlaying ? .orange : .green).font(Font.body.bold())
                 .padding()
@@ -86,17 +94,25 @@ struct OWTriangleOscillatorView: View {
             
             
             if(self.conductor.data.showKeyboard == false){
-                ParameterSlider(text: "Frequency",
-                                parameter: self.$conductor.data.frequency,
-                                range: 20...880).padding()
+                HStack{
+                    ParameterSlider(text: "Frequency",
+                                    parameter: self.$conductor.data.frequency,
+                                    range: 20...880).padding()
+                    VStack{
+                        Text("Hz ")
+                        Text(" ")
+                        Text(" ")
+                    }
+                    
+                }
             }
             
-            ParameterSlider(text: "Amplitude",
-                            parameter: self.$conductor.data.amplitude,
-                            range: 0 ... 1).padding()
-            ParameterSlider(text: "Glide",
-                            parameter: self.$conductor.data.rampDuration,
-                            range: 0...10).padding()
+//            ParameterSlider(text: "Amplitude",
+//                            parameter: self.$conductor.data.amplitude,
+//                            range: 0 ... 1).padding()
+//            ParameterSlider(text: "Glide",
+//                            parameter: self.$conductor.data.rampDuration,
+//                            range: 0...10).padding()
             
             //Show Keyboard button
             
@@ -134,7 +150,7 @@ struct OWSawtoothOscillatorView: View {
     
     var body: some View {
         VStack {
-            Text(self.conductor.data.isPlaying ? "Pause" : "Play").onTapGesture {
+            Text(self.conductor.data.isPlaying ? "||" : "▶︎").onTapGesture {
                 self.conductor.data.isPlaying.toggle()
             }.foregroundColor(self.conductor.data.isPlaying ? .orange : .green).font(Font.body.bold())
                 .padding()
@@ -143,17 +159,25 @@ struct OWSawtoothOscillatorView: View {
             
             
             if(self.conductor.data.showKeyboard == false){
-                ParameterSlider(text: "Frequency",
-                                parameter: self.$conductor.data.frequency,
-                                range: 20...880).padding()
+                HStack{
+                    ParameterSlider(text: "Frequency",
+                                    parameter: self.$conductor.data.frequency,
+                                    range: 20...880).padding()
+                    VStack{
+                        Text("Hz ")
+                        Text(" ")
+                        Text(" ")
+                    }
+                    
+                }
             }
-            
-            ParameterSlider(text: "Amplitude",
-                            parameter: self.$conductor.data.amplitude,
-                            range: 0 ... 1).padding()
-            ParameterSlider(text: "Glide",
-                            parameter: self.$conductor.data.rampDuration,
-                            range: 0...10).padding()
+//
+//            ParameterSlider(text: "Amplitude",
+//                            parameter: self.$conductor.data.amplitude,
+//                            range: 0 ... 1).padding()
+//            ParameterSlider(text: "Glide",
+//                            parameter: self.$conductor.data.rampDuration,
+//                            range: 0...10).padding()
             
             //Show Keyboard button
             
@@ -192,7 +216,7 @@ struct OWSquareOscillatorView: View {
     var body: some View {
         VStack {
 
-            Text(self.conductor.data.isPlaying ? "Pause" : "Play").onTapGesture {
+            Text(self.conductor.data.isPlaying ? "||" : "▶︎").onTapGesture {
                 self.conductor.data.isPlaying.toggle()
             }.foregroundColor(self.conductor.data.isPlaying ? .orange : .green).font(Font.body.bold())
                 .padding()
@@ -201,17 +225,25 @@ struct OWSquareOscillatorView: View {
             
             
             if(self.conductor.data.showKeyboard == false){
-                ParameterSlider(text: "Frequency",
-                                parameter: self.$conductor.data.frequency,
-                                range: 20...880).padding()
+                HStack{
+                    ParameterSlider(text: "Frequency",
+                                    parameter: self.$conductor.data.frequency,
+                                    range: 20...880).padding()
+                    VStack{
+                        Text("Hz ")
+                        Text(" ")
+                        Text(" ")
+                    }
+                    
+                }
             }
             
-            ParameterSlider(text: "Amplitude",
-                            parameter: self.$conductor.data.amplitude,
-                            range: 0 ... 1).padding()
-            ParameterSlider(text: "Glide",
-                            parameter: self.$conductor.data.rampDuration,
-                            range: 0...10).padding()
+//            ParameterSlider(text: "Amplitude",
+//                            parameter: self.$conductor.data.amplitude,
+//                            range: 0 ... 1).padding()
+//            ParameterSlider(text: "Glide",
+//                            parameter: self.$conductor.data.rampDuration,
+//                            range: 0...10).padding()
             
             //Show Keyboard button
             
@@ -249,7 +281,7 @@ struct PWMOscillatorView: View {
     
     var body: some View {
         VStack {
-            Text(self.conductor.data.isPlaying ? "Pause" : "Play").onTapGesture {
+            Text(self.conductor.data.isPlaying ? "||" : "▶︎").onTapGesture {
                 self.conductor.data.isPlaying.toggle()
             }.foregroundColor(self.conductor.data.isPlaying ? .orange : .green).font(Font.body.bold())
                 .padding()
@@ -259,16 +291,110 @@ struct PWMOscillatorView: View {
                             parameter: self.$conductor.data.pulseWidth,
                             range: 0 ... 1).padding(5)
             if(self.conductor.data.showKeyboard == false){
-                ParameterSlider(text: "Frequency",
-                                parameter: self.$conductor.data.frequency,
-                                range: 20...880).padding()
+                HStack{
+                    ParameterSlider(text: "Frequency",
+                                    parameter: self.$conductor.data.frequency,
+                                    range: 20...880).padding()
+                    VStack{
+                        Text("Hz ")
+                        Text(" ")
+                        Text(" ")
+                    }
+                    
+                }
             }
-            ParameterSlider(text: "Amplitude",
-                            parameter: self.$conductor.data.amplitude,
+//            HStack{
+//                ParameterSlider(text: "Amplitude",
+//                                parameter: self.$conductor.data.amplitude,
+//                                range: 0 ... 1).padding()
+//                VStack{
+//                    Text(" /1   ")
+//                    Text(" ")
+//                    Text(" ")
+//                }
+//            }
+//            HStack{
+//            ParameterSlider(text: "Glide Time",
+//                            parameter: self.$conductor.data.rampDuration,
+//                            range: 0...10).padding()
+//                VStack{
+//                    Text("secs ")
+//                    Text(" ")
+//                    Text(" ")
+//                }
+//            }
+            
+            Text(self.conductor.data.showKeyboard ? "Hide Keyboard" : "Show Keyboard").onTapGesture {
+                self.conductor.data.showKeyboard.toggle()
+            }.foregroundColor(.red).font(Font.body.bold())
+            
+            NodeOutputView(conductor.osc)
+            
+            if(self.conductor.data.showKeyboard){
+                Text("Hold key to hold the note")
+                KeyboardControl(firstOctave: 3,
+                                octaveCount: 2,
+                                polyphonicMode: false,
+                                delegate: conductor)
+            }
+            
+        }.cookbookNavBarTitle("Play with Pulse Wave")
+            .onAppear {
+                self.conductor.start()
+            }
+            .onDisappear {
+                self.conductor.stop()
+            }
+    }
+}
+
+struct PWMGlideOscillatorView: View {
+    @StateObject var conductor = PWMOscillatorConductor()
+    
+    var body: some View {
+        VStack {
+            Text(self.conductor.data.isPlaying ? "||" : "▶︎").onTapGesture {
+                self.conductor.data.isPlaying.toggle()
+            }.foregroundColor(self.conductor.data.isPlaying ? .orange : .green).font(Font.body.bold())
+                .padding()
+                .border(self.conductor.data.isPlaying ? .orange : .green, width: 4)
+            
+            ParameterSlider(text: "Pulse Width",
+                            parameter: self.$conductor.data.pulseWidth,
                             range: 0 ... 1).padding(5)
-            ParameterSlider(text: "Glide",
+            if(self.conductor.data.showKeyboard == false){
+                HStack{
+                    ParameterSlider(text: "Frequency",
+                                    parameter: self.$conductor.data.frequency,
+                                    range: 20...880).padding()
+                    VStack{
+                        Text("Hz ")
+                        Text(" ")
+                        Text(" ")
+                    }
+                    
+                }
+            }
+            HStack{
+                ParameterSlider(text: "Amplitude",
+                                parameter: self.$conductor.data.amplitude,
+                                range: 0 ... 1).padding()
+                VStack{
+                    Text(" /1   ")
+                    Text(" ")
+                    Text(" ")
+                }
+            }
+            HStack{
+            ParameterSlider(text: "Glide Time",
                             parameter: self.$conductor.data.rampDuration,
-                            range: 0...10).padding(5)
+                            range: 0...10).padding()
+                VStack{
+                    Text("secs ")
+                    Text(" ")
+                    Text(" ")
+                }
+            }
             
             Text(self.conductor.data.showKeyboard ? "Hide Keyboard" : "Show Keyboard").onTapGesture {
                 self.conductor.data.showKeyboard.toggle()
@@ -305,7 +431,7 @@ struct OWOscillatorView: View {
     var body: some View {
         VStack {
             
-            Text(self.conductor.data.isPlaying ? "Pause" : "Play").onTapGesture {
+            Text(self.conductor.data.isPlaying ? "||" : "▶︎").onTapGesture {
                 self.conductor.data.isPlaying.toggle()
             }.foregroundColor(self.conductor.data.isPlaying ? .orange : .green).font(Font.body.bold())
                 .padding()
@@ -354,7 +480,7 @@ struct OWOscillatorView: View {
                     self.didTapSawtooth = true
                 }                .foregroundColor(didTapSawtooth ? Color.red : Color.black).font(Font.body.bold())
                 //                Spacer()
-                NavigationLink(destination: PWMOscillatorView()){
+                NavigationLink(destination: PWMGlideOscillatorView()){
                     Text("Pulse").foregroundColor(.purple).font(Font.body.bold())
                 }.padding()
                 Spacer()
@@ -362,17 +488,40 @@ struct OWOscillatorView: View {
             }
  
             if(self.conductor.data.showKeyboard == false){
-                ParameterSlider(text: "Frequency",
-                                parameter: self.$conductor.data.frequency,
-                                range: 20...880).padding()
+                HStack{
+                    ParameterSlider(text: "Frequency",
+                                    parameter: self.$conductor.data.frequency,
+                                    range: 20...880).padding()
+                    VStack{
+                        Text("Hz ")
+                        Text(" ")
+                        Text(" ")
+                    }
+                    
+                }
             }
             
-            ParameterSlider(text: "Amplitude",
-                            parameter: self.$conductor.data.amplitude,
-                            range: 0 ... 1).padding()
-            ParameterSlider(text: "Glide",
+            HStack{
+                ParameterSlider(text: "Amplitude",
+                                parameter: self.$conductor.data.amplitude,
+                                range: 0 ... 1).padding()
+                VStack{
+                    Text(" /1   ")
+                    Text(" ")
+                    Text(" ")
+                }
+            }
+            
+            HStack{
+            ParameterSlider(text: "Glide Time",
                             parameter: self.$conductor.data.rampDuration,
                             range: 0...10).padding()
+                VStack{
+                    Text("secs ")
+                    Text(" ")
+                    Text(" ")
+                }
+            }
             
             //Show Keyboard button
             

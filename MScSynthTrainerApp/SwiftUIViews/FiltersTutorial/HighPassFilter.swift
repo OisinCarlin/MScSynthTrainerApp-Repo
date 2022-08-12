@@ -105,7 +105,7 @@ struct HighPassFilterView: View {
             //                self.conductor.data.isPlaying.toggle()
             //            }.foregroundColor(.green).font(Font.body.bold())
             
-            Text(self.conductor.data.isPlaying ? "Pause" : "Play").onTapGesture {
+            Text(self.conductor.data.isPlaying ? "||" : "▶︎").onTapGesture {
                 self.conductor.data.isPlaying.toggle()
             }.foregroundColor(self.conductor.data.isPlaying ? .orange : .green).font(Font.body.bold())
                 .padding()
@@ -157,17 +157,33 @@ struct HighPassFilterView: View {
                 Spacer()
             }
             if(self.conductor.data.showKeyboard == false){
-                ParameterSlider(text: "Frequency",
-                                parameter: self.$conductor.data.frequency,
-                                range: 20...880)
+                HStack{
+                    ParameterSlider(text: "Frequency",
+                                    parameter: self.$conductor.data.frequency,
+                                    range: 20...880).padding()
+                    VStack{
+                        Text("Hz ")
+                        Text(" ")
+                        Text(" ")
+                    }
+                    
+                }
                 //                        .padding()
             }
             
-            ParameterSlider(text: "Amplitude",
-                            parameter: self.$conductor.data.amplitude,
-                            range: 0 ... 1)
-            //                    .padding()
-            //               NodeOutputView(conductor.osc)
+            HStack{
+                ParameterSlider(text: "Amplitude",
+                                parameter: self.$conductor.data.amplitude,
+                                range: 0 ... 1).padding()
+                VStack{
+                    Text(" /1   ")
+                    Text(" ")
+                    Text(" ")
+                }
+            }
+
+            
+//             NodeOutputView(conductor.osc)
             
             //Show Keyboard button
             Text(self.conductor.data.showKeyboard ? "Hide Keyboard" : "Show Keyboard").onTapGesture {

@@ -47,7 +47,7 @@ struct OscillatorsAndWaveformsTutorial: View {
                           description: "Pulse waveforms look similar to square waveforms and sound similarly buzzy and hollow, but alternate between wider and narrower rectangle shapes. The width of these waves can be changed though 'Pulse-width modulation' (PWM). If the waves have the same width - they are 'square waves'. Changing the width affects the character of the sound.")
             OWVCOLinkView(systemImageName1: "vco",
                           title: "Oscillators",
-                          description: "'Oscillators' (or 'VCOs') are the parts of synths that make sounds from different waveforms you can choose. Other synth parts can then sculpt these basic sounds into more interesting sounds. We will now attatch the Oscillator controls to the synth so you can play with the different waveforms you have learned about.")
+                          description: "'Oscillators' (or 'VCOs') are the parts of synths that make sounds from different waveforms you can choose. Other synth parts can then sculpt these basic sounds into more interesting sounds. We will now attatch the Oscillator controls to the synth with Pitch and Amplitude so you can play with the different waveforms you have learned about.")
             
 
         }
