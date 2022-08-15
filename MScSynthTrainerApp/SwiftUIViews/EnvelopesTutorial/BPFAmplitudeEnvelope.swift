@@ -171,7 +171,8 @@ struct BPFAmpEnvView: View {
             HStack{
                 ParameterSlider(text: " Master Amplitude",
                                 parameter: self.$conductor.data.amplitude,
-                                range: 0 ... 1).padding()
+                                range: 0 ... 1)
+                    .padding()
                 VStack{
                     Text(" /1   ")
                     Text(" ")
@@ -193,10 +194,10 @@ struct BPFAmpEnvView: View {
                             parameter: self.$conductor.data.bandwidth,
                             range: 0.0...20_000.0,
                             units: "Hertz")
-            ParameterSlider(text: "Filter Mix",
-                            parameter: self.$conductor.data.balance,
-                            range: 0...1,
-                            units: "%")
+//            ParameterSlider(text: "Filter Mix",
+//                            parameter: self.$conductor.data.balance,
+//                            range: 0...1,
+//                            units: "%")
             
             
         }

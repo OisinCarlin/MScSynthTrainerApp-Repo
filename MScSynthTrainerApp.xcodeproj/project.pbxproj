@@ -23,6 +23,11 @@
 		21427A63287B3C3F00E9EEB5 /* SporthAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 21427A62287B3C3F00E9EEB5 /* SporthAudioKit */; };
 		21427A66287B3C9600E9EEB5 /* STKAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 21427A65287B3C9600E9EEB5 /* STKAudioKit */; };
 		21427A68287B41E800E9EEB5 /* TutorialsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21427A67287B41E800E9EEB5 /* TutorialsMenu.swift */; };
+		214F01EC28AA815500655803 /* QuizMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F01EB28AA815400655803 /* QuizMenu.swift */; };
+		214F01EE28AA824600655803 /* q1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F01ED28AA824600655803 /* q1.swift */; };
+		214F01F028AA8AD200655803 /* q2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F01EF28AA8AD200655803 /* q2.swift */; };
+		214F01F228AA97A800655803 /* QuizSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F01F128AA97A800655803 /* QuizSummary.swift */; };
+		214F01F428AAA14C00655803 /* ScoreTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F01F328AAA14A00655803 /* ScoreTracker.swift */; };
 		214F474D2889B65A003DA5F3 /* OscillatorsAndWaveformsTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F474C2889B65A003DA5F3 /* OscillatorsAndWaveformsTutorial.swift */; };
 		214F4751288AA418003DA5F3 /* SoundWavesTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F4750288AA418003DA5F3 /* SoundWavesTutorial.swift */; };
 		214F4755288AA757003DA5F3 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F4754288AA757003DA5F3 /* OnboardView.swift */; };
@@ -78,6 +83,11 @@
 		21292C8F288094C60044F7B4 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		2132F83A28A675AD00F4342F /* SoundWavesLinkViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundWavesLinkViews.swift; sourceTree = "<group>"; };
 		21427A67287B41E800E9EEB5 /* TutorialsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialsMenu.swift; sourceTree = "<group>"; };
+		214F01EB28AA815400655803 /* QuizMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizMenu.swift; sourceTree = "<group>"; };
+		214F01ED28AA824600655803 /* q1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = q1.swift; sourceTree = "<group>"; };
+		214F01EF28AA8AD200655803 /* q2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = q2.swift; sourceTree = "<group>"; };
+		214F01F128AA97A800655803 /* QuizSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSummary.swift; sourceTree = "<group>"; };
+		214F01F328AAA14A00655803 /* ScoreTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTracker.swift; sourceTree = "<group>"; };
 		214F474C2889B65A003DA5F3 /* OscillatorsAndWaveformsTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OscillatorsAndWaveformsTutorial.swift; sourceTree = "<group>"; };
 		214F4750288AA418003DA5F3 /* SoundWavesTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundWavesTutorial.swift; sourceTree = "<group>"; };
 		214F4754288AA757003DA5F3 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
@@ -146,6 +156,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		214F01EA28AA813D00655803 /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				214F01EB28AA815400655803 /* QuizMenu.swift */,
+				214F01F128AA97A800655803 /* QuizSummary.swift */,
+				214F01EF28AA8AD200655803 /* q2.swift */,
+				214F01ED28AA824600655803 /* q1.swift */,
+				214F01F328AAA14A00655803 /* ScoreTracker.swift */,
+			);
+			path = Quiz;
+			sourceTree = "<group>";
+		};
 		2154D56F289AF1CD00FCCB2F /* Filter Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +326,7 @@
 		21F276F52874D80E00152B32 /* SwiftUIViews */ = {
 			isa = PBXGroup;
 			children = (
+				214F01EA28AA813D00655803 /* Quiz */,
 				21711E7528A28D41009E03C4 /* OnboardViews */,
 				21711E7428A28D1F009E03C4 /* Home+Menus */,
 				21711E7628A28D6D009E03C4 /* BasicControlsTutorial */,
@@ -480,6 +503,7 @@
 			files = (
 				21711E9428A2F783009E03C4 /* AmpEnvLinkViews.swift in Sources */,
 				2132F83B28A675AD00F4342F /* SoundWavesLinkViews.swift in Sources */,
+				214F01F028AA8AD200655803 /* q2.swift in Sources */,
 				21711E8628A2CFD9009E03C4 /* EnvelopesTutorial.swift in Sources */,
 				2154D571289AF1FB00FCCB2F /* FiltersTutorial.swift in Sources */,
 				215844262881FDB300257013 /* BasicControlsTutorial.swift in Sources */,
@@ -504,16 +528,19 @@
 				218C8CBF2862668A00154F87 /* LoginViewController.swift in Sources */,
 				216E0A4428A163A80010E840 /* OscillatorData+Conductors.swift in Sources */,
 				21427A68287B41E800E9EEB5 /* TutorialsMenu.swift in Sources */,
+				214F01EC28AA815500655803 /* QuizMenu.swift in Sources */,
 				2100BD6A289DB23D00CBF322 /* BandRejectFilter.swift in Sources */,
 				21F4F13B28849494003CED52 /* KeyboardControl.swift in Sources */,
 				2100FF1F288C091500808241 /* Oscillator.swift in Sources */,
 				218C8CA92862662000154F87 /* SceneDelegate.swift in Sources */,
 				214F4755288AA757003DA5F3 /* OnboardView.swift in Sources */,
+				214F01F228AA97A800655803 /* QuizSummary.swift in Sources */,
 				21711E6F28A28913009E03C4 /* OWLinkViews.swift in Sources */,
 				21711E8028A2CF14009E03C4 /* AmplitudeEnvelope.swift in Sources */,
 				21A4C9B728997F9200366ED0 /* PlotView.swift in Sources */,
 				21292C90288094C60044F7B4 /* UserDefaults.swift in Sources */,
 				2163BEF028A3F97D00CB2A5C /* PlayMenu.swift in Sources */,
+				214F01EE28AA824600655803 /* q1.swift in Sources */,
 				2163BEF828A401C400CB2A5C /* PlayEnvelopes.swift in Sources */,
 				2163BEFC28A40CF300CB2A5C /* BasicControlsLinkViews.swift in Sources */,
 				21711E8428A2CFBE009E03C4 /* LPFAmplitudeEnvelope.swift in Sources */,
@@ -524,6 +551,7 @@
 				21711E8228A2CF53009E03C4 /* ADSRView.swift in Sources */,
 				21711E9228A2F697009E03C4 /* BRFAmplitudeEnvelope.swift in Sources */,
 				21A4C9B328997F1600366ED0 /* LowPassFilter.swift in Sources */,
+				214F01F428AAA14C00655803 /* ScoreTracker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,6 +30,9 @@ struct PlayMenu: View {
                             }
                         }
                     }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+//                    .padding()
+                    .border(.red, width: 4)
 //                    NavigationLink(destination: SoundWavesTutorial()){
 //                        HStack {
 //                            Image("soundWave2")
@@ -66,6 +69,10 @@ struct PlayMenu: View {
                             }
                         }
                     }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+//                    .padding()
+                    .border(.yellow, width: 4)
+                    
                     NavigationLink(destination: PlayFilters()){
                         HStack {
                             Image("lowPassFilter")
@@ -84,6 +91,10 @@ struct PlayMenu: View {
                             }
                         }
                     }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+//                    .padding()
+                    .border(.green, width: 4)
+                    
                     NavigationLink(destination: PlayEnvelopes()){
                         HStack {
                             Image("envelope")
@@ -102,6 +113,10 @@ struct PlayMenu: View {
                             }
                         }
                     }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+//                    .padding()
+                    .border(.blue, width: 4)
+                    
                 }
             }
         }.navigationBarTitle("Play")

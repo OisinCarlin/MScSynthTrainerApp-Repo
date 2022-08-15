@@ -92,14 +92,6 @@ struct LowPassFilterView: View {
     var body: some View {
         //                ScrollView {
         VStack {
-            
-            
-            //            Text(self.conductor.data.isPlaying ? "Pause" : "Play").onTapGesture {
-            //                self.conductor.data.isPlaying.toggle()
-            //            }.foregroundColor(.green).font(Font.body.bold())
-            //
-            //
-            
             Text(self.conductor.data.isPlaying ? "||" : "▶︎").onTapGesture {
                 self.conductor.data.isPlaying.toggle()
             }.foregroundColor(self.conductor.data.isPlaying ? .orange : .green).font(Font.body.bold())
@@ -169,7 +161,8 @@ struct LowPassFilterView: View {
             HStack{
                 ParameterSlider(text: "Amplitude",
                                 parameter: self.$conductor.data.amplitude,
-                                range: 0 ... 1).padding()
+                                range: 0 ... 1)
+//                    .padding()
                 VStack{
                     Text(" /1   ")
                     Text(" ")
@@ -203,10 +196,10 @@ struct LowPassFilterView: View {
                             parameter: self.$conductor.data.resonance,
                             range: -20...40,
                             units: "dB")
-            ParameterSlider(text: "Filter Mix",
-                            parameter: self.$conductor.data.balance,
-                            range: 0...1,
-                            units: "%")
+//            ParameterSlider(text: "Filter Mix",
+//                            parameter: self.$conductor.data.balance,
+//                            range: 0...1,
+//                            units: "%")
             
             
         }

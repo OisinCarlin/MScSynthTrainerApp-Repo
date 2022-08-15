@@ -77,6 +77,7 @@ struct OWSineOscillatorView: View {
                 self.conductor.stop()
             }
     }
+    
 }
 
 struct OWTriangleOscillatorView: View {

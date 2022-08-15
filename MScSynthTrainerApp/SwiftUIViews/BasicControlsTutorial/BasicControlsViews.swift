@@ -94,6 +94,7 @@ struct BasicControlsAmplitudeOscillatorView: View {
             NodeOutputView(conductor.osc)
             
         }.cookbookNavBarTitle("Play with Amplitude")
+        
             .onAppear {
                 self.conductor.start()
                 

@@ -98,13 +98,7 @@ struct BandRejectFilterView: View {
     @State private var didTapSawtooth:Bool = false
     
     var body: some View {
-        //                ScrollView {
         VStack {
-            
-            
-            //            Text(self.conductor.data.isPlaying ? "Pause" : "Play").onTapGesture {
-            //                self.conductor.data.isPlaying.toggle()
-            //            }.foregroundColor(.green).font(Font.body.bold())
             
             Text(self.conductor.data.isPlaying ? "||" : "▶︎").onTapGesture {
                 self.conductor.data.isPlaying.toggle()
@@ -174,7 +168,8 @@ struct BandRejectFilterView: View {
             HStack{
                 ParameterSlider(text: "Amplitude",
                                 parameter: self.$conductor.data.amplitude,
-                                range: 0 ... 1).padding()
+                                range: 0 ... 1)
+//                    .padding()
                 VStack{
                     Text(" /1   ")
                     Text(" ")
@@ -206,10 +201,10 @@ struct BandRejectFilterView: View {
                             parameter: self.$conductor.data.bandwidth,
                             range: 0.0...20_000.0,
                             units: "Hertz")
-            ParameterSlider(text: "Filter Mix",
-                            parameter: self.$conductor.data.balance,
-                            range: 0...1,
-                            units: "%")
+//            ParameterSlider(text: "Filter Mix",
+//                            parameter: self.$conductor.data.balance,
+//                            range: 0...1,
+//                            units: "%")
             
             
         }

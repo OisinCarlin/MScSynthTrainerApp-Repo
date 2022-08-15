@@ -174,7 +174,8 @@ struct HighPassFilterView: View {
             HStack{
                 ParameterSlider(text: "Amplitude",
                                 parameter: self.$conductor.data.amplitude,
-                                range: 0 ... 1).padding()
+                                range: 0 ... 1)
+//                    .padding()
                 VStack{
                     Text(" /1   ")
                     Text(" ")
@@ -207,10 +208,10 @@ struct HighPassFilterView: View {
                             parameter: self.$conductor.data.resonance,
                             range: -20...40,
                             units: "dB")
-            ParameterSlider(text: "Filter Mix",
-                            parameter: self.$conductor.data.balance,
-                            range: 0...1,
-                            units: "%")
+//            ParameterSlider(text: "Filter Mix",
+//                            parameter: self.$conductor.data.balance,
+//                            range: 0...1,
+//                            units: "%")
             
             
         }

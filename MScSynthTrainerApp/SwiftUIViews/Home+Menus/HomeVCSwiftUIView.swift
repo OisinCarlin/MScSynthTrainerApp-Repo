@@ -20,6 +20,8 @@ import AVFoundation
 
 struct HomeVCSwiftUIView: View {
     
+    //Score Tracker
+//    @StateObject var scoreTracker = ScoreTracker()
     
     var body: some View {
         // If reverting from Menu Navigation view, delete MasterView, TutorialsMenu and DynamicOscillatorView and just present text
@@ -28,7 +30,12 @@ struct HomeVCSwiftUIView: View {
         //            .padding(25)
         NavigationView {
             MasterView()
-        }.navigationViewStyle(DoubleColumnNavigationViewStyle())
+        }
+        //Score Tracker
+        .environmentObject(ScoreTracker())
+        .navigationViewStyle(DoubleColumnNavigationViewStyle())
+        
+        
     }
 }
 
@@ -99,61 +106,61 @@ struct MasterView: View {
                             }
                         }
                     }
-                    //                    NavigationLink(destination: TutorialsMenu()){
-                    //                        HStack {
-                    //                            Image("quiz")
-                    //                                .resizable()
-                    //                                .renderingMode(.original)
-                    //                                .aspectRatio(contentMode: .fit)
-                    //                                .frame(width: 80, height: 80)
-                    //                            VStack(alignment: .leading) {
-                    //                                Text("Quiz")
-                    //                                    .font(.headline)
-                    //                                    .fontWeight(.bold)
-                    //                                Text("Test your learning so far with our quizzes!")
-                    //                                    .font(.subheadline)
-                    //                                    .foregroundColor(Color.gray)
-                    //                                    .lineLimit(2)
-                    //                            }
-                    //                        }
-                    //                    }
-                    //                    NavigationLink(destination: TutorialsMenu()){
-                    //                        HStack {
-                    //                            Image("progress")
-                    //                                .resizable()
-                    //                                .renderingMode(.original)
-                    //                                .aspectRatio(contentMode: .fit)
-                    //                                .frame(width: 80, height: 80)
-                    //                            VStack(alignment: .leading) {
-                    //                                Text("Progress")
-                    //                                    .font(.headline)
-                    //                                    .fontWeight(.bold)
-                    //                                Text("Check out how your sonic journey is going so far.")
-                    //                                    .font(.subheadline)
-                    //                                    .foregroundColor(Color.gray)
-                    //                                    .lineLimit(2)
-                    //                            }
-                    //                        }
-                    //                    }
+                    NavigationLink(destination: QuizMenu()){
+                        HStack {
+                            Image("quiz")
+                                .resizable()
+                                .renderingMode(.original)
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 80, height: 80)
+                            VStack(alignment: .leading) {
+                                Text("Quiz")
+                                    .font(.headline)
+                                    .fontWeight(.bold)
+                                Text("Test your learning so far with our quizzes!")
+                                    .font(.subheadline)
+                                    .foregroundColor(Color.gray)
+                                    .lineLimit(2)
+                            }
+                        }
+                    }
+//                    NavigationLink(destination: TutorialsMenu()){
+                        //                        HStack {
+                        //                            Image("progress")
+                        //                                .resizable()
+                        //                                .renderingMode(.original)
+                        //                                .aspectRatio(contentMode: .fit)
+                        //                                .frame(width: 80, height: 80)
+                        //                            VStack(alignment: .leading) {
+                        //                                Text("Progress")
+                        //                                    .font(.headline)
+                        //                                    .fontWeight(.bold)
+                        //                                Text("Check out how your sonic journey is going so far.")
+                        //                                    .font(.subheadline)
+                        //                                    .foregroundColor(Color.gray)
+                        //                                    .lineLimit(2)
+                        //                            }
+                        //                        }
+                        //                    }
+                    }
+                    
                 }
-                
             }
+            .navigationBarTitle("SynthTrainer")
+            .navigationBarItems(
+                trailing:
+                    HStack{
+                        //
+                    }
+            )
         }
-        .navigationBarTitle("SynthTrainer")
-        .navigationBarItems(
-            trailing:
-                HStack{
-                    //
-                }
-        )
     }
-}
-
-
-
-struct HomeVCSwiftUIView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeVCSwiftUIView()
+    
+    
+    
+    struct HomeVCSwiftUIView_Previews: PreviewProvider {
+        static var previews: some View {
+            HomeVCSwiftUIView()
+        }
     }
-}
-
+    

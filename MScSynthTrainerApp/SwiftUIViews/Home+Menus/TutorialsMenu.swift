@@ -33,6 +33,12 @@ struct TutorialsMenu: View {
                             }
                         }
                     }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+//                    .padding()
+                    .border(.red, width: 4)
+                    
+//                    .background(Color.red)
+                    
                     NavigationLink(destination: SoundWavesTutorial()){
                         HStack {
                             Image("soundWave2")
@@ -51,6 +57,10 @@ struct TutorialsMenu: View {
                             }
                         }
                     }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+//                    .padding()
+                    .border(.orange, width: 4)
+                    
                     NavigationLink(destination: OscillatorsAndWaveformsTutorial()){
                         HStack {
                             Image("waveOscillator")
@@ -69,6 +79,10 @@ struct TutorialsMenu: View {
                             }
                         }
                     }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+//                    .padding()
+                    .border(.yellow, width: 4)
+                    
                     NavigationLink(destination: FiltersTutorial()){
                         HStack {
                             Image("lowPassFilter")
@@ -87,6 +101,10 @@ struct TutorialsMenu: View {
                             }
                         }
                     }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+//                    .padding()
+                    .border(.green, width: 4)
+                    
                     NavigationLink(destination: EnvelopesTutorial()){
                         HStack {
                             Image("envelope")
@@ -105,6 +123,9 @@ struct TutorialsMenu: View {
                             }
                         }
                     }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+//                    .padding()
+                    .border(.blue, width: 4)
 //                    NavigationLink(destination: TutorialsMenu()){
 //                        HStack {
 //                            Image("map")

@@ -151,7 +151,8 @@ struct AmplitudeEnvelopeView: View {
             HStack{
                 ParameterSlider(text: " Master Amplitude",
                                 parameter: self.$conductor.data.amplitude,
-                                range: 0 ... 1).padding()
+                                range: 0 ... 1)
+                    .padding()
                 VStack{
                     Text(" /1   ")
                     Text(" ")
