@@ -33,6 +33,8 @@ struct HomeVCSwiftUIView: View {
         }
         //Score Tracker
         .environmentObject(ScoreTracker())
+        .environmentObject(QuestionCount())
+        
         .navigationViewStyle(DoubleColumnNavigationViewStyle())
         
         
@@ -106,7 +108,9 @@ struct MasterView: View {
                             }
                         }
                     }
-                    NavigationLink(destination: QuizMenu()){
+                    NavigationLink(destination: QuizMenu()
+                    .navigationBarBackButtonHidden(true)
+                    ){
                         HStack {
                             Image("quiz")
                                 .resizable()

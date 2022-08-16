@@ -14,6 +14,9 @@
 		211C71C52869FD40003D6342 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 211C71C42869FD40003D6342 /* GoogleService-Info.plist */; };
 		21292C90288094C60044F7B4 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21292C8F288094C60044F7B4 /* UserDefaults.swift */; };
 		2132F83B28A675AD00F4342F /* SoundWavesLinkViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2132F83A28A675AD00F4342F /* SoundWavesLinkViews.swift */; };
+		213FBD9528ABD31A008CB19F /* q3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213FBD9428ABD319008CB19F /* q3.swift */; };
+		213FBD9728ABD924008CB19F /* QuestionCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213FBD9628ABD924008CB19F /* QuestionCount.swift */; };
+		213FBD9928ABDEAE008CB19F /* q4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213FBD9828ABDEAE008CB19F /* q4.swift */; };
 		21427A51287B3AFC00E9EEB5 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 21427A50287B3AFC00E9EEB5 /* AudioKit */; };
 		21427A54287B3B1400E9EEB5 /* AudioKitUI in Frameworks */ = {isa = PBXBuildFile; productRef = 21427A53287B3B1400E9EEB5 /* AudioKitUI */; };
 		21427A57287B3B6C00E9EEB5 /* AudioKitEX in Frameworks */ = {isa = PBXBuildFile; productRef = 21427A56287B3B6C00E9EEB5 /* AudioKitEX */; };
@@ -82,6 +85,9 @@
 		211C71C42869FD40003D6342 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		21292C8F288094C60044F7B4 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		2132F83A28A675AD00F4342F /* SoundWavesLinkViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundWavesLinkViews.swift; sourceTree = "<group>"; };
+		213FBD9428ABD319008CB19F /* q3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = q3.swift; sourceTree = "<group>"; };
+		213FBD9628ABD924008CB19F /* QuestionCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCount.swift; sourceTree = "<group>"; };
+		213FBD9828ABDEAE008CB19F /* q4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = q4.swift; sourceTree = "<group>"; };
 		21427A67287B41E800E9EEB5 /* TutorialsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialsMenu.swift; sourceTree = "<group>"; };
 		214F01EB28AA815400655803 /* QuizMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizMenu.swift; sourceTree = "<group>"; };
 		214F01ED28AA824600655803 /* q1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = q1.swift; sourceTree = "<group>"; };
@@ -161,9 +167,12 @@
 			children = (
 				214F01EB28AA815400655803 /* QuizMenu.swift */,
 				214F01F128AA97A800655803 /* QuizSummary.swift */,
+				213FBD9828ABDEAE008CB19F /* q4.swift */,
+				213FBD9428ABD319008CB19F /* q3.swift */,
 				214F01EF28AA8AD200655803 /* q2.swift */,
 				214F01ED28AA824600655803 /* q1.swift */,
 				214F01F328AAA14A00655803 /* ScoreTracker.swift */,
+				213FBD9628ABD924008CB19F /* QuestionCount.swift */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -507,7 +516,9 @@
 				21711E8628A2CFD9009E03C4 /* EnvelopesTutorial.swift in Sources */,
 				2154D571289AF1FB00FCCB2F /* FiltersTutorial.swift in Sources */,
 				215844262881FDB300257013 /* BasicControlsTutorial.swift in Sources */,
+				213FBD9728ABD924008CB19F /* QuestionCount.swift in Sources */,
 				214F4751288AA418003DA5F3 /* SoundWavesTutorial.swift in Sources */,
+				213FBD9528ABD31A008CB19F /* q3.swift in Sources */,
 				21F4F13928849459003CED52 /* NavigationHelpers.swift in Sources */,
 				2163BEF228A3FA1A00CB2A5C /* PlayBasicControls.swift in Sources */,
 				214F474D2889B65A003DA5F3 /* OscillatorsAndWaveformsTutorial.swift in Sources */,
@@ -521,6 +532,7 @@
 				21711E9628A2F83F009E03C4 /* FiltersLinkViews.swift in Sources */,
 				2163BEF628A401AE00CB2A5C /* PlayFilters.swift in Sources */,
 				21F4F13D288494F6003CED52 /* ParameterSlider.swift in Sources */,
+				213FBD9928ABDEAE008CB19F /* q4.swift in Sources */,
 				218F57ED2864843C0052B064 /* Utilities.swift in Sources */,
 				21A4C9B528997F6000366ED0 /* DryWetMixer.swift in Sources */,
 				218C8CBC2862667100154F87 /* SignUpViewController.swift in Sources */,

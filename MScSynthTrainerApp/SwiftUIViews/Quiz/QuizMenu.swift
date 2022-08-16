@@ -7,12 +7,19 @@
 
 import SwiftUI
 
+
+
 struct QuizMenu: View {
+    
+    @EnvironmentObject var scoreTracker: ScoreTracker
+    @EnvironmentObject var questionCount: QuestionCount
+    
     var body: some View {
         Form {
             Group {
                 Section(header: Text("Quiz Topics")) {
                     NavigationLink(destination: q1()
+                    .navigationBarBackButtonHidden(true)
                                    
                     ){
                         HStack {
@@ -32,6 +39,11 @@ struct QuizMenu: View {
                             }
                         }
                     }
+                    .onAppear {
+                            scoreTracker.score = 0
+                            questionCount.count = 0
+                    }
+
 //                    .frame(maxWidth: .infinity, maxHeight: .infinity)
 ////                    .padding()
 //                    .border(.red, width: 4)
@@ -146,6 +158,17 @@ struct QuizMenu: View {
                 }
             }
         }.navigationBarTitle("Quiz")
+        .toolbar {
+                ToolbarItemGroup(placement: .navigationBarLeading) {
+                    NavigationLink(destination: MasterView()
+                    .navigationBarBackButtonHidden(true)
+                    ){
+                        Text("Back to Main Menu")
+    //                        .font(Font.body.bold())
+                            .foregroundColor(.blue)
+                    }
+                }
+        }
     }
 }
 

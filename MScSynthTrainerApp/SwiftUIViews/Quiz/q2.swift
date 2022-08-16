@@ -5,15 +5,22 @@
 //  Created by Oisin Carlin on 15/08/2022.
 //
 
+// Filters: Green
+
 import SwiftUI
+import AudioKit
+import AudioKitUI
+import SoundpipeAudioKit
+import AudioToolbox
+import AVFoundation
+import AudioKitEX
+import CAudioKitEX
 
 struct q2: View {
     
-    
-    
-    //Score Tracker
     //Score Tracker
     @EnvironmentObject var scoreTracker: ScoreTracker
+    @EnvironmentObject var questionCount: QuestionCount
     
     
     // Store didtap values
@@ -24,6 +31,8 @@ struct q2: View {
     
     @State private var lock:Bool = false
     
+    @State private var scoreLock:Bool = false
+    
     
     @StateObject var conductor = Q2OscillatorConductor()
     
@@ -32,7 +41,7 @@ struct q2: View {
         
         VStack {
             
-            Text("Which Filter Parameter does this Slider Control on the Low Pass Filter?")
+            Text("Which Filter parameter does this Slider Control on the Low Pass Filter?")
                 .font(.system(size: 20))
                 .fontWeight(.bold)
                 .padding()
@@ -46,46 +55,48 @@ struct q2: View {
             ParameterSlider(text: "",
                             parameter: self.$conductor.data.cutoffFrequency,
                             range: 12.0...3_000.0,
-                            units: "")
-                .padding()
+                            units: "Hertz")
+                .frame(width: 300, height: 100)
+//                .padding()
             
-            // ****** Answer A **********************
+// ****** Answer A **********************
             
-            Text("Resonance").onTapGesture {
+            Button(action: {
                 if(self.lock == false){
                     self.didTapA = true
                 }
                 self.lock = true
+                
+            }){
+                Text("Resonance")
+                    .foregroundColor(self.didTapA ? .red : .black)
+                    .font(Font.body.bold())
+                    .padding()
+                    .frame(maxWidth: 350)
+                    .border(self.didTapA ? .red : .black, width: 3)
             }
-            .foregroundColor(self.didTapA ? .red : .black)
-            .font(Font.body.bold())
-            .padding()
-            .frame(maxWidth: 350)
-            .border(self.didTapA ? .red : .black, width: 3)
             
-            // ****************************************
+// ****************************************
             
-            // ****** Answer B ************************
+// ****** Answer B ************************
             
-            Text("Cut-off Frequency").onTapGesture {
+            Button(action: {
                 if(self.lock == false){
                     self.didTapB = true
                 }
                 self.lock = true
                 
-//                scoreTracker.score += 1
+            }){
+                Text("Cut-off Frequency")
+                    .foregroundColor(self.didTapB ? .green : .black)
+                    
+                    .font(Font.body.bold())
+                    .padding()
+                    .frame(maxWidth: 350)
+                    .border(self.didTapB ? .green : .black, width: 3)
             }
             
-            .foregroundColor(self.didTapB ? .green : .black)
-            
-            .font(Font.body.bold())
-            .padding()
-            .frame(maxWidth: 350)
-            .border(self.didTapB ? .green : .black, width: 3)
-            
-
-            
-            // ************ Response ******************
+// ************ Response ******************
             
             //Correct
             if(self.didTapB){
@@ -93,8 +104,9 @@ struct q2: View {
                     .foregroundColor(.green)
                     .padding()
                 
-                NavigationLink(destination: QuizSummary()
-//                                .environmentObject(scoreTracker)
+                NavigationLink(destination: q3()
+                .navigationBarBackButtonHidden(true)
+
                 ){
                     Text("Next")
                         .foregroundColor(.blue)
@@ -107,22 +119,23 @@ struct q2: View {
                 .onAppear {
 //                    UserDefaults.standard.setQ2Result(value: 1)
                     
-                    scoreTracker.score += 1
+                    if(scoreLock == false){
+                        scoreTracker.score += 1
+                        questionCount.count += 1
+                    }
+                    
+                    scoreLock = true
                 }
-                
             }
             
             // Incorrect
             if(self.didTapA || self.didTapD || self.didTapC){
-                Text("Sorry, that was incorrect. This slider controls Cut-off Frequency")
+                Text("Incorrect, that was incorrect. This slider controls Cut-off Frequency")
                     .foregroundColor(.red)
                     .padding()
                 
-                NavigationLink(destination: QuizSummary(
-                
-                )
-                                
-//                                .environmentObject(scoreTracker)
+                NavigationLink(destination: q3()
+                .navigationBarBackButtonHidden(true)
                                
                 ){
                     Text("Next")
@@ -132,9 +145,12 @@ struct q2: View {
                         .padding()
                         .frame(maxWidth: 350)
                         .border(.blue, width: 3)
-                }.onTapGesture {
-                    UserDefaults.standard.setQ2Result(value: 0)
+                }.onAppear{
+                    questionCount.count += 1
                 }
+//                .onTapGesture {
+//                    UserDefaults.standard.setQ2Result(value: 0)
+//                }
             }
         }
         .onAppear {
@@ -149,27 +165,23 @@ struct q2: View {
         // Colour code border
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .border(.green, width: 16)
+        .toolbar {
+            ToolbarItemGroup(placement: .navigationBarLeading) {
+                NavigationLink(destination: QuizSummary()
+                .navigationBarBackButtonHidden(true)
+                ){
+                    Text("Quit Quiz")
+//                        .font(Font.body.bold())
+                        .foregroundColor(.blue)
+                }
+            }
+        }
     }
     
 }
 
 
-
-
-
-
-
 // Synth Data:
-
-import AudioKit
-import AudioKitUI
-import SoundpipeAudioKit
-import SwiftUI
-import AudioToolbox
-import AVFoundation
-import AudioKitEX
-import CAudioKitEX
-
 
 
 struct Q2OscillatorData {

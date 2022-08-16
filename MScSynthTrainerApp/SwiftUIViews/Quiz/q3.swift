@@ -1,16 +1,23 @@
 //
-//  q1.swift
+//  q3.swift
 //  MScSynthTrainerApp
 //
-//  Created by Oisin Carlin on 15/08/2022.
+//  Created by Oisin Carlin on 16/08/2022.
 //
 
-// O and Ws: Yellow
-
 import SwiftUI
+import AudioKit
+import AudioKitUI
+import SoundpipeAudioKit
+import AudioToolbox
+import AVFoundation
+import AudioKitEX
+import CAudioKitEX
 
-struct q1: View {
-    
+// Envelopes: Blue
+
+struct q3: View {
+   
     @EnvironmentObject var scoreTracker: ScoreTracker
     @EnvironmentObject var questionCount: QuestionCount
     
@@ -30,17 +37,26 @@ struct q1: View {
         
         VStack {
             
-            Text("Which waveform is this?")
+            Text("What does the green, third from the left section of the Envelope Control?")
                 .font(.system(size: 30))
                 .fontWeight(.bold)
-                .padding()
+//                .padding()
             
-            Image("sawWave")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 200, height: 150)
-                .foregroundColor(.blue)
-                .padding()
+//            Image("sawWave")
+//                .resizable()
+//                .scaledToFit()
+//                .frame(width: 300, height: 200)
+//                .foregroundColor(.blue)
+//                .padding()
+            
+            
+            ADSRWidget { att, dec, sus, rel in
+//                self.conductor.env.attackDuration = att
+//                self.conductor.env.decayDuration = dec
+//                self.conductor.env.sustainLevel = sus
+//                self.conductor.env.releaseDuration = rel
+            }
+            .frame(width: 200, height: 150)
             
             
 // ****** Answer A **********************
@@ -52,7 +68,7 @@ struct q1: View {
                 self.lock = true
                 
             }){
-                Text("Sine")
+                Text("Release")
                     .foregroundColor(self.didTapA ? .red : .black)
                     .font(Font.body.bold())
                     .padding()
@@ -71,13 +87,13 @@ struct q1: View {
                 self.lock = true
                 
             }){
-                Text("Square")
-                    .foregroundColor(self.didTapB ? .red : .black)
+                Text("Sustain")
+                    .foregroundColor(self.didTapB ? .green : .black)
                 
                     .font(Font.body.bold())
                     .padding()
                     .frame(maxWidth: 350)
-                    .border(self.didTapB ? .red : .black, width: 3)
+                    .border(self.didTapB ? .green : .black, width: 3)
             }
 // ****************************************
             
@@ -90,7 +106,7 @@ struct q1: View {
                 self.lock = true
                 
             }){
-                Text("Triangle")
+                Text("Attack")
                     .foregroundColor(self.didTapC ? .red : .black)
                     
                     .font(Font.body.bold())
@@ -112,29 +128,27 @@ struct q1: View {
                 self.lock = true
                 
             }){
-                Text("Sawtooth")
-                    .foregroundColor(self.didTapD ? .green : .black)
+                Text("Decay")
+                    .foregroundColor(self.didTapD ? .red : .black)
                     
                     .font(Font.body.bold())
                     .padding()
                     .frame(maxWidth: 350)
-                    .border(self.didTapD ? .green : .black, width: 3)
+                    .border(self.didTapD ? .red : .black, width: 3)
             }
 
 // ****************************************
             
 // ************ Response ******************
             
-            
-            
         
             //Correct
-            if(self.didTapD){
+            if(self.didTapB){
                 Text("Correct!")
                     .foregroundColor(.green)
                     .padding()
                 
-                NavigationLink(destination: q2()
+                NavigationLink(destination: q4()
                 .navigationBarBackButtonHidden(true)
                 ){
                     Text("Next")
@@ -157,12 +171,12 @@ struct q1: View {
             }
             
             // Incorrect
-            if(self.didTapA || self.didTapB || self.didTapC){
-                Text("Incorrect, that was incorrect. This is a Sawtooth Wave")
+            if(self.didTapA || self.didTapC || self.didTapD){
+                Text("Incorrect, this section controls Sustain.")
                     .foregroundColor(.red)
                     .padding()
                 
-                NavigationLink(destination: q2()
+                NavigationLink(destination: q4()
                 .navigationBarBackButtonHidden(true)
                 ){
                     Text("Next")
@@ -175,13 +189,12 @@ struct q1: View {
                 }.onAppear{
                     questionCount.count += 1
                 }
-                
 
             }
         }
         // Colour code border
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .border(.yellow, width: 16)
+        .border(.blue, width: 16)
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarLeading) {
                 NavigationLink(destination: QuizSummary()
@@ -196,8 +209,8 @@ struct q1: View {
     }
 }
 
-struct q1_Previews: PreviewProvider {
+struct q3_Previews: PreviewProvider {
     static var previews: some View {
-        q1()
+        q3()
     }
 }

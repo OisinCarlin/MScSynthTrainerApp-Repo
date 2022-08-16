@@ -21,6 +21,7 @@ struct QuizSummary: View {
     
     //Score Tracker
     @EnvironmentObject var scoreTracker: ScoreTracker
+    @EnvironmentObject var questionCount: QuestionCount
     
 //
 //    // Get UserDefaults results
@@ -45,13 +46,16 @@ struct QuizSummary: View {
                 .padding()
 
             let scoreString = String(scoreTracker.score)
+            let countString = String(questionCount.count)
             
-            Text("You scored:  " + scoreString + " out of 2")
+            Text("You scored:  " + scoreString + " out of " + countString)
                 .font(.system(size: 30))
                 .fontWeight(.bold)
                 .padding()
             
-            NavigationLink(destination: QuizMenu()){
+            NavigationLink(destination: QuizMenu()
+            .navigationBarBackButtonHidden(true)
+            ){
 //                Text("Finish Quiz / Save Result")
                 
                 Text("Complete")
