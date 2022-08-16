@@ -1,5 +1,5 @@
 //
-//  q4.swift
+//  q9.swift
 //  MScSynthTrainerApp
 //
 //  Created by Oisin Carlin on 16/08/2022.
@@ -7,77 +7,82 @@
 
 // Basic Controls: Red
 
+import SwiftUI
 import AudioKit
 import AudioKitUI
 import SoundpipeAudioKit
-import SwiftUI
 import AudioToolbox
 import AVFoundation
 import AudioKitEX
 import CAudioKitEX
 
-struct q4: View {
-        
+
+struct q9: View {
     @EnvironmentObject var scoreTracker: ScoreTracker
     @EnvironmentObject var questionCount: QuestionCount
-    
-    
+
+
     // Store didtap values
     @State private var didTapA:Bool = false
     @State private var didTapB:Bool = false
     @State private var didTapC:Bool = false
     @State private var didTapD:Bool = false
-    
+
     @State private var lock:Bool = false
-    
+
     @State private var scoreLock:Bool = false
-    
+
     @StateObject var conductor = PWMOscillatorConductor()
 
-    
+
     var body: some View {
         
         VStack {
             
-            Text("Which Oscillator parameter does this slider control?")
+            Text("Which Oscillator parameter does the slider control?")
                 .font(.system(size: 20))
                 .fontWeight(.bold)
-//                .padding()
-            
-            
-            Text(self.conductor.data.isPlaying ? "||" : "▶︎").onTapGesture {
-                self.conductor.data.isPlaying.toggle()
-            }.foregroundColor(self.conductor.data.isPlaying ? .orange : .green).font(Font.body.bold())
-                .padding()
-                .border(self.conductor.data.isPlaying ? .orange : .green, width: 4)
+    //                .padding()
             
             HStack{
-                ParameterSlider(text: "",
-                                parameter: self.$conductor.data.frequency,
-                                range: 20...880)
-//                    .padding()
+            ParameterSlider(text: "",
+                            parameter: self.$conductor.data.rampDuration,
+                            range: 0...10).padding()
                 VStack{
-                    Text("Hz ")
+                    Text("secs ")
                     Text(" ")
                     Text(" ")
                 }
-                
             }
-                .frame(width: 300, height: 70)
+            .frame(width: 300, height: 80)
             
-            NodeOutputView(conductor.osc)
-                .frame(width: 300, height: 70)
+            KeyboardControl(firstOctave: 3,
+                            octaveCount: 1,
+                            polyphonicMode: false,
+                            delegate: conductor)
+                .frame(width: 300, height: 80)
             
             
-//            Image("sawWave")
-//                .resizable()
-//                .scaledToFit()
-//                .frame(width: 200, height: 150)
-//                .foregroundColor(.blue)
+//            Text(self.conductor.data.isPlaying ? "||" : "▶︎").onTapGesture {
+//                self.conductor.data.isPlaying.toggle()
+//            }.foregroundColor(self.conductor.data.isPlaying ? .orange : .green).font(Font.body.bold())
 //                .padding()
+//                .border(self.conductor.data.isPlaying ? .orange : .green, width: 4)
 //
+//            ParameterSlider(text: "",
+//                            parameter: self.$conductor.data.pulseWidth,
+//                            range: 0 ... 1).padding(5)
+//                .frame(width: 300, height: 70)
             
-// ****** Answer A **********************
+            
+            
+            
+//            NodeOutputView(conductor.osc)
+//                .frame(width: 300, height: 70)
+            
+
+            
+    // ****** Answer A **********************
             
             Button(action: {
                 if(self.lock == false){
@@ -87,16 +92,16 @@ struct q4: View {
                 
             }){
                 Text("Pitch / Frequency")
-                    .foregroundColor(self.didTapA ? .green : .black)
+                    .foregroundColor(self.didTapA ? .red : .black)
                     .font(Font.body.bold())
                     .padding()
                     .frame(maxWidth: 350)
-                    .border(self.didTapA ? .green : .black, width: 3)
+                    .border(self.didTapA ? .red : .black, width: 3)
             }
             
-// ****************************************
+    // ****************************************
             
-// ****** Answer B ************************
+    // ****** Answer B ************************
             
             Button(action: {
                 if(self.lock == false){
@@ -113,9 +118,9 @@ struct q4: View {
                     .frame(maxWidth: 350)
                     .border(self.didTapB ? .red : .black, width: 3)
             }
-// ****************************************
+    // ****************************************
             
-// ****** Answer C ************************
+    // ****** Answer C ************************
             
             Button(action: {
                 if(self.lock == false){
@@ -124,20 +129,20 @@ struct q4: View {
                 self.lock = true
                 
             }){
-                Text("Glide")
-                    .foregroundColor(self.didTapC ? .red : .black)
+                Text("Glide time")
+                    .foregroundColor(self.didTapC ? .green : .black)
                     
                     .font(Font.body.bold())
                     .padding()
                     .frame(maxWidth: 350)
-                    .border(self.didTapC ? .red : .black, width: 3)
+                    .border(self.didTapC ? .green : .black, width: 3)
             }
             
             
-// ****************************************
+    // ****************************************
             
             
-// ****** Answer D ************************
+    // ****** Answer D ************************
             
             Button(action: {
                 if(self.lock == false){
@@ -146,7 +151,7 @@ struct q4: View {
                 self.lock = true
                 
             }){
-                Text("Pulse-width Modulation")
+                Text("Decay Time")
                     .foregroundColor(self.didTapD ? .red : .black)
                     
                     .font(Font.body.bold())
@@ -155,20 +160,20 @@ struct q4: View {
                     .border(self.didTapD ? .red : .black, width: 3)
             }
 
-// ****************************************
+    // ****************************************
             
-// ************ Response ******************
+    // ************ Response ******************
             
             
             
         
             //Correct
-            if(self.didTapA){
+            if(self.didTapC){
                 Text("Correct!")
                     .foregroundColor(.green)
                     .padding()
                 
-                NavigationLink(destination: q5()
+                NavigationLink(destination: q10()
                 .navigationBarBackButtonHidden(true)
                 ){
                     Text("Next")
@@ -191,12 +196,12 @@ struct q4: View {
             }
             
             // Incorrect
-            if(self.didTapB || self.didTapC || self.didTapD){
-                Text("Incorrect, this slide controls Pitch / Frequency")
+            if(self.didTapB || self.didTapD || self.didTapA){
+                Text("Incorrect, the slider controls Glide Time.")
                     .foregroundColor(.red)
                     .padding()
                 
-                NavigationLink(destination: q5()
+                NavigationLink(destination: q10()
                 .navigationBarBackButtonHidden(true)
                 ){
                     Text("Next")
@@ -222,7 +227,7 @@ struct q4: View {
                 .navigationBarBackButtonHidden(true)
                 ){
                     Text("Quit Quiz")
-//                        .font(Font.body.bold())
+    //                        .font(Font.body.bold())
                         .foregroundColor(.blue)
                 }
             }
@@ -236,7 +241,7 @@ struct q4: View {
     }
 }
 
-
+//
 //struct Q4PWMGlideOscillatorView: View {
 //    @StateObject var conductor = PWMOscillatorConductor()
 //
@@ -309,8 +314,8 @@ struct q4: View {
 //    }
 //}
 
-struct q4_Previews: PreviewProvider {
+struct q9_Previews: PreviewProvider {
     static var previews: some View {
-        q4()
+        q9()
     }
 }

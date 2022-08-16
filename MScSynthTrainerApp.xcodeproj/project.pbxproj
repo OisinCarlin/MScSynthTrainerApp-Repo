@@ -17,6 +17,12 @@
 		213FBD9528ABD31A008CB19F /* q3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213FBD9428ABD319008CB19F /* q3.swift */; };
 		213FBD9728ABD924008CB19F /* QuestionCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213FBD9628ABD924008CB19F /* QuestionCount.swift */; };
 		213FBD9928ABDEAE008CB19F /* q4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213FBD9828ABDEAE008CB19F /* q4.swift */; };
+		213FBD9B28ABFB43008CB19F /* q5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213FBD9A28ABFB43008CB19F /* q5.swift */; };
+		213FBD9D28AC032C008CB19F /* q6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213FBD9C28AC032C008CB19F /* q6.swift */; };
+		213FBD9F28AC0552008CB19F /* q7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213FBD9E28AC0552008CB19F /* q7.swift */; };
+		213FBDA128AC09B1008CB19F /* q8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213FBDA028AC09B1008CB19F /* q8.swift */; };
+		213FBDA328AC0E8C008CB19F /* q9.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213FBDA228AC0E8C008CB19F /* q9.swift */; };
+		213FBDA528AC0E9B008CB19F /* q10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213FBDA428AC0E9B008CB19F /* q10.swift */; };
 		21427A51287B3AFC00E9EEB5 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 21427A50287B3AFC00E9EEB5 /* AudioKit */; };
 		21427A54287B3B1400E9EEB5 /* AudioKitUI in Frameworks */ = {isa = PBXBuildFile; productRef = 21427A53287B3B1400E9EEB5 /* AudioKitUI */; };
 		21427A57287B3B6C00E9EEB5 /* AudioKitEX in Frameworks */ = {isa = PBXBuildFile; productRef = 21427A56287B3B6C00E9EEB5 /* AudioKitEX */; };
@@ -88,6 +94,12 @@
 		213FBD9428ABD319008CB19F /* q3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = q3.swift; sourceTree = "<group>"; };
 		213FBD9628ABD924008CB19F /* QuestionCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCount.swift; sourceTree = "<group>"; };
 		213FBD9828ABDEAE008CB19F /* q4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = q4.swift; sourceTree = "<group>"; };
+		213FBD9A28ABFB43008CB19F /* q5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = q5.swift; sourceTree = "<group>"; };
+		213FBD9C28AC032C008CB19F /* q6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = q6.swift; sourceTree = "<group>"; };
+		213FBD9E28AC0552008CB19F /* q7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = q7.swift; sourceTree = "<group>"; };
+		213FBDA028AC09B1008CB19F /* q8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = q8.swift; sourceTree = "<group>"; };
+		213FBDA228AC0E8C008CB19F /* q9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = q9.swift; sourceTree = "<group>"; };
+		213FBDA428AC0E9B008CB19F /* q10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = q10.swift; sourceTree = "<group>"; };
 		21427A67287B41E800E9EEB5 /* TutorialsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialsMenu.swift; sourceTree = "<group>"; };
 		214F01EB28AA815400655803 /* QuizMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizMenu.swift; sourceTree = "<group>"; };
 		214F01ED28AA824600655803 /* q1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = q1.swift; sourceTree = "<group>"; };
@@ -167,6 +179,12 @@
 			children = (
 				214F01EB28AA815400655803 /* QuizMenu.swift */,
 				214F01F128AA97A800655803 /* QuizSummary.swift */,
+				213FBDA428AC0E9B008CB19F /* q10.swift */,
+				213FBDA228AC0E8C008CB19F /* q9.swift */,
+				213FBDA028AC09B1008CB19F /* q8.swift */,
+				213FBD9E28AC0552008CB19F /* q7.swift */,
+				213FBD9C28AC032C008CB19F /* q6.swift */,
+				213FBD9A28ABFB43008CB19F /* q5.swift */,
 				213FBD9828ABDEAE008CB19F /* q4.swift */,
 				213FBD9428ABD319008CB19F /* q3.swift */,
 				214F01EF28AA8AD200655803 /* q2.swift */,
@@ -520,6 +538,8 @@
 				214F4751288AA418003DA5F3 /* SoundWavesTutorial.swift in Sources */,
 				213FBD9528ABD31A008CB19F /* q3.swift in Sources */,
 				21F4F13928849459003CED52 /* NavigationHelpers.swift in Sources */,
+				213FBDA128AC09B1008CB19F /* q8.swift in Sources */,
+				213FBD9D28AC032C008CB19F /* q6.swift in Sources */,
 				2163BEF228A3FA1A00CB2A5C /* PlayBasicControls.swift in Sources */,
 				214F474D2889B65A003DA5F3 /* OscillatorsAndWaveformsTutorial.swift in Sources */,
 				218C8CAB2862662000154F87 /* ViewController.swift in Sources */,
@@ -528,10 +548,12 @@
 				2163BEFA28A40A9D00CB2A5C /* BasicControlsViews.swift in Sources */,
 				218C8CA72862662000154F87 /* AppDelegate.swift in Sources */,
 				21711E7128A28997009E03C4 /* OWOscillatorViews.swift in Sources */,
+				213FBD9F28AC0552008CB19F /* q7.swift in Sources */,
 				21711E8E28A2F672009E03C4 /* HPFAmplitudeEnvelope.swift in Sources */,
 				21711E9628A2F83F009E03C4 /* FiltersLinkViews.swift in Sources */,
 				2163BEF628A401AE00CB2A5C /* PlayFilters.swift in Sources */,
 				21F4F13D288494F6003CED52 /* ParameterSlider.swift in Sources */,
+				213FBD9B28ABFB43008CB19F /* q5.swift in Sources */,
 				213FBD9928ABDEAE008CB19F /* q4.swift in Sources */,
 				218F57ED2864843C0052B064 /* Utilities.swift in Sources */,
 				21A4C9B528997F6000366ED0 /* DryWetMixer.swift in Sources */,
@@ -545,12 +567,14 @@
 				21F4F13B28849494003CED52 /* KeyboardControl.swift in Sources */,
 				2100FF1F288C091500808241 /* Oscillator.swift in Sources */,
 				218C8CA92862662000154F87 /* SceneDelegate.swift in Sources */,
+				213FBDA328AC0E8C008CB19F /* q9.swift in Sources */,
 				214F4755288AA757003DA5F3 /* OnboardView.swift in Sources */,
 				214F01F228AA97A800655803 /* QuizSummary.swift in Sources */,
 				21711E6F28A28913009E03C4 /* OWLinkViews.swift in Sources */,
 				21711E8028A2CF14009E03C4 /* AmplitudeEnvelope.swift in Sources */,
 				21A4C9B728997F9200366ED0 /* PlotView.swift in Sources */,
 				21292C90288094C60044F7B4 /* UserDefaults.swift in Sources */,
+				213FBDA528AC0E9B008CB19F /* q10.swift in Sources */,
 				2163BEF028A3F97D00CB2A5C /* PlayMenu.swift in Sources */,
 				214F01EE28AA824600655803 /* q1.swift in Sources */,
 				2163BEF828A401C400CB2A5C /* PlayEnvelopes.swift in Sources */,
