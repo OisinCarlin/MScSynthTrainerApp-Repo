@@ -17,6 +17,7 @@ struct QHost1Data {
 class QHost1Conductor: ObservableObject{
 
     @EnvironmentObject var questionCount: QuestionCount
+    @EnvironmentObject var questionComplete: QuestionComplete
 
     @Published var data = QHost1Data() {
         
@@ -34,11 +35,13 @@ struct QHost1: View {
     @StateObject var conductor = QHost1Conductor()
 
   @EnvironmentObject var questionCount: QuestionCount
+    
+    @EnvironmentObject var questionComplete: QuestionComplete
         
 
     var body: some View {
 
-        if questionCount.count < 10 {
+        if questionComplete.completed < 11 {
         if (self.conductor.data.randomInt == 1){
                 q1()
         }

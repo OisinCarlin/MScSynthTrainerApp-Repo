@@ -34,6 +34,7 @@ struct HomeVCSwiftUIView: View {
         //Score Tracker
         .environmentObject(ScoreTracker())
         .environmentObject(QuestionCount())
+        .environmentObject(QuestionComplete())
         .environmentObject(QuestionArray())
         
         
@@ -55,7 +56,7 @@ struct MasterView: View {
     var body: some View {
         Form {
             Group {
-                Section(header: Text(userFirstName)) {
+                Section(header: Text("Main Menu")) {
                     //                    NavigationLink(destination: TutorialsMenu()){
                     //                        HStack {
                     //                            Image("hello")

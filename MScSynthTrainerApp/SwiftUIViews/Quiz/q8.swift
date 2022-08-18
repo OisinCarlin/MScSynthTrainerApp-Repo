@@ -21,6 +21,7 @@ struct q8: View {
     //Score Tracker
     @EnvironmentObject var scoreTracker: ScoreTracker
     @EnvironmentObject var questionCount: QuestionCount
+    @EnvironmentObject var questionComplete: QuestionComplete
     
     
     // Store didtap values
@@ -197,7 +198,9 @@ struct q8: View {
 //                }
             }
         }
+        
         .onAppear {
+            questionComplete.completed += 1
             self.conductor.start()
             
             self.conductor.osc.setWaveform(Table(.square))

@@ -13,6 +13,7 @@ struct QuizMenu: View {
     
     @EnvironmentObject var scoreTracker: ScoreTracker
     @EnvironmentObject var questionCount: QuestionCount
+    @EnvironmentObject var questionComplete: QuestionComplete
     @EnvironmentObject var questionArray: QuestionArray
     
     var body: some View {
@@ -43,6 +44,7 @@ struct QuizMenu: View {
                     .onAppear {
                             scoreTracker.score = 0
                             questionCount.count = 0
+                            questionComplete.completed = 0
                         questionArray.question = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
                     }
 

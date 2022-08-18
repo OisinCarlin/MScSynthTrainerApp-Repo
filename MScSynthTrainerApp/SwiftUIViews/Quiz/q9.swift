@@ -20,6 +20,7 @@ import CAudioKitEX
 struct q9: View {
     @EnvironmentObject var scoreTracker: ScoreTracker
     @EnvironmentObject var questionCount: QuestionCount
+    @EnvironmentObject var questionComplete: QuestionComplete
 
 
     // Store didtap values
@@ -217,6 +218,9 @@ struct q9: View {
                 
 
             }
+        }
+        .onAppear{
+            questionComplete.completed += 1
         }
         // Colour code border
         .frame(maxWidth: .infinity, maxHeight: .infinity)

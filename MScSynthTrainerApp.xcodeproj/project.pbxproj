@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21000D3928AE5370007CDBAA /* QuestionComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21000D3828AE5370007CDBAA /* QuestionComplete.swift */; };
 		2100BD62289D540500CBF322 /* HighPassFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100BD61289D540500CBF322 /* HighPassFilter.swift */; };
 		2100BD66289DA4AC00CBF322 /* BandPassFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100BD65289DA4AC00CBF322 /* BandPassFilter.swift */; };
 		2100BD6A289DB23D00CBF322 /* BandRejectFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100BD69289DB23D00CBF322 /* BandRejectFilter.swift */; };
@@ -86,6 +87,7 @@
 
 /* Begin PBXFileReference section */
 		11D24E5B16A5AB1BB15E00DA /* Pods-MScSynthTrainerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MScSynthTrainerApp.release.xcconfig"; path = "Target Support Files/Pods-MScSynthTrainerApp/Pods-MScSynthTrainerApp.release.xcconfig"; sourceTree = "<group>"; };
+		21000D3828AE5370007CDBAA /* QuestionComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionComplete.swift; sourceTree = "<group>"; };
 		2100BD61289D540500CBF322 /* HighPassFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighPassFilter.swift; sourceTree = "<group>"; };
 		2100BD65289DA4AC00CBF322 /* BandPassFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandPassFilter.swift; sourceTree = "<group>"; };
 		2100BD69289DB23D00CBF322 /* BandRejectFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandRejectFilter.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				214F01F328AAA14A00655803 /* ScoreTracker.swift */,
 				213FBD9628ABD924008CB19F /* QuestionCount.swift */,
 				21AAEA1228AD77EA00562702 /* QuestionArray.swift */,
+				21000D3828AE5370007CDBAA /* QuestionComplete.swift */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 				21427A68287B41E800E9EEB5 /* TutorialsMenu.swift in Sources */,
 				214F01EC28AA815500655803 /* QuizMenu.swift in Sources */,
 				2100BD6A289DB23D00CBF322 /* BandRejectFilter.swift in Sources */,
+				21000D3928AE5370007CDBAA /* QuestionComplete.swift in Sources */,
 				21F4F13B28849494003CED52 /* KeyboardControl.swift in Sources */,
 				2100FF1F288C091500808241 /* Oscillator.swift in Sources */,
 				218C8CA92862662000154F87 /* SceneDelegate.swift in Sources */,
