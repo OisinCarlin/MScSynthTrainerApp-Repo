@@ -40,6 +40,7 @@
 		214F474D2889B65A003DA5F3 /* OscillatorsAndWaveformsTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F474C2889B65A003DA5F3 /* OscillatorsAndWaveformsTutorial.swift */; };
 		214F4751288AA418003DA5F3 /* SoundWavesTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F4750288AA418003DA5F3 /* SoundWavesTutorial.swift */; };
 		214F4755288AA757003DA5F3 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F4754288AA757003DA5F3 /* OnboardView.swift */; };
+		2154685428AC1DC500BD04E0 /* QHost1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2154685328AC1DC500BD04E0 /* QHost1.swift */; };
 		2154D571289AF1FB00FCCB2F /* FiltersTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2154D570289AF1FB00FCCB2F /* FiltersTutorial.swift */; };
 		215844262881FDB300257013 /* BasicControlsTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215844252881FDB300257013 /* BasicControlsTutorial.swift */; };
 		2163BEF028A3F97D00CB2A5C /* PlayMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2163BEEF28A3F97D00CB2A5C /* PlayMenu.swift */; };
@@ -74,6 +75,7 @@
 		21A4C9B328997F1600366ED0 /* LowPassFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A4C9B228997F1600366ED0 /* LowPassFilter.swift */; };
 		21A4C9B528997F6000366ED0 /* DryWetMixer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A4C9B428997F6000366ED0 /* DryWetMixer.swift */; };
 		21A4C9B728997F9200366ED0 /* PlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A4C9B628997F9200366ED0 /* PlotView.swift */; };
+		21AAEA1328AD77EA00562702 /* QuestionArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AAEA1228AD77EA00562702 /* QuestionArray.swift */; };
 		21D9D904286A0F7000DB0153 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D9D903286A0F7000DB0153 /* Constants.swift */; };
 		21F276F72874D83900152B32 /* HomeVCSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F276F62874D83900152B32 /* HomeVCSwiftUIView.swift */; };
 		21F4F13928849459003CED52 /* NavigationHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F4F13828849459003CED52 /* NavigationHelpers.swift */; };
@@ -109,6 +111,7 @@
 		214F474C2889B65A003DA5F3 /* OscillatorsAndWaveformsTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OscillatorsAndWaveformsTutorial.swift; sourceTree = "<group>"; };
 		214F4750288AA418003DA5F3 /* SoundWavesTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundWavesTutorial.swift; sourceTree = "<group>"; };
 		214F4754288AA757003DA5F3 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
+		2154685328AC1DC500BD04E0 /* QHost1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHost1.swift; sourceTree = "<group>"; };
 		2154D570289AF1FB00FCCB2F /* FiltersTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersTutorial.swift; sourceTree = "<group>"; };
 		215844252881FDB300257013 /* BasicControlsTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicControlsTutorial.swift; sourceTree = "<group>"; };
 		2163BEEF28A3F97D00CB2A5C /* PlayMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayMenu.swift; sourceTree = "<group>"; };
@@ -145,6 +148,7 @@
 		21A4C9B228997F1600366ED0 /* LowPassFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowPassFilter.swift; sourceTree = "<group>"; };
 		21A4C9B428997F6000366ED0 /* DryWetMixer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DryWetMixer.swift; sourceTree = "<group>"; };
 		21A4C9B628997F9200366ED0 /* PlotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotView.swift; sourceTree = "<group>"; };
+		21AAEA1228AD77EA00562702 /* QuestionArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionArray.swift; sourceTree = "<group>"; };
 		21D9D903286A0F7000DB0153 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		21F276F62874D83900152B32 /* HomeVCSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCSwiftUIView.swift; sourceTree = "<group>"; };
 		21F4F13828849459003CED52 /* NavigationHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelpers.swift; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				214F01EB28AA815400655803 /* QuizMenu.swift */,
+				2154685328AC1DC500BD04E0 /* QHost1.swift */,
 				214F01F128AA97A800655803 /* QuizSummary.swift */,
 				213FBDA428AC0E9B008CB19F /* q10.swift */,
 				213FBDA228AC0E8C008CB19F /* q9.swift */,
@@ -191,6 +196,7 @@
 				214F01ED28AA824600655803 /* q1.swift */,
 				214F01F328AAA14A00655803 /* ScoreTracker.swift */,
 				213FBD9628ABD924008CB19F /* QuestionCount.swift */,
+				21AAEA1228AD77EA00562702 /* QuestionArray.swift */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -571,6 +577,7 @@
 				214F4755288AA757003DA5F3 /* OnboardView.swift in Sources */,
 				214F01F228AA97A800655803 /* QuizSummary.swift in Sources */,
 				21711E6F28A28913009E03C4 /* OWLinkViews.swift in Sources */,
+				21AAEA1328AD77EA00562702 /* QuestionArray.swift in Sources */,
 				21711E8028A2CF14009E03C4 /* AmplitudeEnvelope.swift in Sources */,
 				21A4C9B728997F9200366ED0 /* PlotView.swift in Sources */,
 				21292C90288094C60044F7B4 /* UserDefaults.swift in Sources */,
@@ -580,6 +587,7 @@
 				2163BEF828A401C400CB2A5C /* PlayEnvelopes.swift in Sources */,
 				2163BEFC28A40CF300CB2A5C /* BasicControlsLinkViews.swift in Sources */,
 				21711E8428A2CFBE009E03C4 /* LPFAmplitudeEnvelope.swift in Sources */,
+				2154685428AC1DC500BD04E0 /* QHost1.swift in Sources */,
 				218C8CC22862669700154F87 /* HomeViewController.swift in Sources */,
 				21711E9028A2F688009E03C4 /* BPFAmplitudeEnvelope.swift in Sources */,
 				21D9D904286A0F7000DB0153 /* Constants.swift in Sources */,

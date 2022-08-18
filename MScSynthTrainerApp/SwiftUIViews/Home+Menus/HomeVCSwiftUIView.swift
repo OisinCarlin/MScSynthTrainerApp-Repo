@@ -34,6 +34,8 @@ struct HomeVCSwiftUIView: View {
         //Score Tracker
         .environmentObject(ScoreTracker())
         .environmentObject(QuestionCount())
+        .environmentObject(QuestionArray())
+        
         
         .navigationViewStyle(DoubleColumnNavigationViewStyle())
         

@@ -148,7 +148,7 @@ struct q8: View {
                     .foregroundColor(.green)
 //                    .padding()
                 
-                NavigationLink(destination: q9()
+                NavigationLink(destination: QHost1()
                 .navigationBarBackButtonHidden(true)
 
                 ){
@@ -178,7 +178,7 @@ struct q8: View {
                     .foregroundColor(.red)
 //                    .padding()
                 
-                NavigationLink(destination: q9()
+                NavigationLink(destination: QHost1()
                 .navigationBarBackButtonHidden(true)
                                
                 ){

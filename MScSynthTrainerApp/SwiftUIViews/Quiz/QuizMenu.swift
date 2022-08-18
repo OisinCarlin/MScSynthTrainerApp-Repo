@@ -13,12 +13,13 @@ struct QuizMenu: View {
     
     @EnvironmentObject var scoreTracker: ScoreTracker
     @EnvironmentObject var questionCount: QuestionCount
+    @EnvironmentObject var questionArray: QuestionArray
     
     var body: some View {
         Form {
             Group {
                 Section(header: Text("Quiz Topics")) {
-                    NavigationLink(destination: q1()
+                    NavigationLink(destination: QHost1()
                     .navigationBarBackButtonHidden(true)
                                    
                     ){
@@ -42,6 +43,7 @@ struct QuizMenu: View {
                     .onAppear {
                             scoreTracker.score = 0
                             questionCount.count = 0
+                        questionArray.question = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
                     }
 
 //                    .frame(maxWidth: .infinity, maxHeight: .infinity)

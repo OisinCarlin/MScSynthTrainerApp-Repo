@@ -173,7 +173,7 @@ struct q9: View {
                     .foregroundColor(.green)
                     .padding()
                 
-                NavigationLink(destination: q10()
+                NavigationLink(destination: QHost1()
                 .navigationBarBackButtonHidden(true)
                 ){
                     Text("Next")
@@ -201,7 +201,7 @@ struct q9: View {
                     .foregroundColor(.red)
                     .padding()
                 
-                NavigationLink(destination: q10()
+                NavigationLink(destination: QHost1()
                 .navigationBarBackButtonHidden(true)
                 ){
                     Text("Next")

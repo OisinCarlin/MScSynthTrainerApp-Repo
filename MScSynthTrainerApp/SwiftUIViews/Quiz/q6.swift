@@ -152,7 +152,7 @@ var body: some View {
                 .foregroundColor(.green)
                 .padding()
             
-            NavigationLink(destination: q7()
+            NavigationLink(destination: QHost1()
             .navigationBarBackButtonHidden(true)
             ){
                 Text("Next")
@@ -180,7 +180,7 @@ var body: some View {
                 .foregroundColor(.red)
                 .padding()
             
-            NavigationLink(destination: q7()
+            NavigationLink(destination: QHost1()
             .navigationBarBackButtonHidden(true)
             ){
                 Text("Next")

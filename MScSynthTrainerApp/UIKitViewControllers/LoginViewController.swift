@@ -77,7 +77,7 @@ class LoginViewController: UIViewController {
                             print("Error getting documents: \(err)")
                         } else {
                             for document in querySnapshot!.documents {
-                                // print("\(document.documentID) => \(document.data())")
+                                 print("\(document.documentID) => \(document.data())")
                                 
                                 // let data = document.data()
                                 let docID = document.documentID
@@ -85,8 +85,8 @@ class LoginViewController: UIViewController {
                                 let userFirstName = document["firstname"] as? String ?? ""
                                 let userLastName = document["lastname"] as? String ?? ""
                                 
-
-                                
+                                print (userFirstName)
+//
                                 
                                 UserDefaults.standard.setUserDocumentID(value: docID)
                                 UserDefaults.standard.setUserID(value: userID)
