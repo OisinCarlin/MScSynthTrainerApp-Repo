@@ -44,10 +44,6 @@ class LoginViewController: UIViewController {
         Utilities.styleFilledButton(loginButton)
     }
     
-    
-    
-    
-    
     @IBAction func loginTapped(_ sender: Any) {
         
         // TODO: Validate Text Fields
@@ -68,10 +64,8 @@ class LoginViewController: UIViewController {
             else {
                 
                 // 11/7/22: Capturing user data from Firebase to store upon Login
-                // Make this functionality available after Signing Up too, or transition to Login Instead
                 let db = Firestore.firestore()
                 let uid = Auth.auth().currentUser?.uid
-                
                 
                 db.collection("users").whereField("uid", isEqualTo: uid!)
                     .getDocuments() { (querySnapshot, err) in
@@ -81,19 +75,42 @@ class LoginViewController: UIViewController {
                             for document in querySnapshot!.documents {
                                 print("\(document.documentID) => \(document.data())")
                                 
-                                // let data = document.data()
+                                
                                 let docID = document.documentID
                                 let userID = document["uid"] as? String ?? ""
                                 let userFirstName = document["firstname"] as? String ?? ""
                                 let userLastName = document["lastname"] as? String ?? ""
                                 
-                                print (userFirstName)
-                                //
+                                // Test collection of User Data from Firebase User Document
+                                print ("                                                         ")
+                                print ("**** Start Printing Firebase Document Snapshot Data *****")
+                                print ("                                                         ")
+                                print ("First name: " + userFirstName)
+                                print ("Last name: " + userLastName)
+                                print ("User ID" + userID)
+                                print ("Document ID: " + docID)
+                                print ("                                                         ")
+                                print ("**** End Printing Firebase Document Snapshot Data *****")
+                                print ("                                                         ")
                                 
+                                // Setting UserDefaults for User Data
                                 UserDefaults.standard.setUserDocumentID(value: docID)
                                 UserDefaults.standard.setUserID(value: userID)
                                 UserDefaults.standard.setUserFirstName(value: userFirstName)
                                 UserDefaults.standard.setUserLastName(value: userLastName)
+                                
+                                // Test UserDefaults Getters for User Data
+                                print ("                                                         ")
+                                print ("**** Start Printing User Defaults Getters *****")
+                                print ("                                                         ")
+                                print("First name: " + UserDefaults.standard.getUserFirstName())
+                                print("Last name: " + UserDefaults.standard.getUserLastName())
+                                print("User ID" + UserDefaults.standard.getUserID())
+                                print("Document ID: " + UserDefaults.standard.getUserDocumentID())
+                                print ("                                                         ")
+                                print ("**** End Printing User Defaults Getters *****")
+                                print ("                                                         ")
+                                
                                 
                                 // Set Login status boolean
                                 UserDefaults.standard.setLoggedIn(value: true)
@@ -101,7 +118,6 @@ class LoginViewController: UIViewController {
                             }
                         }
                     }
-                
                 
                 // Transition to Home ViewController
                 let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
@@ -111,9 +127,7 @@ class LoginViewController: UIViewController {
             }
         }
         
-        
     }
-    
 }
 
 

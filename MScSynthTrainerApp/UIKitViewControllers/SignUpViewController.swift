@@ -118,6 +118,7 @@ class SignUpViewController: UIViewController {
                     // User was created successfully, now store the first name and last name
                     let db = Firestore.firestore()
                     
+                    // Create user database document in Firebase
                     db.collection("users").addDocument(data: ["firstname":firstName,
                                                               "lastname":lastName, "uid": result!.user.uid]) { (error) in
                         if error != nil {
@@ -125,15 +126,70 @@ class SignUpViewController: UIViewController {
                             self.showError("Error saving user data")
                         }
                     }
+
+                    // Start of Get Document Code
+                    let addDocUserID = result!.user.uid
+
                     
+                    db.collection("users").whereField("uid", isEqualTo: addDocUserID)
+                        .getDocuments() { (querySnapshot, err) in
+                            if let err = err {
+                                print("Error getting documents: \(err)")
+                            } else {
+                                for document in querySnapshot!.documents {
+                                    print("\(document.documentID) => \(document.data())")
+                                    
+                                    
+                                    let docID = document.documentID
+                                    let userID = document["uid"] as? String ?? ""
+                                    let userFirstName = document["firstname"] as? String ?? ""
+                                    let userLastName = document["lastname"] as? String ?? ""
+                                    
+                                    // Test collection of User Data from Firebase User Document
+                                    print ("                                                         ")
+                                    print ("**** Start Printing Firebase Document Snapshot Data *****")
+                                    print ("                                                         ")
+                                    print ("First name: " + userFirstName)
+                                    print ("Last name: " + userLastName)
+                                    print ("User ID: " + userID)
+                                    print ("Document ID: " + docID)
+                                    print ("**** End Printing Firebase Document Snapshot Data *****")
+                                    print ("                                                         ")
+                                    
+                                    // Setting UserDefaults for User Data
+                                    UserDefaults.standard.setUserDocumentID(value: docID)
+                                    UserDefaults.standard.setUserID(value: userID)
+                                    UserDefaults.standard.setUserFirstName(value: userFirstName)
+                                    UserDefaults.standard.setUserLastName(value: userLastName)
+                                    
+                                    // Test UserDefaults Getters for User Data
+                                    print ("                                                         ")
+                                    print ("**** Start Printing User Defaults Getters *****")
+                                    print ("                                                         ")
+                                    print("First name: " +  UserDefaults.standard.getUserFirstName())
+                                    print("Last name: " + UserDefaults.standard.getUserLastName())
+                                    print("User ID: " + UserDefaults.standard.getUserID())
+                                    print("Document ID: " + UserDefaults.standard.getUserDocumentID())
+                                    print ("                                                         ")
+                                    print ("**** End Printing User Defaults Getters *****")
+                                    print ("                                                         ")
+                                    
+                                    
+                                    // Set Login status boolean
+                                    UserDefaults.standard.setLoggedIn(value: true)
+                                    
+                                }
+                            }
+                        }
                     
-                    
+
+                    // End of Get Document Code
+                      
                     
                     // Transition to the home screen
                     self.transitionToHome()
                     
                     // Transition to the home screen
-                    
                     
                 }
             }
