@@ -4,6 +4,8 @@
 //
 //  Created by Oisin Carlin on 09/08/2022.
 //
+// Filters Example Linking Onboard Views
+//
 
 import SwiftUI
 import AudioKit
@@ -31,9 +33,7 @@ struct LPFLinkView: View {
                     .scaledToFit()
                     .frame(width: 300, height: 200)
                     .foregroundColor(.blue)
-
             }
-
             
             Text(title)
                 .font(.title).bold()
@@ -66,9 +66,8 @@ struct HPFLinkView: View {
                     .scaledToFit()
                     .frame(width: 300, height: 200)
                     .foregroundColor(.blue)
-
             }
-
+            
             
             Text(title)
                 .font(.title).bold()
@@ -101,9 +100,9 @@ struct BPFLinkView: View {
                     .scaledToFit()
                     .frame(width: 300, height: 200)
                     .foregroundColor(.blue)
-
+                
             }
-
+            
             
             Text(title)
                 .font(.title).bold()
@@ -136,9 +135,9 @@ struct BRFLinkView: View {
                     .scaledToFit()
                     .frame(width: 300, height: 200)
                     .foregroundColor(.blue)
-
+                
             }
-
+            
             
             Text(title)
                 .font(.title).bold()

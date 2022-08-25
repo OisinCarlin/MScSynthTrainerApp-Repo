@@ -4,6 +4,8 @@
 //
 //  Created by Oisin Carlin on 10/08/2022.
 //
+// Play Menu View
+//
 
 import SwiftUI
 
@@ -23,7 +25,7 @@ struct PlayMenu: View {
                                 Text("Basic Controls")
                                     .font(.headline)
                                     .fontWeight(.bold)
-                                Text("")
+                                Text("Up, down, high, low. Learn the basics here.")
                                     .font(.subheadline)
                                     .foregroundColor(Color.gray)
                                     .lineLimit(2)
@@ -31,26 +33,7 @@ struct PlayMenu: View {
                         }
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-//                    .padding()
                     .border(.red, width: 4)
-//                    NavigationLink(destination: SoundWavesTutorial()){
-//                        HStack {
-//                            Image("soundWave2")
-//                                .resizable()
-//                                .renderingMode(.original)
-//                                .aspectRatio(contentMode: .fit)
-//                                .frame(width: 80, height: 80)
-//                            VStack(alignment: .leading) {
-//                                Text("Sound Waves")
-//                                    .font(.headline)
-//                                    .fontWeight(.bold)
-//                                Text("...")
-//                                    .font(.subheadline)
-//                                    .foregroundColor(Color.gray)
-//                                    .lineLimit(2)
-//                            }
-//                        }
-//                    }
                     NavigationLink(destination: PlayOscillatorsAndWaveforms()){
                         HStack {
                             Image("waveOscillator")
@@ -62,7 +45,7 @@ struct PlayMenu: View {
                                 Text("Oscillators and Waveforms")
                                     .font(.headline)
                                     .fontWeight(.bold)
-                                Text("...")
+                                Text("Learn the shapes that shape your tone!")
                                     .font(.subheadline)
                                     .foregroundColor(Color.gray)
                                     .lineLimit(2)
@@ -70,7 +53,6 @@ struct PlayMenu: View {
                         }
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-//                    .padding()
                     .border(.yellow, width: 4)
                     
                     NavigationLink(destination: PlayFilters()){
@@ -84,7 +66,7 @@ struct PlayMenu: View {
                                 Text("Filters")
                                     .font(.headline)
                                     .fontWeight(.bold)
-                                Text("...")
+                                Text("Filter out the noise and keep the good stuff.")
                                     .font(.subheadline)
                                     .foregroundColor(Color.gray)
                                     .lineLimit(2)
@@ -92,7 +74,6 @@ struct PlayMenu: View {
                         }
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-//                    .padding()
                     .border(.green, width: 4)
                     
                     NavigationLink(destination: PlayEnvelopes()){
@@ -106,7 +87,7 @@ struct PlayMenu: View {
                                 Text("Envelopes")
                                     .font(.headline)
                                     .fontWeight(.bold)
-                                Text("...")
+                                Text("Wrap your sound up and send it away!")
                                     .font(.subheadline)
                                     .foregroundColor(Color.gray)
                                     .lineLimit(2)
@@ -114,9 +95,7 @@ struct PlayMenu: View {
                         }
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-//                    .padding()
-                    .border(.blue, width: 4)
-                    
+                    .border(.blue, width: 4)  
                 }
             }
         }.navigationBarTitle("Play")

@@ -4,6 +4,8 @@
 //
 //  Created by Oisin Carlin on 05/08/2022.
 //
+// High Pass Filter Example View
+//
 
 
 import AudioKit
@@ -168,23 +170,21 @@ struct HighPassFilterView: View {
                     }
                     
                 }
-                //                        .padding()
             }
             
             HStack{
                 ParameterSlider(text: "Amplitude",
                                 parameter: self.$conductor.data.amplitude,
                                 range: 0 ... 1)
-//                    .padding()
                 VStack{
                     Text(" /1   ")
                     Text(" ")
                     Text(" ")
                 }
             }
-
             
-//             NodeOutputView(conductor.osc)
+            
+            //             NodeOutputView(conductor.osc)
             
             //Show Keyboard button
             Text(self.conductor.data.showKeyboard ? "Hide Keyboard" : "Show Keyboard").onTapGesture {
@@ -208,11 +208,6 @@ struct HighPassFilterView: View {
                             parameter: self.$conductor.data.resonance,
                             range: -20...40,
                             units: "dB")
-//            ParameterSlider(text: "Filter Mix",
-//                            parameter: self.$conductor.data.balance,
-//                            range: 0...1,
-//                            units: "%")
-            
             
         }
         

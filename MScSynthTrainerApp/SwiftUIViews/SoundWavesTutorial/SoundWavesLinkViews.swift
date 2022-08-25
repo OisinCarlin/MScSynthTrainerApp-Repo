@@ -4,6 +4,8 @@
 //
 //  Created by Oisin Carlin on 12/08/2022.
 //
+// Sound Waves Example Linking Onboard Views
+//
 
 import SwiftUI
 import AudioKit
@@ -33,7 +35,7 @@ struct SWAmplitudeLinkView: View {
                     .frame(width: 300, height: 200)
                     .foregroundColor(.blue)
             }
-
+            
             
             
             Text(title)
@@ -68,11 +70,8 @@ struct SWPitchLinkView: View {
                     .scaledToFit()
                     .frame(width: 300, height: 200)
                     .foregroundColor(.blue)
-
+                
             }
-
-            
-            
             Text(title)
                 .font(.title).bold()
             

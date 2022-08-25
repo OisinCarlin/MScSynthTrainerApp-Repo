@@ -4,6 +4,8 @@
 //
 //  Created by Oisin Carlin on 10/08/2022.
 //
+// Basic Controls Submenu of Play Menu
+//
 
 import SwiftUI
 
@@ -30,7 +32,6 @@ struct PlayBasicControls: View {
                             }
                         }
                     }
-                    
                     
                     NavigationLink(destination: BasicControlsPitchOscillatorView()){
                         HStack {

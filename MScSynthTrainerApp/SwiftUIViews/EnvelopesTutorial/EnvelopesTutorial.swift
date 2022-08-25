@@ -4,6 +4,8 @@
 //
 //  Created by Oisin Carlin on 09/08/2022.
 //
+// Envelopes Tutorial TabView Slideshow
+//
 
 import SwiftUI
 
@@ -40,17 +42,6 @@ struct EnvelopesTutorial: View {
                         description: "'Release' is the last part of the ADSR envelope. It is the amount of time after a note is let go for the amplitude to fade away from the 'sustain' level to zero. Think again of the piano. The note can be pressed, held and sustained, but when the note is released it quickly stops. This is because it has a short release time. A cello may have a longer release time if you stop bowing but still hold the note on the neck - the note gradually fades away.")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .border(.blue, width: 16)
-//            OnboardViewOneImage(systemImageName1: "",
-//                                title: "",
-//                                description: "")
-            
-            
-            //: * Sustain is not a time, but a percentage of the peak amplitude that will be the the sustained amplitude.
-            //: * Release is the amount of time after a note is let go for the sound to die away to zero.
-
-            
-            //: * Attack is the amount of time it takes a sound to reach its maximum volume.  An example of a fast attack is a
-            //:   piano, where as a cello can have a longer attack time.
             
             AmpEnvLinkView(systemImageName1: "appADSR",
                            title: "Play with ADSR Envelope",
@@ -59,8 +50,8 @@ struct EnvelopesTutorial: View {
                 .border(.blue, width: 16)
             
             FiltersAmpEnvLinkView(systemImageName1: "appADSR",
-                           title: "Play ADSR Enveloped Sound through Filters",
-                           description: "Now that you have had a go at using an ADSR envelope to control the amplitude of synth oscillator sounds - try playing some enveloped sounds through some of the filters you've learned to see what interesting sounds you can create.")
+                                  title: "Play ADSR Enveloped Sound through Filters",
+                                  description: "Now that you have had a go at using an ADSR envelope to control the amplitude of synth oscillator sounds - try playing some enveloped sounds through some of the filters you've learned to see what interesting sounds you can create.")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .border(.blue, width: 16)
         }

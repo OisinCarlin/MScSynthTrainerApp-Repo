@@ -4,6 +4,8 @@
 //
 //  Created by Oisin Carlin on 10/08/2022.
 //
+// Envelopes Submenu of Play Menu
+//
 
 import SwiftUI
 
@@ -107,8 +109,6 @@ struct PlayEnvelopes: View {
                             }
                         }
                     }
-
-
                 }
             }
         }.navigationBarTitle("Play")

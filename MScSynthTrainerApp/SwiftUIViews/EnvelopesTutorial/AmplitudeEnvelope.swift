@@ -4,6 +4,9 @@
 //
 //  Created by Oisin Carlin on 09/08/2022.
 //
+// Amplitude Envelope Example View
+//
+
 
 
 import AudioKit
@@ -14,15 +17,6 @@ import AVFoundation
 import SoundpipeAudioKit
 import SwiftUI
 
-//: ## Amplitude Envelope
-//: A surprising amount of character can be added to a sound by changing its amplitude over time.
-//: A very common means of defining the shape of amplitude is to use an ADSR envelope which stands for
-//: Attack, Sustain, Decay, Release.
-//: * Attack is the amount of time it takes a sound to reach its maximum volume.  An example of a fast attack is a
-//:   piano, where as a cello can have a longer attack time.
-//: * Decay is the amount of time after which the peak amplitude is reached for a lower amplitude to arrive.
-//: * Sustain is not a time, but a percentage of the peak amplitude that will be the the sustained amplitude.
-//: * Release is the amount of time after a note is let go for the sound to die away to zero.
 
 
 struct AmpEnvData {
@@ -33,7 +27,7 @@ struct AmpEnvData {
 class AmplitudeEnvelopeConductor: ObservableObject, KeyboardDelegate {
     let engine = AudioEngine()
     var currentNote = 0
-
+    
     func noteOn(note: MIDINoteNumber) {
         if note != currentNote {
             env.closeGate()
@@ -41,11 +35,11 @@ class AmplitudeEnvelopeConductor: ObservableObject, KeyboardDelegate {
         osc.frequency = note.midiNoteToFrequency()
         env.openGate()
     }
-
+    
     func noteOff(note: MIDINoteNumber) {
         env.closeGate()
     }
-
+    
     var osc: Oscillator
     var env: AmplitudeEnvelope
     var fader: Fader
@@ -55,7 +49,7 @@ class AmplitudeEnvelopeConductor: ObservableObject, KeyboardDelegate {
             osc.$amplitude.ramp(to: data.amplitude, duration: data.rampDuration)
         }
     }
-
+    
     init() {
         osc = Oscillator()
         env = AmplitudeEnvelope(osc)
@@ -63,7 +57,7 @@ class AmplitudeEnvelopeConductor: ObservableObject, KeyboardDelegate {
         osc.amplitude = 1
         engine.output = fader
     }
-
+    
     func start() {
         osc.start()
         do {
@@ -72,7 +66,7 @@ class AmplitudeEnvelopeConductor: ObservableObject, KeyboardDelegate {
             Log(err)
         }
     }
-
+    
     func stop() {
         osc.stop()
         engine.stop()
@@ -86,7 +80,7 @@ struct AmplitudeEnvelopeView: View {
     @State private var didTapSquare:Bool = false
     @State private var didTapTriangle:Bool = false
     @State private var didTapSawtooth:Bool = false
-
+    
     var body: some View {
         VStack {
             
@@ -98,7 +92,7 @@ struct AmplitudeEnvelopeView: View {
                 self.conductor.env.sustainLevel = sus
                 self.conductor.env.releaseDuration = rel
             }
-//            NodeOutputView(conductor.env)
+            //            NodeOutputView(conductor.env)
             NodeRollingView(conductor.fader, color: .red)
             
             Text("Oscillator Waveform Controls:").foregroundColor(.pink).font(Font.body.bold()).padding()
@@ -164,7 +158,7 @@ struct AmplitudeEnvelopeView: View {
                             octaveCount: 1,
                             polyphonicMode: false,
                             delegate: conductor)
-
+            
         }.cookbookNavBarTitle("Amplitude Envelope")
             .onAppear {
                 self.conductor.start()

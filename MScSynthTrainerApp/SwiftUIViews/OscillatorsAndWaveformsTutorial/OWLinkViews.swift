@@ -4,6 +4,8 @@
 //
 //  Created by Oisin Carlin on 09/08/2022.
 //
+// Oscillators and Waveforms Example Linking Onboard Views
+//
 
 import SwiftUI
 import AudioKit
@@ -70,7 +72,7 @@ struct OWSquareLinkView: View {
                     .frame(width: 300, height: 200)
                     .foregroundColor(.blue)
             }
-
+            
             Text(title)
                 .font(.title).bold()
             
@@ -134,7 +136,7 @@ struct OWSawtoothLinkView: View {
                     .frame(width: 300, height: 200)
                     .foregroundColor(.blue)
             }
-
+            
             Text(title)
                 .font(.title).bold()
             
@@ -166,7 +168,7 @@ struct OWPWMLinkView: View {
                     .scaledToFit()
                     .frame(width: 300, height: 200)
                     .foregroundColor(.blue)
-
+                
             }
             
             

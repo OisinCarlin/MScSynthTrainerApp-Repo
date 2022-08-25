@@ -4,6 +4,8 @@
 //
 //  Created by Oisin Carlin on 09/08/2022.
 //
+// Amplitude Envelope with Low Pass Filter Example View
+//
 
 import AudioKit
 import AudioKitUI
@@ -60,8 +62,6 @@ class LPFAmpEnvConductor: ObservableObject, KeyboardDelegate {
             filter.cutoffFrequency = data.cutoffFrequency
             filter.resonance = data.resonance
             dryWetMixer.balance = data.balance
-//
-//            osc.$frequency.ramp(to: data.frequency, duration: data.rampDuration)
             osc.$amplitude.ramp(to: data.amplitude, duration: data.rampDuration)
             
         }
@@ -106,19 +106,15 @@ struct LPFAmpEnvView: View {
     @State private var didTapSawtooth:Bool = false
     
     var body: some View {
-        //                ScrollView {
         VStack {
-//            Text("Envelope and Oscillator Controls:").foregroundColor(.pink).font(Font.body.bold())
-////                .padding()
+            
             
             ADSRWidget { att, dec, sus, rel in
                 self.conductor.env.attackDuration = att
                 self.conductor.env.decayDuration = dec
                 self.conductor.env.sustainLevel = sus
                 self.conductor.env.releaseDuration = rel
-            }
-//            NodeOutputView(conductor.env)
-            
+            }     
             
             NodeRollingView(conductor.dryWetMixer, color: .red)
             
@@ -167,7 +163,7 @@ struct LPFAmpEnvView: View {
                 }                .foregroundColor(didTapSawtooth ? Color.red : Color.black).font(Font.body.bold())
                 Spacer()
             }
-
+            
             
             HStack{
                 ParameterSlider(text: " Master Amplitude",
@@ -180,12 +176,12 @@ struct LPFAmpEnvView: View {
                     Text(" ")
                 }
             }
-
+            
             KeyboardControl(firstOctave: 3,
                             octaveCount: 1,
                             polyphonicMode: false,
                             delegate: conductor)
- 
+            
             Text("Low Pass Filter Controls:").foregroundColor(.pink).font(Font.body.bold()).padding()
             ParameterSlider(text: "Cutoff Frequency",
                             parameter: self.$conductor.data.cutoffFrequency,
@@ -195,14 +191,9 @@ struct LPFAmpEnvView: View {
                             parameter: self.$conductor.data.resonance,
                             range: -20...40,
                             units: "dB")
-//            ParameterSlider(text: "Filter Mix",
-//                            parameter: self.$conductor.data.balance,
-//                            range: 0...1,
-//                            units: "%")
-            
             
         }
-  
+        
         
         .cookbookNavBarTitle("LPF and Envelope")
         .onAppear {
@@ -220,7 +211,6 @@ struct LPFAmpEnvView: View {
         }
         
     }
-    
 }
 
 

@@ -4,6 +4,8 @@
 //
 //  Created by Oisin Carlin on 09/08/2022.
 //
+// Amplitude Envelope with Band Reject Filter Example View
+//
 
 import AudioKit
 import AudioKitUI
@@ -23,10 +25,9 @@ struct BRFAmpEnvData {
     var rampDuration: AUValue = 0.1
     
     var showKeyboard = false
-        
+    
     var centerFrequency: AUValue = 2_000.0
     var bandwidth: AUValue = 100.0
-//    var rampDuration: AUValue = 0.02
     var balance: AUValue = 1
 }
 
@@ -61,7 +62,7 @@ class BRFAmpEnvConductor: ObservableObject, KeyboardDelegate {
             
             filter.centerFrequency = data.centerFrequency
             filter.bandwidth = data.bandwidth
-
+            
             osc.$amplitude.ramp(to: data.amplitude, duration: data.rampDuration)
         }
     }
@@ -105,10 +106,7 @@ struct BRFAmpEnvView: View {
     @State private var didTapSawtooth:Bool = false
     
     var body: some View {
-        //                ScrollView {
         VStack {
-//            Text("Envelope and Oscillator Controls:").foregroundColor(.pink).font(Font.body.bold())
-////                .padding()
             
             ADSRWidget { att, dec, sus, rel in
                 self.conductor.env.attackDuration = att
@@ -116,7 +114,6 @@ struct BRFAmpEnvView: View {
                 self.conductor.env.sustainLevel = sus
                 self.conductor.env.releaseDuration = rel
             }
-//            NodeOutputView(conductor.env)
             
             
             NodeRollingView(conductor.dryWetMixer, color: .red)
@@ -166,7 +163,7 @@ struct BRFAmpEnvView: View {
                 }                .foregroundColor(didTapSawtooth ? Color.red : Color.black).font(Font.body.bold())
                 Spacer()
             }
-
+            
             
             HStack{
                 ParameterSlider(text: " Master Amplitude",
@@ -179,12 +176,12 @@ struct BRFAmpEnvView: View {
                     Text(" ")
                 }
             }
-
+            
             KeyboardControl(firstOctave: 3,
                             octaveCount: 1,
                             polyphonicMode: false,
                             delegate: conductor)
- 
+            
             Text("Band Reject Filter Controls:").foregroundColor(.pink).font(Font.body.bold()).padding()
             ParameterSlider(text: "Center Frequency",
                             parameter: self.$conductor.data.centerFrequency,
@@ -194,14 +191,9 @@ struct BRFAmpEnvView: View {
                             parameter: self.$conductor.data.bandwidth,
                             range: 0.0...20_000.0,
                             units: "Hertz")
-//            ParameterSlider(text: "Filter Mix",
-//                            parameter: self.$conductor.data.balance,
-//                            range: 0...1,
-//                            units: "%")
-            
             
         }
-  
+        
         
         .cookbookNavBarTitle("BRF and Envelope")
         .onAppear {

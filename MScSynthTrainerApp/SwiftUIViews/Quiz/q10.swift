@@ -4,8 +4,9 @@
 //
 //  Created by Oisin Carlin on 16/08/2022.
 //
-
+// Question View 10
 // Sound Waves: Orange
+//
 
 import SwiftUI
 import AudioKit
@@ -32,7 +33,7 @@ struct q10: View {
     @State private var lock:Bool = false
     
     @State private var scoreLock:Bool = false
-
+    
     
     var body: some View {
         
@@ -51,7 +52,7 @@ struct q10: View {
                 .padding()
             
             
-// ****** Answer A **********************
+            // ****** Answer A **********************
             
             Button(action: {
                 if(self.lock == false){
@@ -68,9 +69,9 @@ struct q10: View {
                     .border(self.didTapA ? .red : .black, width: 3)
             }
             
-// ****************************************
+            // ****************************************
             
-// ****** Answer B ************************
+            // ****** Answer B ************************
             
             Button(action: {
                 if(self.lock == false){
@@ -87,9 +88,9 @@ struct q10: View {
                     .frame(maxWidth: 350)
                     .border(self.didTapB ? .green : .black, width: 3)
             }
-// ****************************************
+            // ****************************************
             
-// ****** Answer C ************************
+            // ****** Answer C ************************
             
             Button(action: {
                 if(self.lock == false){
@@ -100,7 +101,7 @@ struct q10: View {
             }){
                 Text("Amplitude")
                     .foregroundColor(self.didTapC ? .red : .black)
-                    
+                
                     .font(Font.body.bold())
                     .padding()
                     .frame(maxWidth: 350)
@@ -108,10 +109,10 @@ struct q10: View {
             }
             
             
-// ****************************************
+            // ****************************************
             
             
-// ****** Answer D ************************
+            // ****** Answer D ************************
             
             Button(action: {
                 if(self.lock == false){
@@ -122,20 +123,20 @@ struct q10: View {
             }){
                 Text("Resonance")
                     .foregroundColor(self.didTapD ? .red : .black)
-                    
+                
                     .font(Font.body.bold())
                     .padding()
                     .frame(maxWidth: 350)
                     .border(self.didTapD ? .red : .black, width: 3)
             }
-
-// ****************************************
             
-// ************ Response ******************
+            // ****************************************
+            
+            // ************ Response ******************
             
             
             
-        
+            
             //Correct
             if(self.didTapB){
                 Text("Correct!")
@@ -143,7 +144,7 @@ struct q10: View {
                     .padding()
                 
                 NavigationLink(destination: QHost1()
-                .navigationBarBackButtonHidden(true)
+                                .navigationBarBackButtonHidden(true)
                 ){
                     Text("Next")
                         .foregroundColor(.blue)
@@ -171,7 +172,7 @@ struct q10: View {
                     .padding()
                 
                 NavigationLink(destination: QHost1()
-                .navigationBarBackButtonHidden(true)
+                                .navigationBarBackButtonHidden(true)
                 ){
                     Text("Next")
                         .foregroundColor(.blue)
@@ -184,7 +185,7 @@ struct q10: View {
                     questionCount.count += 1
                 }
                 
-
+                
             }
         }
         .onAppear{
@@ -196,10 +197,9 @@ struct q10: View {
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarLeading) {
                 NavigationLink(destination: QuizSummary()
-                .navigationBarBackButtonHidden(true)
+                                .navigationBarBackButtonHidden(true)
                 ){
                     Text("Quit Quiz")
-//                        .font(Font.body.bold())
                         .foregroundColor(.blue)
                 }
             }

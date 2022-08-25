@@ -4,6 +4,9 @@
 //
 //  Created by Oisin Carlin on 09/08/2022.
 //
+//
+// Amplitude Envelopes Example Linking Onboard Views
+//
 
 import SwiftUI
 import AudioKit
@@ -31,7 +34,6 @@ struct AmpEnvLinkView: View {
                     .scaledToFit()
                     .frame(width: 250, height: 120)
                     .foregroundColor(.blue)
-                
             }
             
             
@@ -80,20 +82,19 @@ struct FiltersAmpEnvLinkView: View {
             NavigationLink(destination: LPFAmpEnvView()){
                 Text("Tap here to Play Enveloped Sound through Low Pass Filter").foregroundColor(.blue).font(Font.body.bold())
             }
-//            .padding()
+            
             NavigationLink(destination: HPFAmpEnvView()){
                 Text("Tap here to Play Enveloped Sound through High Pass Filter").foregroundColor(.purple).font(Font.body.bold())
             }
-//            .padding()
+            
             NavigationLink(destination: BPFAmpEnvView()){
                 Text("Tap here to Play Enveloped Sound through Band Pass Filter").foregroundColor(.pink).font(Font.body.bold())
             }
-//            .padding()
+            
             NavigationLink(destination: BRFAmpEnvView()){
                 Text("Tap here to Play Enveloped Sound through Band Reject Filter").foregroundColor(.red).font(Font.body.bold())
             }
-//            .padding()
-
+            
         }
         .padding(.horizontal, 40)
     }

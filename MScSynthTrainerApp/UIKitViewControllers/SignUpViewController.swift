@@ -4,6 +4,8 @@
 //
 //  Created by Oisin Carlin on 21/06/2022.
 //
+// Sign-Up UIKit Viewcontroller Accompanying Code File
+//
 
 import UIKit
 import FirebaseAuth
@@ -26,7 +28,7 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         setUpElements()
     }
@@ -44,16 +46,16 @@ class SignUpViewController: UIViewController {
         Utilities.styleFilledButton(signUpButton)
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
     // Check the fields and validate that the data is correct.
     // If everything is correct, this method returns nil. Otherwise it returns the error message.
@@ -100,7 +102,7 @@ class SignUpViewController: UIViewController {
             let lastName = lastNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-
+            
             
             // Create the user
             Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
@@ -128,7 +130,7 @@ class SignUpViewController: UIViewController {
                     
                     
                     // Transition to the home screen
-                     self.transitionToHome()
+                    self.transitionToHome()
                     
                     // Transition to the home screen
                     
@@ -152,33 +154,33 @@ class SignUpViewController: UIViewController {
         let db = Firestore.firestore()
         let uid = Auth.auth().currentUser?.uid
         
-
-            db.collection("users").whereField("uid", isEqualTo: uid!)
-                .getDocuments() { (querySnapshot, err) in
-                    if let err = err {
-                        print("Error getting documents: \(err)")
-                    } else {
-                        for document in querySnapshot!.documents {
-                            // print("\(document.documentID) => \(document.data())")
-                            
-                            // let data = document.data()
-                            let docID = document.documentID
-                            let userID = document["uid"] as? String ?? ""
-                            let userFirstName = document["firstname"] as? String ?? ""
-                            let userLastName = document["lastname"] as? String ?? ""
-                            
-
-                            UserDefaults.standard.setUserDocumentID(value: docID)
-                            UserDefaults.standard.setUserID(value: userID)
-                            UserDefaults.standard.setUserFirstName(value: userFirstName)
-                            UserDefaults.standard.setUserLastName(value: userLastName)
-                            
-                            // Set Login status boolean
-                            UserDefaults.standard.setLoggedIn(value: true)
-                            
+        
+        db.collection("users").whereField("uid", isEqualTo: uid!)
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        // print("\(document.documentID) => \(document.data())")
+                        
+                        // let data = document.data()
+                        let docID = document.documentID
+                        let userID = document["uid"] as? String ?? ""
+                        let userFirstName = document["firstname"] as? String ?? ""
+                        let userLastName = document["lastname"] as? String ?? ""
+                        
+                        
+                        UserDefaults.standard.setUserDocumentID(value: docID)
+                        UserDefaults.standard.setUserID(value: userID)
+                        UserDefaults.standard.setUserFirstName(value: userFirstName)
+                        UserDefaults.standard.setUserLastName(value: userLastName)
+                        
+                        // Set Login status boolean
+                        UserDefaults.standard.setLoggedIn(value: true)
+                        
                     }
                 }
-        }
+            }
         
         
         
@@ -196,7 +198,7 @@ class SignUpViewController: UIViewController {
     
     //Problem: Back button no longer works when transitioning to LoginVC from SignUp
     // Transition to Login ViewController
-
+    
     func transitionToLogin(){
         
         let loginViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.loginViewController) as? LoginViewController
@@ -206,8 +208,5 @@ class SignUpViewController: UIViewController {
         
     }
 
-    
-    
-    
 }
 

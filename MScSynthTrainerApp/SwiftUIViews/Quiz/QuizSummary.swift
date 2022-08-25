@@ -4,17 +4,10 @@
 //
 //  Created by Oisin Carlin on 15/08/2022.
 //
+// Quiz Summary: Presents User Score and Questions Completed from incremented EnviromentObject variables.
+//
 
 import SwiftUI
-
-
-//struct ScoreView: View {
-//    @EnvironmentObject var settings: GameSettings
-//
-//    var body: some View {
-//        Text("Score: \(settings.score)")
-//    }
-//}
 
 struct QuizSummary: View {
     
@@ -22,12 +15,6 @@ struct QuizSummary: View {
     //Score Tracker
     @EnvironmentObject var scoreTracker: ScoreTracker
     @EnvironmentObject var questionCount: QuestionCount
-    
-//
-//    // Get UserDefaults results
-//    @State private var q1result:Int = UserDefaults.standard.getQ1Result()
-//
-//    @State private var q2result:Int = UserDefaults.standard.getQ2Result()
     
     var body: some View {
         
@@ -44,7 +31,7 @@ struct QuizSummary: View {
                 .frame(width: 300, height: 200)
                 .foregroundColor(.blue)
                 .padding()
-
+            
             let scoreString = String(scoreTracker.score)
             let countString = String(questionCount.count)
             
@@ -54,9 +41,8 @@ struct QuizSummary: View {
                 .padding()
             
             NavigationLink(destination: QuizMenu()
-            .navigationBarBackButtonHidden(true)
+                            .navigationBarBackButtonHidden(true)
             ){
-//                Text("Finish Quiz / Save Result")
                 
                 Text("Complete")
                     .foregroundColor(.blue)
@@ -66,13 +52,9 @@ struct QuizSummary: View {
                     .frame(maxWidth: 350)
                     .border(.blue, width: 3)
             }.onTapGesture {
-                //                UserDefaults.standard.setQ1Result(value: 0)
             }
-            
-            
-            
         }
-
+        
     }
 }
 

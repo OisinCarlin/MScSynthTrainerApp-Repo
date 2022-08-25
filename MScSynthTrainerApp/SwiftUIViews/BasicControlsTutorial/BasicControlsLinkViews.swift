@@ -4,6 +4,8 @@
 //
 //  Created by Oisin Carlin on 10/08/2022.
 //
+// Basic Controls Example Linking Onboard Views
+//
 
 import SwiftUI
 import AudioKit

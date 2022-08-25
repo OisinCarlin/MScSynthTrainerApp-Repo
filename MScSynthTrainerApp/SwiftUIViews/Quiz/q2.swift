@@ -4,8 +4,9 @@
 //
 //  Created by Oisin Carlin on 15/08/2022.
 //
-
+// Question View 2
 // Filters: Green
+//
 
 import SwiftUI
 import AudioKit
@@ -58,9 +59,9 @@ struct q2: View {
                             range: 12.0...3_000.0,
                             units: "Hertz")
                 .frame(width: 300, height: 100)
-//                .padding()
+            //                .padding()
             
-// ****** Answer A **********************
+            // ****** Answer A **********************
             
             Button(action: {
                 if(self.lock == false){
@@ -77,9 +78,9 @@ struct q2: View {
                     .border(self.didTapA ? .red : .black, width: 3)
             }
             
-// ****************************************
+            // ****************************************
             
-// ****** Answer B ************************
+            // ****** Answer B ************************
             
             Button(action: {
                 if(self.lock == false){
@@ -90,14 +91,14 @@ struct q2: View {
             }){
                 Text("Cut-off Frequency")
                     .foregroundColor(self.didTapB ? .green : .black)
-                    
+                
                     .font(Font.body.bold())
                     .padding()
                     .frame(maxWidth: 350)
                     .border(self.didTapB ? .green : .black, width: 3)
             }
             
-// ************ Response ******************
+            // ************ Response ******************
             
             //Correct
             if(self.didTapB){
@@ -106,8 +107,8 @@ struct q2: View {
                     .padding()
                 
                 NavigationLink(destination: QHost1()
-                .navigationBarBackButtonHidden(true)
-
+                                .navigationBarBackButtonHidden(true)
+                               
                 ){
                     Text("Next")
                         .foregroundColor(.blue)
@@ -118,7 +119,6 @@ struct q2: View {
                         .border(.blue, width: 3)
                 }
                 .onAppear {
-//                    UserDefaults.standard.setQ2Result(value: 1)
                     
                     if(scoreLock == false){
                         scoreTracker.score += 1
@@ -136,7 +136,7 @@ struct q2: View {
                     .padding()
                 
                 NavigationLink(destination: QHost1()
-                .navigationBarBackButtonHidden(true)
+                                .navigationBarBackButtonHidden(true)
                                
                 ){
                     Text("Next")
@@ -149,9 +149,7 @@ struct q2: View {
                 }.onAppear{
                     questionCount.count += 1
                 }
-//                .onTapGesture {
-//                    UserDefaults.standard.setQ2Result(value: 0)
-//                }
+                
             }
         }
         .onAppear {
@@ -170,16 +168,14 @@ struct q2: View {
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarLeading) {
                 NavigationLink(destination: QuizSummary()
-                .navigationBarBackButtonHidden(true)
+                                .navigationBarBackButtonHidden(true)
                 ){
                     Text("Quit Quiz")
-//                        .font(Font.body.bold())
                         .foregroundColor(.blue)
                 }
             }
         }
     }
-    
 }
 
 

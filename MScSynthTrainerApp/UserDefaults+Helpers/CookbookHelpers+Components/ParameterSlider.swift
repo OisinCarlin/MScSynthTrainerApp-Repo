@@ -4,6 +4,8 @@
 //
 //  Created by Oisin Carlin on 04/07/2022.
 //
+// AudioKit Cookbook Parameter Slider View Presentation
+//
 
 import AVFoundation
 import SwiftUI
@@ -14,7 +16,7 @@ struct ParameterSlider: View {
     var range: ClosedRange<AUValue>
     var format: String = "%0.2f"
     var units: String = ""
-
+    
     var body: some View {
         VStack {
             HStack {
@@ -50,7 +52,7 @@ struct ParameterSlider_Previews: PreviewProvider {
                 .background(Color(.systemBackground))
                 .environment(\.colorScheme, .dark)
                 .previewDisplayName("Dark Mode")
-
+            
             ParameterSlider(text: "Text",
                             parameter: $param1,
                             range: 0...1,

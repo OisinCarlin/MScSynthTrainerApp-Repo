@@ -4,32 +4,27 @@
 //
 //  Created by Oisin Carlin on 15/08/2022.
 //
+// Quiz Section Landing View
+// Resets Score and Question Counting and Completion EnviromentObjects OnAppear
+//
 
 import SwiftUI
-
-
 
 struct QuizMenu: View {
     
     @EnvironmentObject var scoreTracker: ScoreTracker
     @EnvironmentObject var questionCount: QuestionCount
     @EnvironmentObject var questionComplete: QuestionComplete
-    @EnvironmentObject var questionArray: QuestionArray
     
     var body: some View {
         Form {
             Group {
-                Section(header: Text("Quiz Topics")) {
+                Section(header: Text("")) {
                     NavigationLink(destination: QHost1()
-                    .navigationBarBackButtonHidden(true)
+                                    .navigationBarBackButtonHidden(true)
                                    
                     ){
                         HStack {
-//                            Image("controls")
-//                                .resizable()
-//                                .renderingMode(.original)
-//                                .aspectRatio(contentMode: .fit)
-//                                .frame(width: 80, height: 80)
                             VStack(alignment: .leading) {
                                 Text("Start Quiz")
                                     .font(.headline)
@@ -42,137 +37,25 @@ struct QuizMenu: View {
                         }
                     }
                     .onAppear {
-                            scoreTracker.score = 0
-                            questionCount.count = 0
-                            questionComplete.completed = 0
-                        questionArray.question = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                        
+                        // Reset Score and Question Counting and Completion EnviromentObjects
+                        scoreTracker.score = 0
+                        questionCount.count = 0
+                        questionComplete.completed = 0
                     }
-
-//                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-////                    .padding()
-//                    .border(.red, width: 4)
-                    
-//                    .background(Color.red)
-                    
-//                    NavigationLink(destination: SoundWavesTutorial()){
-//                        HStack {
-//                            Image("soundWave2")
-//                                .resizable()
-//                                .renderingMode(.original)
-//                                .aspectRatio(contentMode: .fit)
-//                                .frame(width: 80, height: 80)
-//                            VStack(alignment: .leading) {
-//                                Text("Sound Waves")
-//                                    .font(.headline)
-//                                    .fontWeight(.bold)
-//                                Text("...")
-//                                    .font(.subheadline)
-//                                    .foregroundColor(Color.gray)
-//                                    .lineLimit(2)
-//                            }
-//                        }
-//                    }
-//                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-////                    .padding()
-//                    .border(.orange, width: 4)
-//
-//                    NavigationLink(destination: OscillatorsAndWaveformsTutorial()){
-//                        HStack {
-//                            Image("waveOscillator")
-//                                .resizable()
-//                                .renderingMode(.original)
-//                                .aspectRatio(contentMode: .fit)
-//                                .frame(width: 80, height: 80)
-//                            VStack(alignment: .leading) {
-//                                Text("Oscillators and Waveforms")
-//                                    .font(.headline)
-//                                    .fontWeight(.bold)
-//                                Text("...")
-//                                    .font(.subheadline)
-//                                    .foregroundColor(Color.gray)
-//                                    .lineLimit(2)
-//                            }
-//                        }
-//                    }
-//                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-////                    .padding()
-//                    .border(.yellow, width: 4)
-//
-//                    NavigationLink(destination: FiltersTutorial()){
-//                        HStack {
-//                            Image("lowPassFilter")
-//                                .resizable()
-//                                .renderingMode(.original)
-//                                .aspectRatio(contentMode: .fit)
-//                                .frame(width: 80, height: 80)
-//                            VStack(alignment: .leading) {
-//                                Text("Filters")
-//                                    .font(.headline)
-//                                    .fontWeight(.bold)
-//                                Text("...")
-//                                    .font(.subheadline)
-//                                    .foregroundColor(Color.gray)
-//                                    .lineLimit(2)
-//                            }
-//                        }
-//                    }
-//                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-////                    .padding()
-//                    .border(.green, width: 4)
-//
-//                    NavigationLink(destination: EnvelopesTutorial()){
-//                        HStack {
-//                            Image("envelope")
-//                                .resizable()
-//                                .renderingMode(.original)
-//                                .aspectRatio(contentMode: .fit)
-//                                .frame(width: 80, height: 80)
-//                            VStack(alignment: .leading) {
-//                                Text("Envelopes")
-//                                    .font(.headline)
-//                                    .fontWeight(.bold)
-//                                Text("...")
-//                                    .font(.subheadline)
-//                                    .foregroundColor(Color.gray)
-//                                    .lineLimit(2)
-//                            }
-//                        }
-//                    }
-//                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-////                    .padding()
-//                    .border(.blue, width: 4)
-//                    NavigationLink(destination: TutorialsMenu()){
-//                        HStack {
-//                            Image("map")
-//                                .resizable()
-//                                .renderingMode(.original)
-//                                .aspectRatio(contentMode: .fit)
-//                                .frame(width: 80, height: 80)
-//                            VStack(alignment: .leading) {
-//                                Text("Approaches")
-//                                    .font(.headline)
-//                                    .fontWeight(.bold)
-//                                Text("...")
-//                                    .font(.subheadline)
-//                                    .foregroundColor(Color.gray)
-//                                    .lineLimit(2)
-//                            }
-//                        }
-//                    }
                 }
             }
         }.navigationBarTitle("Quiz")
-        .toolbar {
+            .toolbar {
                 ToolbarItemGroup(placement: .navigationBarLeading) {
                     NavigationLink(destination: MasterView()
-                    .navigationBarBackButtonHidden(true)
+                                    .navigationBarBackButtonHidden(true)
                     ){
                         Text("Back to Main Menu")
-    //                        .font(Font.body.bold())
                             .foregroundColor(.blue)
                     }
                 }
-        }
+            }
     }
 }
 

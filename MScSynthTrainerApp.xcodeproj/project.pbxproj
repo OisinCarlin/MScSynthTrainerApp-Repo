@@ -76,7 +76,6 @@
 		21A4C9B328997F1600366ED0 /* LowPassFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A4C9B228997F1600366ED0 /* LowPassFilter.swift */; };
 		21A4C9B528997F6000366ED0 /* DryWetMixer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A4C9B428997F6000366ED0 /* DryWetMixer.swift */; };
 		21A4C9B728997F9200366ED0 /* PlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A4C9B628997F9200366ED0 /* PlotView.swift */; };
-		21AAEA1328AD77EA00562702 /* QuestionArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AAEA1228AD77EA00562702 /* QuestionArray.swift */; };
 		21D9D904286A0F7000DB0153 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D9D903286A0F7000DB0153 /* Constants.swift */; };
 		21F276F72874D83900152B32 /* HomeVCSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F276F62874D83900152B32 /* HomeVCSwiftUIView.swift */; };
 		21F4F13928849459003CED52 /* NavigationHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F4F13828849459003CED52 /* NavigationHelpers.swift */; };
@@ -150,7 +149,6 @@
 		21A4C9B228997F1600366ED0 /* LowPassFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowPassFilter.swift; sourceTree = "<group>"; };
 		21A4C9B428997F6000366ED0 /* DryWetMixer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DryWetMixer.swift; sourceTree = "<group>"; };
 		21A4C9B628997F9200366ED0 /* PlotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotView.swift; sourceTree = "<group>"; };
-		21AAEA1228AD77EA00562702 /* QuestionArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionArray.swift; sourceTree = "<group>"; };
 		21D9D903286A0F7000DB0153 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		21F276F62874D83900152B32 /* HomeVCSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCSwiftUIView.swift; sourceTree = "<group>"; };
 		21F4F13828849459003CED52 /* NavigationHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelpers.swift; sourceTree = "<group>"; };
@@ -198,7 +196,6 @@
 				214F01ED28AA824600655803 /* q1.swift */,
 				214F01F328AAA14A00655803 /* ScoreTracker.swift */,
 				213FBD9628ABD924008CB19F /* QuestionCount.swift */,
-				21AAEA1228AD77EA00562702 /* QuestionArray.swift */,
 				21000D3828AE5370007CDBAA /* QuestionComplete.swift */,
 			);
 			path = Quiz;
@@ -581,7 +578,6 @@
 				214F4755288AA757003DA5F3 /* OnboardView.swift in Sources */,
 				214F01F228AA97A800655803 /* QuizSummary.swift in Sources */,
 				21711E6F28A28913009E03C4 /* OWLinkViews.swift in Sources */,
-				21AAEA1328AD77EA00562702 /* QuestionArray.swift in Sources */,
 				21711E8028A2CF14009E03C4 /* AmplitudeEnvelope.swift in Sources */,
 				21A4C9B728997F9200366ED0 /* PlotView.swift in Sources */,
 				21292C90288094C60044F7B4 /* UserDefaults.swift in Sources */,
@@ -748,7 +744,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7DNCT7C94K;
 				INFOPLIST_FILE = MScSynthTrainerApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -767,7 +765,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7DNCT7C94K;
 				INFOPLIST_FILE = MScSynthTrainerApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

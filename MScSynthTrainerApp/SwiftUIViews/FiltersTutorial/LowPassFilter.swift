@@ -1,3 +1,12 @@
+//
+//  LowPassFilter.swift
+//  MScSynthTrainerApp
+//
+//  Created by Oisin Carlin on 05/08/2022.
+//
+// Low Pass Filter Example View
+//
+
 
 import AudioKit
 import AudioKitUI
@@ -155,22 +164,20 @@ struct LowPassFilterView: View {
                     }
                     
                 }
-                //                        .padding()
+                
             }
             
             HStack{
                 ParameterSlider(text: "Amplitude",
                                 parameter: self.$conductor.data.amplitude,
                                 range: 0 ... 1)
-//                    .padding()
+                
                 VStack{
                     Text(" /1   ")
                     Text(" ")
                     Text(" ")
                 }
             }
-            //                    .padding()
-            //               NodeOutputView(conductor.osc)
             
             //Show Keyboard button
             Text(self.conductor.data.showKeyboard ? "Hide Keyboard" : "Show Keyboard").onTapGesture {
@@ -196,11 +203,6 @@ struct LowPassFilterView: View {
                             parameter: self.$conductor.data.resonance,
                             range: -20...40,
                             units: "dB")
-//            ParameterSlider(text: "Filter Mix",
-//                            parameter: self.$conductor.data.balance,
-//                            range: 0...1,
-//                            units: "%")
-            
             
         }
         
@@ -221,9 +223,7 @@ struct LowPassFilterView: View {
             .onDisappear {
                 self.conductor.stop()
             }
-        
     }
-    
 }
 
 

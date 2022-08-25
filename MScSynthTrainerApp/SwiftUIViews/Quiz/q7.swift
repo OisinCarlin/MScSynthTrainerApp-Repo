@@ -4,6 +4,9 @@
 //
 //  Created by Oisin Carlin on 16/08/2022.
 //
+// Question View 7
+// Envelopes: Blue
+//
 
 import SwiftUI
 import AudioKit
@@ -14,7 +17,7 @@ import AVFoundation
 import AudioKitEX
 import CAudioKitEX
 
-// Envelopes: Blue
+
 
 struct q7: View {
     
@@ -32,15 +35,11 @@ struct q7: View {
     @State private var lock:Bool = false
     
     @State private var scoreLock:Bool = false
-
+    
     
     var body: some View {
         
         VStack {
-            
-//            Text("An enveloped sound that that takes a long time to reach it's peak amplititude has a ___ time?")
-//                .font(.system(size: 12))
-//                .fontWeight(.bold)
             
             Text("An enveloped sound that that takes ")
                 .font(.system(size: 20))
@@ -49,32 +48,19 @@ struct q7: View {
             Text("a long time to reach it's peak amplititude has ")
                 .font(.system(size: 20))
                 .fontWeight(.bold)
-//                .padding()
-            
             
             Text("a long ___ time?")
                 .font(.system(size: 20))
                 .fontWeight(.bold)
-//                .padding()
-            
-//            Image("sawWave")
-//                .resizable()
-//                .scaledToFit()
-//                .frame(width: 300, height: 200)
-//                .foregroundColor(.blue)
-//                .padding()
             
             
             ADSRWidget { att, dec, sus, rel in
-//                self.conductor.env.attackDuration = att
-//                self.conductor.env.decayDuration = dec
-//                self.conductor.env.sustainLevel = sus
-//                self.conductor.env.releaseDuration = rel
+                
             }
             .frame(width: 200, height: 150)
             
             
-// ****** Answer A **********************
+            // ****** Answer A **********************
             
             Button(action: {
                 if(self.lock == false){
@@ -91,9 +77,9 @@ struct q7: View {
                     .border(self.didTapA ? .red : .black, width: 3)
             }
             
-// ****************************************
+            // ****************************************
             
-// ****** Answer B ************************
+            // ****** Answer B ************************
             
             Button(action: {
                 if(self.lock == false){
@@ -110,9 +96,9 @@ struct q7: View {
                     .frame(maxWidth: 350)
                     .border(self.didTapB ? .red : .black, width: 3)
             }
-// ****************************************
+            // ****************************************
             
-// ****** Answer C ************************
+            // ****** Answer C ************************
             
             Button(action: {
                 if(self.lock == false){
@@ -123,7 +109,7 @@ struct q7: View {
             }){
                 Text("Attack")
                     .foregroundColor(self.didTapC ? .green : .black)
-                    
+                
                     .font(Font.body.bold())
                     .padding()
                     .frame(maxWidth: 350)
@@ -131,10 +117,10 @@ struct q7: View {
             }
             
             
-// ****************************************
+            // ****************************************
             
             
-// ****** Answer D ************************
+            // ****** Answer D ************************
             
             Button(action: {
                 if(self.lock == false){
@@ -145,18 +131,18 @@ struct q7: View {
             }){
                 Text("Decay")
                     .foregroundColor(self.didTapD ? .red : .black)
-                    
+                
                     .font(Font.body.bold())
                     .padding()
                     .frame(maxWidth: 350)
                     .border(self.didTapD ? .red : .black, width: 3)
             }
-
-// ****************************************
             
-// ************ Response ******************
+            // ****************************************
             
-        
+            // ************ Response ******************
+            
+            
             //Correct
             if(self.didTapC){
                 Text("Correct!")
@@ -164,7 +150,7 @@ struct q7: View {
                     .padding()
                 
                 NavigationLink(destination: QHost1()
-                .navigationBarBackButtonHidden(true)
+                                .navigationBarBackButtonHidden(true)
                 ){
                     Text("Next")
                         .foregroundColor(.blue)
@@ -192,7 +178,7 @@ struct q7: View {
                     .padding()
                 
                 NavigationLink(destination: QHost1()
-                .navigationBarBackButtonHidden(true)
+                                .navigationBarBackButtonHidden(true)
                 ){
                     Text("Next")
                         .foregroundColor(.blue)
@@ -204,7 +190,7 @@ struct q7: View {
                 }.onAppear{
                     questionCount.count += 1
                 }
-
+                
             }
         }
         .onAppear{
@@ -216,10 +202,9 @@ struct q7: View {
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarLeading) {
                 NavigationLink(destination: QuizSummary()
-                .navigationBarBackButtonHidden(true)
+                                .navigationBarBackButtonHidden(true)
                 ){
                     Text("Quit Quiz")
-//                        .font(Font.body.bold())
                         .foregroundColor(.blue)
                 }
             }

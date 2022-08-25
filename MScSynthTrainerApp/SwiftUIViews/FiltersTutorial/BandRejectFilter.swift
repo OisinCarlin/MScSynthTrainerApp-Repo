@@ -4,6 +4,8 @@
 //
 //  Created by Oisin Carlin on 05/08/2022.
 //
+// Band Reject Filter Example View
+//
 
 import AudioKit
 import AudioKitUI
@@ -169,7 +171,7 @@ struct BandRejectFilterView: View {
                 ParameterSlider(text: "Amplitude",
                                 parameter: self.$conductor.data.amplitude,
                                 range: 0 ... 1)
-//                    .padding()
+                //                    .padding()
                 VStack{
                     Text(" /1   ")
                     Text(" ")
@@ -201,10 +203,10 @@ struct BandRejectFilterView: View {
                             parameter: self.$conductor.data.bandwidth,
                             range: 0.0...20_000.0,
                             units: "Hertz")
-//            ParameterSlider(text: "Filter Mix",
-//                            parameter: self.$conductor.data.balance,
-//                            range: 0...1,
-//                            units: "%")
+            //            ParameterSlider(text: "Filter Mix",
+            //                            parameter: self.$conductor.data.balance,
+            //                            range: 0...1,
+            //                            units: "%")
             
             
         }

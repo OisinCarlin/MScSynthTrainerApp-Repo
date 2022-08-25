@@ -2,7 +2,7 @@
 //  Oscillator.swift
 //  testFilter
 //
-// Backend nodes for running the oscillator - particularly for waveform selection.
+//  Backend nodes for running the AudioKit Oscillator - particularly for waveform selection.
 //
 //  Created by Oisin Carlin on 22/07/2022.
 //
@@ -21,15 +21,15 @@ public class Oscillator: DynamicWaveformNode {
     
     /// Connected nodes
     public var connections: [Node] { [] }
-
+    
     /// Underlying AVAudioNode
     public var avAudioNode = instantiate(instrument: "csto")
-
+    
     fileprivate var waveform: Table?
-
+    
     /// Callback when the wavetable is updated
     public var waveformUpdateHandler: ([Float]) -> Void = { _ in }
-
+    
     /// Specification details for frequency
     public static let frequencyDef = NodeParameterDef(
         identifier: "frequency",
@@ -38,10 +38,10 @@ public class Oscillator: DynamicWaveformNode {
         defaultValue: 440.0,
         range: 0.0 ... 20_000.0,
         unit: .hertz)
-
+    
     /// Frequency in cycles per second
     @Parameter(frequencyDef) public var frequency: AUValue
-
+    
     /// Specification details for amplitude
     public static let amplitudeDef = NodeParameterDef(
         identifier: "amplitude",
@@ -50,10 +50,10 @@ public class Oscillator: DynamicWaveformNode {
         defaultValue: 1.0,
         range: 0.0 ... 10.0,
         unit: .generic)
-
+    
     /// Output Amplitude.
     @Parameter(amplitudeDef) public var amplitude: AUValue
-
+    
     /// Specification details for detuningOffset
     public static let detuningOffsetDef = NodeParameterDef(
         identifier: "detuningOffset",
@@ -62,10 +62,10 @@ public class Oscillator: DynamicWaveformNode {
         defaultValue: 0.0,
         range: -1_000.0 ... 1_000.0,
         unit: .hertz)
-
+    
     /// Frequency offset in Hz.
     @Parameter(detuningOffsetDef) public var detuningOffset: AUValue
-
+    
     /// Specification details for detuningMultiplier
     public static let detuningMultiplierDef = NodeParameterDef(
         identifier: "detuningMultiplier",
@@ -74,12 +74,12 @@ public class Oscillator: DynamicWaveformNode {
         defaultValue: 1.0,
         range: 0.9 ... 1.11,
         unit: .generic)
-
+    
     /// Frequency detuning multiplier
     @Parameter(detuningMultiplierDef) public var detuningMultiplier: AUValue
-
+    
     // MARK: - Initialization
-
+    
     /// Initialize this DynamicOscillator node
     ///
     /// - Parameters:
@@ -111,7 +111,7 @@ public class Oscillator: DynamicWaveformNode {
     }
     
     // MARK: - DynamicWaveformNode Protocol methods
-
+    
     /// Sets the wavetable of the oscillator node
     /// - Parameter waveform: The waveform of oscillation
     public func setWaveform(_ waveform: Table) {
@@ -119,7 +119,7 @@ public class Oscillator: DynamicWaveformNode {
         self.waveform = waveform
         waveformUpdateHandler(waveform.content)
     }
-
+    
     /// Gets the floating point values stored in the oscillator's wavetable
     public func getWaveformValues() -> [Float] {
         return waveform?.content ?? []

@@ -4,6 +4,8 @@
 //
 //  Created by Oisin Carlin on 22/07/2022.
 //
+// Default Tutorial TabView Slides OnboardViews with one or two images.
+//
 
 import SwiftUI
 
@@ -29,7 +31,7 @@ struct OnboardView: View {
                     .frame(width: 100, height: 100)
                     .foregroundColor(.blue)
             }
-
+            
             
             Text(title)
                 .font(.title).bold()
@@ -57,9 +59,8 @@ struct OnboardViewOneImage: View {
                     .scaledToFit()
                     .frame(width: 300, height: 200)
                     .foregroundColor(.blue)
-
             }
-
+            
             
             Text(title)
                 .font(.title).bold()

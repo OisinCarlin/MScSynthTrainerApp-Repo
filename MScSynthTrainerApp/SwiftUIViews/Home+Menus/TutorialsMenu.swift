@@ -4,12 +4,11 @@
 //
 //  Created by Oisin Carlin on 10/07/2022.
 //
+// Tutorials Menu View
+//
 
 import SwiftUI
 
-// Only need one NavigationView Instance for Menu navigation
-// .. in primary menu screen HomeVCSwiftUIView
-// Can imbed multiple NavigationLink destinations between SwiftUI files
 struct TutorialsMenu: View {
     var body: some View {
         Form {
@@ -26,7 +25,7 @@ struct TutorialsMenu: View {
                                 Text("Basic Controls")
                                     .font(.headline)
                                     .fontWeight(.bold)
-                                Text("Up, down, high, low. Learn the basics here")
+                                Text("Up, down, high, low. Learn the basics here.")
                                     .font(.subheadline)
                                     .foregroundColor(Color.gray)
                                     .lineLimit(2)
@@ -34,10 +33,8 @@ struct TutorialsMenu: View {
                         }
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-//                    .padding()
                     .border(.red, width: 4)
                     
-//                    .background(Color.red)
                     
                     NavigationLink(destination: SoundWavesTutorial()){
                         HStack {
@@ -50,7 +47,7 @@ struct TutorialsMenu: View {
                                 Text("Sound Waves")
                                     .font(.headline)
                                     .fontWeight(.bold)
-                                Text("...")
+                                Text("What are sounds and what makes them wavey?")
                                     .font(.subheadline)
                                     .foregroundColor(Color.gray)
                                     .lineLimit(2)
@@ -58,7 +55,6 @@ struct TutorialsMenu: View {
                         }
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-//                    .padding()
                     .border(.orange, width: 4)
                     
                     NavigationLink(destination: OscillatorsAndWaveformsTutorial()){
@@ -72,7 +68,7 @@ struct TutorialsMenu: View {
                                 Text("Oscillators and Waveforms")
                                     .font(.headline)
                                     .fontWeight(.bold)
-                                Text("...")
+                                Text("Learn the shapes that shape your tone!")
                                     .font(.subheadline)
                                     .foregroundColor(Color.gray)
                                     .lineLimit(2)
@@ -80,7 +76,6 @@ struct TutorialsMenu: View {
                         }
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-//                    .padding()
                     .border(.yellow, width: 4)
                     
                     NavigationLink(destination: FiltersTutorial()){
@@ -94,7 +89,7 @@ struct TutorialsMenu: View {
                                 Text("Filters")
                                     .font(.headline)
                                     .fontWeight(.bold)
-                                Text("...")
+                                Text("Filter out the noise and keep the good stuff.")
                                     .font(.subheadline)
                                     .foregroundColor(Color.gray)
                                     .lineLimit(2)
@@ -102,7 +97,6 @@ struct TutorialsMenu: View {
                         }
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-//                    .padding()
                     .border(.green, width: 4)
                     
                     NavigationLink(destination: EnvelopesTutorial()){
@@ -116,7 +110,7 @@ struct TutorialsMenu: View {
                                 Text("Envelopes")
                                     .font(.headline)
                                     .fontWeight(.bold)
-                                Text("...")
+                                Text("Wrap your sound up and send it away!")
                                     .font(.subheadline)
                                     .foregroundColor(Color.gray)
                                     .lineLimit(2)
@@ -124,26 +118,7 @@ struct TutorialsMenu: View {
                         }
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-//                    .padding()
                     .border(.blue, width: 4)
-//                    NavigationLink(destination: TutorialsMenu()){
-//                        HStack {
-//                            Image("map")
-//                                .resizable()
-//                                .renderingMode(.original)
-//                                .aspectRatio(contentMode: .fit)
-//                                .frame(width: 80, height: 80)
-//                            VStack(alignment: .leading) {
-//                                Text("Approaches")
-//                                    .font(.headline)
-//                                    .fontWeight(.bold)
-//                                Text("...")
-//                                    .font(.subheadline)
-//                                    .foregroundColor(Color.gray)
-//                                    .lineLimit(2)
-//                            }
-//                        }
-//                    }
                 }
             }
         }.navigationBarTitle("Tutorials")

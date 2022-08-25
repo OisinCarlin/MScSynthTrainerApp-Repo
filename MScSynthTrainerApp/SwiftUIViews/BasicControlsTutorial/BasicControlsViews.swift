@@ -4,6 +4,8 @@
 //
 //  Created by Oisin Carlin on 10/08/2022.
 //
+// Basic Controls Playable Example Views
+//
 
 // **************** Oscillator Data *****************************
 
@@ -153,9 +155,6 @@ struct BasicControlsKeyboardOscillatorView: View {
     var body: some View {
         
         VStack {
-//            ParameterSlider(text: "Amplitude",
-//                            parameter: self.$conductor.data.amplitude,
-//                            range: 0 ... 1).padding()
             NodeOutputView(conductor.osc)
             KeyboardControl(firstOctave: 3,
                             octaveCount: 1,
@@ -181,14 +180,10 @@ struct BasicControlsGlideOscillatorView: View {
     var body: some View {
         VStack {
             
-//            ParameterSlider(text: "Amplitude",
-//                            parameter: self.$conductor.data.amplitude,
-//                            range: 0 ... 1).padding()
-            
             HStack{
-            ParameterSlider(text: "Glide Time",
-                            parameter: self.$conductor.data.rampDuration,
-                            range: 0...10).padding()
+                ParameterSlider(text: "Glide Time",
+                                parameter: self.$conductor.data.rampDuration,
+                                range: 0...10).padding()
                 VStack{
                     Text("secs ")
                     Text(" ")

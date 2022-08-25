@@ -4,6 +4,9 @@
 //
 //  Created by Oisin Carlin on 08/08/2022.
 //
+//  Default and Pulse-width Modulation AudioKit Oscillator Data and Conductor Classes
+//
+//
 
 import AudioKit
 import AudioKitUI
@@ -81,18 +84,18 @@ struct PWMOscillatorData {
 }
 
 class PWMOscillatorConductor: ObservableObject, KeyboardDelegate {
-
+    
     let engine = AudioEngine()
-
+    
     func noteOn(note: MIDINoteNumber) {
         data.isPlaying = true
         data.frequency = note.midiNoteToFrequency()
     }
-
+    
     func noteOff(note: MIDINoteNumber) {
         data.isPlaying = false
     }
-
+    
     @Published var data = PWMOscillatorData() {
         didSet {
             if data.isPlaying {
@@ -100,29 +103,29 @@ class PWMOscillatorConductor: ObservableObject, KeyboardDelegate {
                 osc.$pulseWidth.ramp(to: data.pulseWidth, duration: data.rampDuration)
                 osc.$frequency.ramp(to: data.frequency, duration: data.rampDuration)
                 osc.$amplitude.ramp(to: data.amplitude, duration: data.rampDuration)
-
+                
             } else {
                 osc.amplitude = 0.0
             }
         }
     }
-
+    
     var osc = PWMOscillator()
-
+    
     init() {
         engine.output = osc
     }
-
+    
     func start() {
         osc.amplitude = 0.2
-
+        
         do {
             try engine.start()
         } catch let err {
             Log(err)
         }
     }
-
+    
     func stop() {
         data.isPlaying = false
         osc.stop()

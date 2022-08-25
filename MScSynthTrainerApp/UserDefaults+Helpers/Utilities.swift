@@ -1,11 +1,8 @@
 //
 //  Utilities.swift
-//  customauth
+//  Reference: www.youtube.com/watch?v=1HN7usMROt8&t=4061s&ab_channel=CodeWithChris
 //
-//  Created by Christopher Ching on 2019-05-09.
-//  Copyright © 2019 Christopher Ching. All rights reserved.
-
-// Tutorial link: https://www.youtube.com/watch?v=1HN7usMROt8&t=4061s&ab_channel=CodeWithChris
+// UIKit Sign-up and Log-in ViewController button styling and Password Format Verification
 //
 
 import Foundation

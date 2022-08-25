@@ -1,12 +1,12 @@
 //
 //  OscillatorsAndWaveformsTutorial.swift
 //  MScSynthTrainerApp
-
+//
 // Ref: learningsynths.ableton.com/en/oscillators/how-synths-make-sound
-//
-// Possibly separate into Sound Waves and Oscillators/Waveforms sections of tutorials
-//
 //  Created by Oisin Carlin on 21/07/2022.
+//
+// Oscillators and Waveforms Tutorial TabView Slideshow
+//
 //
 
 import SwiftUI
@@ -28,7 +28,7 @@ struct OscillatorsAndWaveformsTutorial: View {
                                 description: "Sound waves come in many different shapes called 'waveforms'. The sounds of these waveforms have different characteristics, or 'timbres'. There are four main 'basic waveforms' you will often find when using synthesisers: sine, square, triangle and sawtooth.")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .border(.yellow, width: 16)
-
+            
             OWSineLinkView(systemImageName1: "sineWave",
                            title: "Sine Waveform",
                            description: "Sine waves are smooth, curved waves that do not have any corners or sharp drops. They make smooth, clear whistling or vocal-like sounds. Because of their cleanness or lack of a 'grit' you may find in other waveforms, it may be harder to hear lower-pitched sine-wave tones through smaller speakers.")
@@ -40,13 +40,12 @@ struct OscillatorsAndWaveformsTutorial: View {
                                description: "Triangle waves are like sine wave but with corners instead of curves - making them triangle shaped. They sound not as smooth but a bit clearer and brighter than a sine wave. Instead of a person whistling a triangle-wave tone might remind you of a recorder or a flute.")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .border(.yellow, width: 16)
-
+            
             OWSawtoothLinkView(systemImageName1: "sawWave",
                                title: "Sawtooth Waveform",
                                description: "Sawtooth waves are jagged shaped like the teeth of a saw. The waves rise up a slope then sharply drop down with tight corners. This makes them very rich and buzzy sounding. You can imagine a sawtooth-like tone being made by a violin or cello - the bow pulls the string out and then it quickly snaps back before being pulled again.")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .border(.yellow, width: 16)
-            //            OWSawtoothOscillatorView()
             OWSquareLinkView(systemImageName1: "squareWave",
                              title: "Square Waveform",
                              description: "Square waves are a type of evenly sized 'Pulse' waveform in the shape of a square. Nearly all the waves's cycle is spent at the very top or bottom with sharp drops between. This makes the sound quite buzzy, but the space between the waves makes them sound quite hollow. Think of woodwind instruments like clarinets, or old video game sounds.")
@@ -63,7 +62,7 @@ struct OscillatorsAndWaveformsTutorial: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .border(.yellow, width: 16)
             
-
+            
         }
         .tabViewStyle(PageTabViewStyle())
         

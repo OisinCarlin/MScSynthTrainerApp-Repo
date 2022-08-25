@@ -4,6 +4,8 @@
 //
 //  Created by Oisin Carlin on 05/08/2022.
 //
+// Band Pass Filter Example View
+//
 
 import AudioKit
 import AudioKitUI
@@ -99,7 +101,7 @@ struct BandPassFilterView: View {
     
     var body: some View {
         VStack {
-        
+            
             Text(self.conductor.data.isPlaying ? "||" : "▶︎").onTapGesture {
                 self.conductor.data.isPlaying.toggle()
             }.foregroundColor(self.conductor.data.isPlaying ? .orange : .green).font(Font.body.bold())
@@ -162,21 +164,21 @@ struct BandPassFilterView: View {
                     }
                     
                 }
-                //                        .padding()
+                
             }
             
             HStack{
                 ParameterSlider(text: "Amplitude",
                                 parameter: self.$conductor.data.amplitude,
                                 range: 0 ... 1)
-//                    .padding()
+                //                    .padding()
                 VStack{
                     Text(" /1   ")
                     Text(" ")
                     Text(" ")
                 }
             }
-
+            
             
             //Show Keyboard button
             Text(self.conductor.data.showKeyboard ? "Hide Keyboard" : "Show Keyboard").onTapGesture {
@@ -200,10 +202,6 @@ struct BandPassFilterView: View {
                             parameter: self.$conductor.data.bandwidth,
                             range: 0.0...20_000.0,
                             units: "Hertz")
-//            ParameterSlider(text: "Filter Mix",
-//                            parameter: self.$conductor.data.balance,
-//                            range: 0...1,
-//                            units: "%")
             
             
         }
@@ -225,7 +223,6 @@ struct BandPassFilterView: View {
             .onDisappear {
                 self.conductor.stop()
             }
-        
     }
     
 }

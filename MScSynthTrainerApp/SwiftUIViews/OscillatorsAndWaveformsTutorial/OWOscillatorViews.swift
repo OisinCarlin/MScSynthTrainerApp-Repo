@@ -4,6 +4,8 @@
 //
 //  Created by Oisin Carlin on 09/08/2022.
 //
+// Oscillators and Waveforms Playable Example Views
+//
 
 import SwiftUI
 import AudioKit
@@ -42,13 +44,6 @@ struct OWSineOscillatorView: View {
                 }
             }
             
-//            ParameterSlider(text: "Amplitude",
-//                            parameter: self.$conductor.data.amplitude,
-//                            range: 0 ... 1).padding()
-//            ParameterSlider(text: "Glide",
-//                            parameter: self.$conductor.data.rampDuration,
-//                            range: 0...10).padding()
-            
             //Show Keyboard button
             
             Text(self.conductor.data.showKeyboard ? "Hide Keyboard" : "Show Keyboard").onTapGesture {
@@ -70,7 +65,6 @@ struct OWSineOscillatorView: View {
         }.cookbookNavBarTitle("Play Sine Wave")
             .onAppear {
                 self.conductor.start()
-                
                 self.conductor.osc.setWaveform(Table(.sine))
             }
             .onDisappear {
@@ -107,13 +101,6 @@ struct OWTriangleOscillatorView: View {
                     
                 }
             }
-            
-//            ParameterSlider(text: "Amplitude",
-//                            parameter: self.$conductor.data.amplitude,
-//                            range: 0 ... 1).padding()
-//            ParameterSlider(text: "Glide",
-//                            parameter: self.$conductor.data.rampDuration,
-//                            range: 0...10).padding()
             
             //Show Keyboard button
             
@@ -172,13 +159,6 @@ struct OWSawtoothOscillatorView: View {
                     
                 }
             }
-//
-//            ParameterSlider(text: "Amplitude",
-//                            parameter: self.$conductor.data.amplitude,
-//                            range: 0 ... 1).padding()
-//            ParameterSlider(text: "Glide",
-//                            parameter: self.$conductor.data.rampDuration,
-//                            range: 0...10).padding()
             
             //Show Keyboard button
             
@@ -216,7 +196,7 @@ struct OWSquareOscillatorView: View {
     
     var body: some View {
         VStack {
-
+            
             Text(self.conductor.data.isPlaying ? "||" : "▶︎").onTapGesture {
                 self.conductor.data.isPlaying.toggle()
             }.foregroundColor(self.conductor.data.isPlaying ? .orange : .green).font(Font.body.bold())
@@ -239,13 +219,6 @@ struct OWSquareOscillatorView: View {
                 }
             }
             
-//            ParameterSlider(text: "Amplitude",
-//                            parameter: self.$conductor.data.amplitude,
-//                            range: 0 ... 1).padding()
-//            ParameterSlider(text: "Glide",
-//                            parameter: self.$conductor.data.rampDuration,
-//                            range: 0...10).padding()
-            
             //Show Keyboard button
             
             Text(self.conductor.data.showKeyboard ? "Hide Keyboard" : "Show Keyboard").onTapGesture {
@@ -267,7 +240,6 @@ struct OWSquareOscillatorView: View {
         }.cookbookNavBarTitle("Play Square Wave")
             .onAppear {
                 self.conductor.start()
-                
                 self.conductor.osc.setWaveform(Table(.square))
             }
             .onDisappear {
@@ -304,26 +276,6 @@ struct PWMOscillatorView: View {
                     
                 }
             }
-//            HStack{
-//                ParameterSlider(text: "Amplitude",
-//                                parameter: self.$conductor.data.amplitude,
-//                                range: 0 ... 1).padding()
-//                VStack{
-//                    Text(" /1   ")
-//                    Text(" ")
-//                    Text(" ")
-//                }
-//            }
-//            HStack{
-//            ParameterSlider(text: "Glide Time",
-//                            parameter: self.$conductor.data.rampDuration,
-//                            range: 0...10).padding()
-//                VStack{
-//                    Text("secs ")
-//                    Text(" ")
-//                    Text(" ")
-//                }
-//            }
             
             Text(self.conductor.data.showKeyboard ? "Hide Keyboard" : "Show Keyboard").onTapGesture {
                 self.conductor.data.showKeyboard.toggle()
@@ -373,7 +325,6 @@ struct PWMGlideOscillatorView: View {
                         Text(" ")
                         Text(" ")
                     }
-                    
                 }
             }
             HStack{
@@ -387,9 +338,9 @@ struct PWMGlideOscillatorView: View {
                 }
             }
             HStack{
-            ParameterSlider(text: "Glide Time",
-                            parameter: self.$conductor.data.rampDuration,
-                            range: 0...10).padding()
+                ParameterSlider(text: "Glide Time",
+                                parameter: self.$conductor.data.rampDuration,
+                                range: 0...10).padding()
                 VStack{
                     Text("secs ")
                     Text(" ")
@@ -487,7 +438,7 @@ struct OWOscillatorView: View {
                 Spacer()
                 
             }
- 
+            
             if(self.conductor.data.showKeyboard == false){
                 HStack{
                     ParameterSlider(text: "Frequency",
@@ -498,7 +449,6 @@ struct OWOscillatorView: View {
                         Text(" ")
                         Text(" ")
                     }
-                    
                 }
             }
             
@@ -514,9 +464,9 @@ struct OWOscillatorView: View {
             }
             
             HStack{
-            ParameterSlider(text: "Glide Time",
-                            parameter: self.$conductor.data.rampDuration,
-                            range: 0...10).padding()
+                ParameterSlider(text: "Glide Time",
+                                parameter: self.$conductor.data.rampDuration,
+                                range: 0...10).padding()
                 VStack{
                     Text("secs ")
                     Text(" ")

@@ -4,6 +4,9 @@
 //
 //  Created by Oisin Carlin on 21/06/2022.
 //
+//
+// Log-in UIKit Viewcontroller Accompanying Code File
+//
 
 import UIKit
 import FirebaseAuth
@@ -13,7 +16,6 @@ import FirebaseFirestore
 
 class LoginViewController: UIViewController {
     
-    //    var model = ViewModel()
     
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -77,7 +79,7 @@ class LoginViewController: UIViewController {
                             print("Error getting documents: \(err)")
                         } else {
                             for document in querySnapshot!.documents {
-                                 print("\(document.documentID) => \(document.data())")
+                                print("\(document.documentID) => \(document.data())")
                                 
                                 // let data = document.data()
                                 let docID = document.documentID
@@ -86,7 +88,7 @@ class LoginViewController: UIViewController {
                                 let userLastName = document["lastname"] as? String ?? ""
                                 
                                 print (userFirstName)
-//
+                                //
                                 
                                 UserDefaults.standard.setUserDocumentID(value: docID)
                                 UserDefaults.standard.setUserID(value: userID)
