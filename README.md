@@ -25,4 +25,15 @@ Welcome to the SynthTrainer iOS App Repository! Here's some intructions to get y
 
 8. Quit Terminal. Navigate back to the root folder of the cloned project and enter the folder.
 
-9. A new Xcode Workspace file has been generated, called 'MScSynthTrainerApp.xcworkspace'.
+9. A new Xcode Workspace file has been generated, called 'MScSynthTrainerApp.xcworkspace'. Open this Workspace file.
+
+10. In Xcode go to File > Packages > click 'Reset Packages Caches'.
+
+11. Then go to Product > click 'Clean Build Folder'.
+
+12. Choose an iPhone Simulator from the Siumulators list at the top of Xcode. iPhone 11 would be ideal.
+
+13. Run the application by pressing Cmd + R.
+
+
+
