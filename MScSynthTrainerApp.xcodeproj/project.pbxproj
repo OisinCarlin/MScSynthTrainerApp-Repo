@@ -44,6 +44,11 @@
 		2154685428AC1DC500BD04E0 /* QHost1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2154685328AC1DC500BD04E0 /* QHost1.swift */; };
 		2154D571289AF1FB00FCCB2F /* FiltersTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2154D570289AF1FB00FCCB2F /* FiltersTutorial.swift */; };
 		215844262881FDB300257013 /* BasicControlsTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215844252881FDB300257013 /* BasicControlsTutorial.swift */; };
+		2162427A28B9225500BCE3C0 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2162427928B9225500BCE3C0 /* KeyboardView.swift */; };
+		2162427C28B9229800BCE3C0 /* KeyboardWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2162427B28B9229800BCE3C0 /* KeyboardWidget.swift */; };
+		2162427E28B922C800BCE3C0 /* AudioKitUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2162427D28B922C800BCE3C0 /* AudioKitUI.swift */; };
+		2162428028B922EF00BCE3C0 /* Waveform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2162427F28B922EF00BCE3C0 /* Waveform.swift */; };
+		2162428228B9230B00BCE3C0 /* WaveformLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2162428128B9230B00BCE3C0 /* WaveformLayer.swift */; };
 		2163BEF028A3F97D00CB2A5C /* PlayMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2163BEEF28A3F97D00CB2A5C /* PlayMenu.swift */; };
 		2163BEF228A3FA1A00CB2A5C /* PlayBasicControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2163BEF128A3FA1A00CB2A5C /* PlayBasicControls.swift */; };
 		2163BEF428A3FE9400CB2A5C /* PlayOscillatorsAndWaveforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2163BEF328A3FE9400CB2A5C /* PlayOscillatorsAndWaveforms.swift */; };
@@ -115,6 +120,11 @@
 		2154685328AC1DC500BD04E0 /* QHost1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHost1.swift; sourceTree = "<group>"; };
 		2154D570289AF1FB00FCCB2F /* FiltersTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersTutorial.swift; sourceTree = "<group>"; };
 		215844252881FDB300257013 /* BasicControlsTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicControlsTutorial.swift; sourceTree = "<group>"; };
+		2162427928B9225500BCE3C0 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
+		2162427B28B9229800BCE3C0 /* KeyboardWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardWidget.swift; sourceTree = "<group>"; };
+		2162427D28B922C800BCE3C0 /* AudioKitUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioKitUI.swift; sourceTree = "<group>"; };
+		2162427F28B922EF00BCE3C0 /* Waveform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Waveform.swift; sourceTree = "<group>"; };
+		2162428128B9230B00BCE3C0 /* WaveformLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformLayer.swift; sourceTree = "<group>"; };
 		2163BEEF28A3F97D00CB2A5C /* PlayMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayMenu.swift; sourceTree = "<group>"; };
 		2163BEF128A3FA1A00CB2A5C /* PlayBasicControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayBasicControls.swift; sourceTree = "<group>"; };
 		2163BEF328A3FE9400CB2A5C /* PlayOscillatorsAndWaveforms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayOscillatorsAndWaveforms.swift; sourceTree = "<group>"; };
@@ -208,6 +218,18 @@
 				21A4C9B428997F6000366ED0 /* DryWetMixer.swift */,
 			);
 			path = "Filter Helpers";
+			sourceTree = "<group>";
+		};
+		2162427828B9220B00BCE3C0 /* Deprecated Keyboard Code */ = {
+			isa = PBXGroup;
+			children = (
+				2162427928B9225500BCE3C0 /* KeyboardView.swift */,
+				2162427B28B9229800BCE3C0 /* KeyboardWidget.swift */,
+				2162427D28B922C800BCE3C0 /* AudioKitUI.swift */,
+				2162428128B9230B00BCE3C0 /* WaveformLayer.swift */,
+				2162427F28B922EF00BCE3C0 /* Waveform.swift */,
+			);
+			path = "Deprecated Keyboard Code";
 			sourceTree = "<group>";
 		};
 		216E0A4228A163640010E840 /* Oscillator Data+Conductors */ = {
@@ -374,6 +396,7 @@
 		21F4F137288493E8003CED52 /* CookbookHelpers+Components */ = {
 			isa = PBXGroup;
 			children = (
+				2162427828B9220B00BCE3C0 /* Deprecated Keyboard Code */,
 				21F4F13828849459003CED52 /* NavigationHelpers.swift */,
 				21F4F13A28849494003CED52 /* KeyboardControl.swift */,
 				21F4F13C288494F6003CED52 /* ParameterSlider.swift */,
@@ -534,10 +557,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2162427E28B922C800BCE3C0 /* AudioKitUI.swift in Sources */,
 				21711E9428A2F783009E03C4 /* AmpEnvLinkViews.swift in Sources */,
 				2132F83B28A675AD00F4342F /* SoundWavesLinkViews.swift in Sources */,
 				214F01F028AA8AD200655803 /* q2.swift in Sources */,
 				21711E8628A2CFD9009E03C4 /* EnvelopesTutorial.swift in Sources */,
+				2162427C28B9229800BCE3C0 /* KeyboardWidget.swift in Sources */,
 				2154D571289AF1FB00FCCB2F /* FiltersTutorial.swift in Sources */,
 				215844262881FDB300257013 /* BasicControlsTutorial.swift in Sources */,
 				213FBD9728ABD924008CB19F /* QuestionCount.swift in Sources */,
@@ -556,6 +581,7 @@
 				21711E7128A28997009E03C4 /* OWOscillatorViews.swift in Sources */,
 				213FBD9F28AC0552008CB19F /* q7.swift in Sources */,
 				21711E8E28A2F672009E03C4 /* HPFAmplitudeEnvelope.swift in Sources */,
+				2162428228B9230B00BCE3C0 /* WaveformLayer.swift in Sources */,
 				21711E9628A2F83F009E03C4 /* FiltersLinkViews.swift in Sources */,
 				2163BEF628A401AE00CB2A5C /* PlayFilters.swift in Sources */,
 				21F4F13D288494F6003CED52 /* ParameterSlider.swift in Sources */,
@@ -564,6 +590,7 @@
 				218F57ED2864843C0052B064 /* Utilities.swift in Sources */,
 				21A4C9B528997F6000366ED0 /* DryWetMixer.swift in Sources */,
 				218C8CBC2862667100154F87 /* SignUpViewController.swift in Sources */,
+				2162427A28B9225500BCE3C0 /* KeyboardView.swift in Sources */,
 				21F276F72874D83900152B32 /* HomeVCSwiftUIView.swift in Sources */,
 				218C8CBF2862668A00154F87 /* LoginViewController.swift in Sources */,
 				216E0A4428A163A80010E840 /* OscillatorData+Conductors.swift in Sources */,
@@ -587,6 +614,7 @@
 				2163BEF828A401C400CB2A5C /* PlayEnvelopes.swift in Sources */,
 				2163BEFC28A40CF300CB2A5C /* BasicControlsLinkViews.swift in Sources */,
 				21711E8428A2CFBE009E03C4 /* LPFAmplitudeEnvelope.swift in Sources */,
+				2162428028B922EF00BCE3C0 /* Waveform.swift in Sources */,
 				2154685428AC1DC500BD04E0 /* QHost1.swift in Sources */,
 				218C8CC22862669700154F87 /* HomeViewController.swift in Sources */,
 				21711E9028A2F688009E03C4 /* BPFAmplitudeEnvelope.swift in Sources */,

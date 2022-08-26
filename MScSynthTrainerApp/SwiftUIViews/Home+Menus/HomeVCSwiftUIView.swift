@@ -30,8 +30,6 @@ struct HomeVCSwiftUIView: View {
         .environmentObject(QuestionComplete())
         
         .navigationViewStyle(DoubleColumnNavigationViewStyle())
-        
-        
     }
 }
 
