@@ -19,7 +19,6 @@ struct HomeVCSwiftUIView: View {
     
     var body: some View {
         
-        
         // NavigationView declaration - top of hierarchy
         NavigationView {
             MasterView()
@@ -39,10 +38,7 @@ struct MasterView: View {
     // Completion to dismiss SwiftUIView
     var dismiss: (() -> Void)?
     var present: (()->Void)?
-    
-    
-    let userFirstName = UserDefaults.standard.getUserFirstName()
-    
+
     var body: some View {
         Form {
             Group {
