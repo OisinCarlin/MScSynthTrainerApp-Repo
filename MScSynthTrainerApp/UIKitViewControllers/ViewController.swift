@@ -6,11 +6,12 @@
 //
 // First 'Welcome' UIKit ViewController presented upon Application Initialisation
 //
+// Ref: (Sheikh, 2020): www.youtube.com/watch?v=aWL7W8SLfeo&ab_channel=JawaadSheikh
+//
 
 import UIKit
 
 class ViewController: UIViewController {
-    
     
     @IBOutlet weak var signUpButton: UIButton!
     
@@ -18,8 +19,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     
     // 5/7/22: Unwinding methods for Back Buttons on SignUpViewController and LoginViewController
-    // www.youtube.com/watch?v=aWL7W8SLfeo&ab_channel=JawaadSheikh
-    
     @IBAction func unwindToInitialVC(sender : UIStoryboardSegue)
     {
         

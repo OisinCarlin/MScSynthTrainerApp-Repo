@@ -6,6 +6,8 @@
 //
 // Sign-Up UIKit Viewcontroller Accompanying Code File
 //
+// Ref: (Ching, 2019) : www.youtube.com/watch?v=1HN7usMROt8&t=2309s&ab_channel=CodeWithChris
+//
 
 import UIKit
 import FirebaseAuth
@@ -77,48 +79,39 @@ class SignUpViewController: UIViewController {
             //Password isn't secure enough
             return "Please make sure your password is at least 8 characters, contains a special character and a number."
         }
-        
         return nil
     }
     
     
     
     @IBAction func signUpTapped(_ sender: Any) {
-        
         // Validate the fields
         let error = validateFields()
-        
         // Error/validateFields method returns nil if no problems, or returns error message if there is a problem.
         // Therefore, if error/validateFields does NOT return nil AKA there IS a problem...
         if error != nil {
-            
             //There's something wrong with the fields, show error message
             showError(error!)
-            
         } else {
-            
             // Create cleaned versions of the data
             let firstName = firstNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let lastName = lastNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
-            
-            // Create the user
+            // Create the user in Users Database with their Email and Password
             Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
                 
                 // Check for errors
                 if err != nil{
-                    
                     // There was an error creating the user
                     self.showError("Error creating user")
-                    
                 } else {
-                    
-                    // User was created successfully, now store the first name and last name
+                    // User was created successfully.
+                    // Now store the firstName, lastname and UID from result of User Database Object in Firestore Database
                     let db = Firestore.firestore()
                     
-                    // Create user database document in Firebase
+                    // Create user data document in Firestore, add data.
                     db.collection("users").addDocument(data: ["firstname":firstName,
                                                               "lastname":lastName, "uid": result!.user.uid]) { (error) in
                         if error != nil {
@@ -126,10 +119,8 @@ class SignUpViewController: UIViewController {
                             self.showError("Error saving user data")
                         }
                     }
-
                     // Start of Get Document Code
                     let addDocUserID = result!.user.uid
-
                     
                     db.collection("users").whereField("uid", isEqualTo: addDocUserID)
                         .getDocuments() { (querySnapshot, err) in
@@ -138,7 +129,6 @@ class SignUpViewController: UIViewController {
                             } else {
                                 for document in querySnapshot!.documents {
                                     print("\(document.documentID) => \(document.data())")
-                                    
                                     
                                     let docID = document.documentID
                                     let userID = document["uid"] as? String ?? ""
@@ -173,24 +163,13 @@ class SignUpViewController: UIViewController {
                                     print ("                                                         ")
                                     print ("**** End Printing User Defaults Getters *****")
                                     print ("                                                         ")
-                                    
-                                    
-                                    // Set Login status boolean
-                                    UserDefaults.standard.setLoggedIn(value: true)
-                                    
                                 }
                             }
                         }
-                    
-
                     // End of Get Document Code
-                      
                     
                     // Transition to the home screen
                     self.transitionToHome()
-                    
-                    // Transition to the home screen
-                    
                 }
             }
         }
@@ -206,7 +185,6 @@ class SignUpViewController: UIViewController {
     func transitionToHome(){
         
         // 11/7/22: Capturing user data from Firebase to store upon Login
-        // Make this functionality available after Signing Up too, or transition to Login Instead
         let db = Firestore.firestore()
         let uid = Auth.auth().currentUser?.uid
         
@@ -230,10 +208,6 @@ class SignUpViewController: UIViewController {
                         UserDefaults.standard.setUserID(value: userID)
                         UserDefaults.standard.setUserFirstName(value: userFirstName)
                         UserDefaults.standard.setUserLastName(value: userLastName)
-                        
-                        // Set Login status boolean
-                        UserDefaults.standard.setLoggedIn(value: true)
-                        
                     }
                 }
             }
@@ -247,21 +221,16 @@ class SignUpViewController: UIViewController {
         
     }
     
-    // 5/7/22 - Transitioning to LoginVC instead of HomeVC
+    // Transitioning to LoginVC instead of HomeVC
     // Assigned "LoginVC" to LoginViewController's Storyboard ID
     // Clicked on Login View Controller's square button and Assigned under Custom Class - Identity
     // Also added this Storyboard ID to Constants.swift file
-    
-    //Problem: Back button no longer works when transitioning to LoginVC from SignUp
-    // Transition to Login ViewController
-    
     func transitionToLogin(){
         
         let loginViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.loginViewController) as? LoginViewController
         
         view.window?.rootViewController = loginViewController
         view.window?.makeKeyAndVisible()
-        
     }
 
 }

@@ -4,15 +4,15 @@
 //
 //  Created by Oisin Carlin on 14/07/2022.
 //
-//
 // Defining Application UserDefaults Storage variables, Getters and Setters.
 // Stores Logged-in User details from Firebase database
+//
+// Ref: (Voong, 2016): www.youtube.com/watch?v=gjYAIXjpIS8&t=888s&ab_channel=LetsBuildThatApp
 //
 
 import Foundation
 
 enum UserDefaultsKeys : String {
-    case isLoggedIn
     case userDocumentID
     case userID
     case userFirstName
@@ -20,17 +20,6 @@ enum UserDefaultsKeys : String {
 }
 
 extension UserDefaults{
-    
-    //MARK: Check Login
-    func setLoggedIn(value: Bool) {
-        // Change "false" to "value" if needing to unset the boolean
-        set(false, forKey: UserDefaultsKeys.isLoggedIn.rawValue)
-        synchronize()
-    }
-    
-    func isLoggedIn()-> Bool {
-        return bool(forKey: UserDefaultsKeys.isLoggedIn.rawValue)
-    }
     
     //MARK: Save User Data
     func setUserDocumentID(value: String){
@@ -71,5 +60,4 @@ extension UserDefaults{
     func getUserLastName() -> String{
         return string(forKey: UserDefaultsKeys.userLastName.rawValue) ?? ""
     }
-    
 }

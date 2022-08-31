@@ -3,7 +3,7 @@
 //  MScSynthTrainerApp
 //
 //  Created by Oisin Carlin on 05/07/2022.
-//  Navigation Menu Style Reference: Rebeloper :www.youtube.com/watch?v=7c2fBRM4gSA&ab_channel=Rebeloper-RebelDeveloper
+//  Navigation Menu Style Reference: (Rebeloper, 2019) :www.youtube.com/watch?v=7c2fBRM4gSA&ab_channel=Rebeloper-RebelDeveloper
 //
 // First Child SwiftUI View Hosted by UIKit ViewController: HomeVCSwiftUIView
 // Main menu presented at top of SwiftUI NavigationView hierarchy: MasterView

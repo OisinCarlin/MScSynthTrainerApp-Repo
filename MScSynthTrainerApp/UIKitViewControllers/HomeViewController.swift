@@ -3,7 +3,8 @@
 //  MScSynthTrainerApp
 //
 //  Created by Oisin Carlin on 21/06/2022.
-//  // Ref: www.youtube.com/watch?v=aWL7W8SLfeo&ab_channel=JawaadSheikh
+//
+// Ref: (Sheikh, 2020): www.youtube.com/watch?v=aWL7W8SLfeo&ab_channel=JawaadSheikh
 //
 // SwiftUI Hosting Viewcontroller Accompanying Code File
 //
@@ -27,9 +28,7 @@ class HomeViewController: UIViewController {
         addChild(childView)
         childView.view.frame = theContainer.bounds
         theContainer.addSubview(childView.view)
-        
     }
-    
     
     /*
      // MARK: - Navigation

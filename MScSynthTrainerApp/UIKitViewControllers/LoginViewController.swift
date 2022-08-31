@@ -1,11 +1,11 @@
 //
 //  LoginViewController.swift
 //  MScSynthTrainerApp
-//
 //  Created by Oisin Carlin on 21/06/2022.
 //
-//
 // Log-in UIKit Viewcontroller Accompanying Code File
+//
+// Ref: (Ching, 2019): www.youtube.com/watch?v=1HN7usMROt8&t=2309s&ab_channel=CodeWithChris
 //
 
 import UIKit
@@ -15,7 +15,6 @@ import FirebaseFirestore
 
 
 class LoginViewController: UIViewController {
-    
     
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -27,9 +26,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
-        
         setUpElements()
     }
     
@@ -75,7 +72,6 @@ class LoginViewController: UIViewController {
                             for document in querySnapshot!.documents {
                                 print("\(document.documentID) => \(document.data())")
                                 
-                                
                                 let docID = document.documentID
                                 let userID = document["uid"] as? String ?? ""
                                 let userFirstName = document["firstname"] as? String ?? ""
@@ -110,11 +106,6 @@ class LoginViewController: UIViewController {
                                 print ("                                                         ")
                                 print ("**** End Printing User Defaults Getters *****")
                                 print ("                                                         ")
-                                
-                                
-                                // Set Login status boolean
-                                UserDefaults.standard.setLoggedIn(value: true)
-                                
                             }
                         }
                     }
@@ -126,7 +117,6 @@ class LoginViewController: UIViewController {
                 self.view.window?.makeKeyAndVisible()
             }
         }
-        
     }
 }
 
