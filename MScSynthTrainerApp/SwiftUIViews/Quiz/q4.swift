@@ -197,7 +197,7 @@ struct q4: View {
             
             // Incorrect
             if(self.didTapB || self.didTapC || self.didTapD){
-                Text("Incorrect, this slide controls Pitch / Frequency")
+                Text("Incorrect, this slider controls Pitch / Frequency")
                     .foregroundColor(.red)
                     .padding()
                 

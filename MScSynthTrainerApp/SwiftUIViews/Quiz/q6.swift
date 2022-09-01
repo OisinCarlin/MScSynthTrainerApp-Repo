@@ -188,7 +188,7 @@ struct q6: View {
             
             // Incorrect
             if(self.didTapB || self.didTapC || self.didTapA){
-                Text("Incorrect, this slide controls Pulse-width Modulation")
+                Text("Incorrect, this slider controls Pulse-width Modulation")
                     .foregroundColor(.red)
                     .padding()
                 
