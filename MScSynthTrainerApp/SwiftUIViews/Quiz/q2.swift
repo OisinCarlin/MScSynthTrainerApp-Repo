@@ -126,6 +126,17 @@ struct q2: View {
                     }
                     
                     scoreLock = true
+                    
+                    // Test printing EnvironmentObject counters
+                    print("                                                    ")
+                    print("**** Start of EnvironmentObject Counters Printing ****")
+                    print("                                                    ")
+                    print("Score: " + String(scoreTracker.score))
+                    print("Answers Attempted: " + String(questionCount.count))
+                    print("Question Views Shown: " + String(questionComplete.completed))
+                    print("                                                    ")
+                    print("**** End of EnvironmentObject Counters Printing ****")
+                    print("                                                    ")
                 }
             }
             
@@ -148,6 +159,17 @@ struct q2: View {
                         .border(.blue, width: 3)
                 }.onAppear{
                     questionCount.count += 1
+                    
+                    // Test printing EnvironmentObject counters
+                    print("                                                    ")
+                    print("**** Start of EnvironmentObject Counters Printing ****")
+                    print("                                                    ")
+                    print("Score: " + String(scoreTracker.score))
+                    print("Answers Attempted: " + String(questionCount.count))
+                    print("Question Views Shown: " + String(questionComplete.completed))
+                    print("                                                    ")
+                    print("**** End of EnvironmentObject Counters Printing ****")
+                    print("                                                    ")
                 }
                 
             }
@@ -255,5 +277,8 @@ class Q2OscillatorConductor: ObservableObject, KeyboardDelegate {
 struct q2_Previews: PreviewProvider {
     static var previews: some View {
         q2()
+            .environmentObject(ScoreTracker())
+            .environmentObject(QuestionCount())
+            .environmentObject(QuestionComplete())
     }
 }

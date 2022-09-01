@@ -143,6 +143,17 @@ struct q1: View {
                         questionCount.count += 1
                     }
                     scoreLock = true
+                    
+                    // Test printing EnvironmentObject counters
+                    print("                                                    ")
+                    print("**** Start of EnvironmentObject Counters Printing ****")
+                    print("                                                    ")
+                    print("Score: " + String(scoreTracker.score))
+                    print("Answers Attempted: " + String(questionCount.count))
+                    print("Question Views Shown: " + String(questionComplete.completed))
+                    print("                                                    ")
+                    print("**** End of EnvironmentObject Counters Printing ****")
+                    print("                                                    ")
                 }
             }
             
@@ -163,6 +174,17 @@ struct q1: View {
                         .border(.blue, width: 3)
                 }.onAppear{
                     questionCount.count += 1
+                    
+                    // Test printing EnvironmentObject counters
+                    print("                                                    ")
+                    print("**** Start of EnvironmentObject Counters Printing ****")
+                    print("                                                    ")
+                    print("Score: " + String(scoreTracker.score))
+                    print("Answers Attempted: " + String(questionCount.count))
+                    print("Question Views Shown: " + String(questionComplete.completed))
+                    print("                                                    ")
+                    print("**** End of EnvironmentObject Counters Printing ****")
+                    print("                                                    ")
                 }
             }
         }
@@ -188,5 +210,8 @@ struct q1: View {
 struct q1_Previews: PreviewProvider {
     static var previews: some View {
         q1()
+            .environmentObject(ScoreTracker())
+            .environmentObject(QuestionCount())
+            .environmentObject(QuestionComplete())
     }
 }
