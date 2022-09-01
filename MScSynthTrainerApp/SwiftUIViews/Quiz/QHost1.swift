@@ -12,40 +12,27 @@
 import SwiftUI
 
 struct QHost1Data {
-    
     // Random Integer Generator
     var randomInt = Int.random(in: 1..<11)
-    
 }
 
 class QHost1Conductor: ObservableObject{
-    
-    
     //Conductor to prepare presentation of Question View from Random Integer Data
     @EnvironmentObject var questionCount: QuestionCount
     @EnvironmentObject var questionComplete: QuestionComplete
-    
     @Published var data = QHost1Data() {
-        
         didSet{
             
         }
-        
     }
-    
 }
 
 struct QHost1: View {
-    
     @StateObject var conductor = QHost1Conductor()
-    
     @EnvironmentObject var questionCount: QuestionCount
-    
     @EnvironmentObject var questionComplete: QuestionComplete
     
-    
     var body: some View {
-        
         if questionComplete.completed < 11 {
             if (self.conductor.data.randomInt == 1){
                 q1()

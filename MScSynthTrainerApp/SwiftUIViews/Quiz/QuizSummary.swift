@@ -11,20 +11,17 @@ import SwiftUI
 
 struct QuizSummary: View {
     
-    
     //Score Tracker
     @EnvironmentObject var scoreTracker: ScoreTracker
     @EnvironmentObject var questionCount: QuestionCount
     
     var body: some View {
-        
         VStack {
             
             Text("Congratulations")
                 .font(.system(size: 30))
                 .fontWeight(.bold)
                 .padding()
-            
             Image("progress")
                 .resizable()
                 .scaledToFit()

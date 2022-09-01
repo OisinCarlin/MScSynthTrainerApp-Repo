@@ -24,14 +24,11 @@ struct q1: View {
     @State private var didTapD:Bool = false
     
     @State private var lock:Bool = false
-    
     @State private var scoreLock:Bool = false
     
     
     var body: some View {
-        
         VStack {
-            
             Text("Which waveform is this?")
                 .font(.system(size: 30))
                 .fontWeight(.bold)
@@ -104,7 +101,6 @@ struct q1: View {
             
             // ****************************************
             
-            
             // ****** Answer D ************************
             
             Button(action: {
@@ -126,13 +122,11 @@ struct q1: View {
             // ****************************************
             
             // ************ Response ******************
-            
             //Correct
             if(self.didTapD){
                 Text("Correct!")
                     .foregroundColor(.green)
                     .padding()
-                
                 NavigationLink(destination: QHost1()
                                 .navigationBarBackButtonHidden(true)
                 ){
@@ -144,12 +138,10 @@ struct q1: View {
                         .frame(maxWidth: 350)
                         .border(.blue, width: 3)
                 }.onAppear{
-                    
                     if(scoreLock == false){
                         scoreTracker.score += 1
                         questionCount.count += 1
                     }
-                    
                     scoreLock = true
                 }
             }
@@ -159,7 +151,6 @@ struct q1: View {
                 Text("Incorrect, that was incorrect. This is a Sawtooth Wave")
                     .foregroundColor(.red)
                     .padding()
-                
                 NavigationLink(destination: QHost1()
                                 .navigationBarBackButtonHidden(true)
                 ){
@@ -173,8 +164,6 @@ struct q1: View {
                 }.onAppear{
                     questionCount.count += 1
                 }
-                
-                
             }
         }
         .onAppear{

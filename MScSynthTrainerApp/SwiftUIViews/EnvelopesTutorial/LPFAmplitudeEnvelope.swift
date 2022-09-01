@@ -23,9 +23,7 @@ struct LPFAmpEnvData {
     var frequency: AUValue = 440
     var amplitude: AUValue = 0.5
     var rampDuration: AUValue = 0.1
-    
     var showKeyboard = false
-    
     var cutoffFrequency: AUValue = 1_000
     var resonance: AUValue = 0
     var balance: AUValue = 1
@@ -33,16 +31,13 @@ struct LPFAmpEnvData {
 
 class LPFAmpEnvConductor: ObservableObject, KeyboardDelegate {
     var osc = Oscillator()
-    
     let engine = AudioEngine()
     let filter: LowPassFilter
     let dryWetMixer: DryWetMixer
     
     var currentNote = 0
     
-    
     func noteOn(note: MIDINoteNumber) {
-        
         if note != currentNote {
             env.closeGate()
         }
@@ -63,16 +58,13 @@ class LPFAmpEnvConductor: ObservableObject, KeyboardDelegate {
             filter.resonance = data.resonance
             dryWetMixer.balance = data.balance
             osc.$amplitude.ramp(to: data.amplitude, duration: data.rampDuration)
-            
         }
     }
-    
     init() {
         osc = Oscillator()
         env = AmplitudeEnvelope(osc)
         fader = Fader(env)
         osc.amplitude = 1
-        
         
         filter = LowPassFilter(fader)
         dryWetMixer = DryWetMixer(fader, filter)
@@ -107,18 +99,13 @@ struct LPFAmpEnvView: View {
     
     var body: some View {
         VStack {
-            
-            
             ADSRWidget { att, dec, sus, rel in
                 self.conductor.env.attackDuration = att
                 self.conductor.env.decayDuration = dec
                 self.conductor.env.sustainLevel = sus
                 self.conductor.env.releaseDuration = rel
-            }     
-            
+            }
             NodeRollingView(conductor.dryWetMixer, color: .red)
-            
-            
             HStack {
                 Spacer()
                 Text("Sine").onTapGesture {
@@ -163,8 +150,6 @@ struct LPFAmpEnvView: View {
                 }                .foregroundColor(didTapSawtooth ? Color.red : Color.black).font(Font.body.bold())
                 Spacer()
             }
-            
-            
             HStack{
                 ParameterSlider(text: " Master Amplitude",
                                 parameter: self.$conductor.data.amplitude,
@@ -176,7 +161,6 @@ struct LPFAmpEnvView: View {
                     Text(" ")
                 }
             }
-            
             KeyboardControl(firstOctave: 3,
                             octaveCount: 1,
                             polyphonicMode: false,
@@ -193,8 +177,6 @@ struct LPFAmpEnvView: View {
                             units: "dB")
             
         }
-        
-        
         .cookbookNavBarTitle("LPF and Envelope")
         .onAppear {
             self.conductor.start()
@@ -209,7 +191,6 @@ struct LPFAmpEnvView: View {
         .onDisappear {
             self.conductor.stop()
         }
-        
     }
 }
 
