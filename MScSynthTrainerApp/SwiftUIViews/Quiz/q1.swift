@@ -159,7 +159,7 @@ struct q1: View {
             
             // Incorrect
             if(self.didTapA || self.didTapB || self.didTapC){
-                Text("Incorrect, that was incorrect. This is a Sawtooth Wave")
+                Text("Incorrect, this is a Sawtooth Wave")
                     .foregroundColor(.red)
                     .padding()
                 NavigationLink(destination: QHost1()
