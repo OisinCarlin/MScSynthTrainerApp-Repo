@@ -51,6 +51,18 @@ struct QuizSummary: View {
             }.onTapGesture {
             }
         }
+        .onAppear{
+            
+            // Test printing EnvironmentObject counters
+            print("                                                    ")
+            print("**** Start of EnvironmentObject Counters Printing ****")
+            print("                                                    ")
+            print("Score: " + String(scoreTracker.score))
+            print("Answers Attempted: " + String(questionCount.count))
+            print("                                                    ")
+            print("**** End of EnvironmentObject Counters Printing ****")
+            print("                                                    ")
+        }
         
     }
 }

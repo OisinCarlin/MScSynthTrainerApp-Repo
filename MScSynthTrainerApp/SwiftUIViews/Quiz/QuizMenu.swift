@@ -42,6 +42,17 @@ struct QuizMenu: View {
                         scoreTracker.score = 0
                         questionCount.count = 0
                         questionComplete.completed = 0
+                        
+                        // Test printing EnvironmentObject counters
+                        print("                                                    ")
+                        print("**** Start of EnvironmentObject Counters Printing ****")
+                        print("                                                    ")
+                        print("Score: " + String(scoreTracker.score))
+                        print("Answers Attempted: " + String(questionCount.count))
+                        print("Question Views Shown: " + String(questionComplete.completed))
+                        print("                                                    ")
+                        print("**** End of EnvironmentObject Counters Printing ****")
+                        print("                                                    ")
                     }
                 }
             }
