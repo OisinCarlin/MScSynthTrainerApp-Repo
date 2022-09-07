@@ -70,5 +70,7 @@ struct QuizSummary: View {
 struct QuizSummary_Previews: PreviewProvider {
     static var previews: some View {
         QuizSummary()
+            .environmentObject(ScoreTracker())
+            .environmentObject(QuestionCount())
     }
 }
