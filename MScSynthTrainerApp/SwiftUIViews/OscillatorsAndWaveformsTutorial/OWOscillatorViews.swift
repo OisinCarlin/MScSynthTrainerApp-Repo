@@ -17,6 +17,7 @@ import AVFoundation
 import AudioKitEX
 import CAudioKitEX
 
+//*************** Sine Wave Playable Example *******************************************
 
 struct OWSineOscillatorView: View {
     @StateObject var conductor = OscillatorConductor()
@@ -73,6 +74,10 @@ struct OWSineOscillatorView: View {
     }
     
 }
+
+//******************************************************************************************
+
+//*************** Triangle Wave Playable Example *******************************************
 
 struct OWTriangleOscillatorView: View {
     @StateObject var conductor = OscillatorConductor()
@@ -133,6 +138,10 @@ struct OWTriangleOscillatorView: View {
     
 }
 
+//******************************************************************************************
+
+//*************** Sawtooth Wave Playable Example *******************************************
+
 struct OWSawtoothOscillatorView: View {
     @StateObject var conductor = OscillatorConductor()
     
@@ -190,6 +199,10 @@ struct OWSawtoothOscillatorView: View {
     }
     
 }
+
+//******************************************************************************************
+
+//*************** Square Wave Playable Example *********************************************
 
 struct OWSquareOscillatorView: View {
     @StateObject var conductor = OscillatorConductor()
@@ -249,6 +262,10 @@ struct OWSquareOscillatorView: View {
     
 }
 
+//******************************************************************************************
+
+//*************** Pulse Wave Playable Example **********************************************
+
 struct PWMOscillatorView: View {
     @StateObject var conductor = PWMOscillatorConductor()
     
@@ -300,6 +317,10 @@ struct PWMOscillatorView: View {
             }
     }
 }
+
+//******************************************************************************************
+
+//*************** Pulse Wave With Glide Playable Example ***********************************
 
 struct PWMGlideOscillatorView: View {
     @StateObject var conductor = PWMOscillatorConductor()
@@ -371,6 +392,10 @@ struct PWMGlideOscillatorView: View {
             }
     }
 }
+
+//******************************************************************************************
+
+//*************** Full Oscillator Playable Example *****************************************
 
 struct OWOscillatorView: View {
     @StateObject var conductor = OscillatorConductor()
@@ -498,9 +523,14 @@ struct OWOscillatorView: View {
                 self.didTapSquare = false
                 self.didTapTriangle = false
                 self.didTapSawtooth = false
+                
+                self.conductor.osc.setWaveform(Table(.sine))
             }
             .onDisappear {
                 self.conductor.stop()
             }
     }
 }
+
+//******************************************************************************************
+
